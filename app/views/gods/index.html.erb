@@ -1,0 +1,12 @@
+<h1>Gods#index</h1>
+<p>Find me in app/views/gods/index.html.erb</p>
+
+<% if @gods.count > 0  %>
+<ul>
+  <% @gods.each do |god| %>
+    <li><%= link_to "#{god.name}", god_path(god) %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>"No Gods found!"</p>
+<% end %>

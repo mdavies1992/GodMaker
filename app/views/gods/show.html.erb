@@ -1,0 +1,13 @@
+<h1>Gods#show</h1>
+<p>Find me in app/views/gods/show.html.erb</p>
+<br>
+<p>Name: <%= @god.name %></p>
+<p>Epitaph: <%= @god.epitaph %></p>
+<p>Alignment: <%= @god.alignment.name %></p>
+<p>Domain: <%= @god.domain.name %></p>
+<p>Tenets:</p>
+<ul>
+  <% @god.tenets.each do |tenet| %>
+   <li><%= tenet %></li>
+  <% end %>
+</ul>

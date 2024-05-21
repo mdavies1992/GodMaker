@@ -10,8 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_19_092619) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "alignments", force: :cascade do |t|
+    t.string "name"
+    t.bigint "x_alignment_id"
+    t.bigint "y_alignment_id"
+    t.string "descriptors", default: [], array: true
+    t.string "titles", default: [], array: true
+    t.string "tenets", default: [], array: true
+    t.index ["x_alignment_id"], name: "index_alignments_on_x_alignment_id"
+    t.index ["y_alignment_id"], name: "index_alignments_on_y_alignment_id"
+  end
+
+  create_table "domains", force: :cascade do |t|
+    t.string "name"
+    t.string "descriptors", default: [], array: true
+    t.string "titles", default: [], array: true
+    t.string "tenets", default: [], array: true
+  end
+
+  create_table "gods", force: :cascade do |t|
+    t.string "name"
+    t.string "epitaph"
+    t.string "tenets", default: [], array: true
+    t.bigint "alignment_id", null: false
+    t.bigint "domain_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["alignment_id"], name: "index_gods_on_alignment_id"
+    t.index ["domain_id"], name: "index_gods_on_domain_id"
+  end
+
+  create_table "x_alignments", force: :cascade do |t|
+    t.string "name"
+    t.string "descriptors", default: [], array: true
+    t.string "titles", default: [], array: true
+    t.string "tenets", default: [], array: true
+  end
+
+  create_table "y_alignments", force: :cascade do |t|
+    t.string "name"
+    t.string "descriptors", default: [], array: true
+    t.string "titles", default: [], array: true
+    t.string "tenets", default: [], array: true
+  end
+
+  add_foreign_key "alignments", "x_alignments"
+  add_foreign_key "alignments", "y_alignments"
+  add_foreign_key "gods", "alignments"
+  add_foreign_key "gods", "domains"
 end
