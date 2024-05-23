@@ -1,7 +1,8 @@
 <h1>Gods#new</h1>
 <p>Find me in app/views/gods/new.html.erb</p>
-
 <%= simple_form_for @god do |f| %>
   <%= f.input :name %>
+  <%= f.input :random_domain, as: :boolean, label: "Choose random Domain"%>
+  <%= f.input :domain, collection: God::DOMAINS, prompt: "Select a Domain" %>
   <%= f.submit%>
 <% end %>
