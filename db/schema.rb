@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_23_092152) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_23_130736) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_092152) do
     t.string "tenets", default: [], array: true
   end
 
+  create_table "generals", force: :cascade do |t|
+    t.string "names", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "gods", force: :cascade do |t|
     t.string "name"
     t.string "epitaph"
@@ -40,6 +46,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_092152) do
     t.bigint "domain_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "random_name"
+    t.boolean "random_alignment"
     t.boolean "random_domain"
     t.index ["alignment_id"], name: "index_gods_on_alignment_id"
     t.index ["domain_id"], name: "index_gods_on_domain_id"

@@ -1,8 +1,13 @@
 <h1>Gods#new</h1>
 <p>Find me in app/views/gods/new.html.erb</p>
-<%= simple_form_for @god do |f| %>
-  <%= f.input :name %>
-  <%= f.input :random_domain, as: :boolean, label: "Choose random Domain"%>
-  <%= f.input :domain, collection: God::DOMAINS, prompt: "Select a Domain" %>
-  <%= f.submit%>
-<% end %>
+<div class="container">
+  <%= simple_form_for @god do |f| %>
+    <%= f.input :random_name, as: :boolean, label: "Randomly generate Name"%>
+    <%= f.input :name %>
+    <%= f.input :random_alignment, as: :boolean, label: "Choose random Alignment"%>
+    <%= f.input :alignment, collection: God::ALIGNMENTS, prompt: "Select an Alignment" %>
+    <%= f.input :random_domain, as: :boolean, label: "Choose random Domain"%>
+    <%= f.input :domain, collection: God::DOMAINS, prompt: "Select a Domain" %>
+    <%= f.submit%>
+  <% end %>
+</div>

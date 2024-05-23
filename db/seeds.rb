@@ -1,5 +1,6 @@
 # Clear it all out
 puts "Clearing DB"
+General.destroy_all
 God.destroy_all
 Domain.destroy_all
 Alignment.destroy_all
@@ -153,7 +154,7 @@ puts "Life created"
 
 arcana_descriptors = ["Magical", "Mystical", "Enchanting", "Great", "All-knowing", "Mysterious", "Boundless", "Wise", "Otherworldly", "Cosmic"];
 arcana_titles = ["Arcane", "Sage", "Diviner", "Seer", "Diviner", "Master", "Weaver", "Mage", "Scrollmaster", "Teacher", "Entity"];
-arcana_tenets = ["Embrace the pursuit of arcane wisdom and understanding. Encourage the study of magic in all its forms.", "Safeguard magical knowledge from those who would seek to disrupt or abuse it.", "Stand against those who would seek to suppress or extinguish magic from the world. Protect magical knowledge and artifacts from destruction or misuse.", "Encourage innovation and experimentation within the bounds of your gods ethical guidelines, if any. Inspire creativity and ingenuity in the development of new spells and magical techniques.", "Every month, you must sacrifice a scroll of magical power you have found or written, via ritual or donation to the faith's order.", "Acknowledge and respect the origins of magic, whether it be through divine providence, natural forces, or cosmic energies. Treat the source of magic with reverence and gratitude.", "Use your arcane abilities responsibly and with care. Understand the consequences of your actions and wield magic for the greater good, avoiding unnecessary harm or disruption.", "Safeguard the secrets of magic from those who would misuse or exploit them for nefarious purposes. Exercise discretion in sharing arcane knowledge and only reveal it to those deemed worthy and trustworthy.", "Cultivate a spirit of curiosity and exploration, delving into the mysteries of magic with an open mind and a thirst for discovery. Remain ever-curious and unafraid to explore the unknown.", "Work towards uniting practitioners of magic, regardless of their traditions or beliefs. Foster cooperation and understanding among magical communities to strengthen the bonds of arcane knowledge."];
+arcana_tenets = ["Embrace the pursuit of arcane wisdom and understanding. Encourage the study of magic in all its forms.", "Safeguard magical knowledge from those who would seek to disrupt or abuse it.", "Stand against those who would seek to suppress or extinguish magic from the world. Protect magical knowledge and artifacts from destruction or misuse.", "Encourage innovation and experimentation within the bounds of your gods ethical guidelines, if any. Inspire creativity and ingenuity in the development of new spells and magical techniques.", "Every month, you must sacrifice a scroll of magical power you have found or written, via ritual or donation to the faith's order.", "Acknowledge and respect the origins of magic, whether it be through divine providence, natural forces, or cosmic energies. Treat the source of magic with reverence and gratitude.", "It is your divinely appointed task to create at least one new spell or piece of magical craft, or to rediscover such a wonder.", "Safeguard the secrets of magic from those who would misuse or exploit them for nefarious purposes. Exercise discretion in sharing arcane knowledge and only reveal it to those deemed worthy and trustworthy.", "Cultivate a spirit of curiosity and exploration, delving into the mysteries of magic with an open mind and a thirst for discovery. Remain ever-curious and unafraid to explore the unknown.", "Work towards uniting practitioners of magic, regardless of their traditions or beliefs. Foster cooperation and understanding among magical communities to strengthen the bonds of arcane knowledge."];
 Domain.create!(name: "Arcana", descriptors: arcana_descriptors, titles: arcana_titles, tenets: arcana_tenets )
 puts "Arcana created"
 
@@ -169,21 +170,16 @@ puts "War created"
 # Domain.create!(name: "", descriptors: _descriptors, titles: _titles, tenets: _tenets )
 # puts " created"
 
-
-def make_name
-  n = rand(1..4)
-  components = ["A", "Zu", "Ta", "Re", "Mas"]
-  name = ''
-  n.times do
-    name = name + components.sample
-  end
-  return name
-end
+puts "Making global details"
+global = General.new
+global.names = ['ae', 'ald', 'el', 'gal', 'thal', 'ar', 'mor', 'zan', 'drak', 'eld', 'fen', 'dor', 'thor', 'wyn', 'mire', 'gorn', 'zul', 'tas', 'ter', 'ghas', 'zir', 'wyr', "'", "-", "byr", "bir", "ch", "der", "dan", "dak", "fro", "fyr", "il", "ty", "tyr", "wul", "bren", "ka", "kha", "ky", "sin", "vel", "vil", "vy" ]
+# global.names = ["a", "ah", "ar", "ay", "ae", "at", "ay", "ald", "be", "ba", "bo", "by", "bi", "bel" "c" "cu", "ch", "cy", "co", "cr", "che", "d" "da", "do", "de", "di", "dei", "dy", "dr", "e", "el", "ey", "ed", "er", "ei", "f", "ft", "fo", "fh", "fy", "fa", "fi", "g", "gh", "gy", "ga", "go", "gu", "gi", "gr", "gw", "h", "ha", "hi", "hu", "he", "hy", "ht", "i", "in", "ir", "if", "ij", "ip", "iz", "ich", "it", "j", "jer", "p" "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "zed", "zer", "zul", "zas", "zo", "za", "zy" "-", "'"]
+global.save
 
 
 #Create God
 puts "Creating God"
-new_god = God.new(name: make_name, alignment: Alignment.all.sample, domain: Domain.all.sample)
+new_god = God.new(name: global.make_name, alignment: Alignment.all.sample, domain: Domain.all.sample)
 god_descriptors = new_god.alignment.descriptors + new_god.alignment.x_alignment.descriptors + new_god.alignment.y_alignment.descriptors  + new_god.domain.descriptors
 god_titles = new_god.alignment.titles + new_god.alignment.x_alignment.titles + new_god.alignment.y_alignment.titles  + new_god.domain.titles
 new_god.epitaph = "The #{god_descriptors.sample} #{god_titles.sample}"

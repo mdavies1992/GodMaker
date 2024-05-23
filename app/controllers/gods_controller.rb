@@ -12,12 +12,25 @@ class GodsController < ApplicationController
   end
 
   def create
+    @global = General.first
     @god = God.new(god_params)
     @domains = Domain.all
     puts "Creating God"
-    @god.alignment = Alignment.all.sample
+
+    # - Name Choice / RNG
+    if params[:god][:random_name] == "1"
+      @god.name =  @global.make_name
+    end
 
 
+    # - Alignment RNG
+    if params[:god][:random_alignment] == "1"
+      @god.alignment =  Alignment.all.sample
+    else
+      @god.alignment = Alignment.find(params[:god][:alignment])
+    end
+
+    # - Domain choice/RNG
     if params[:god][:random_domain] == "1"
       @god.domain =  Domain.all.sample
     else
@@ -51,16 +64,6 @@ private
 
   def god_params
     params.require(:god).permit(:name)
-  end
-
-  def make_name
-    n = rand(1..4)
-    components = ["Ah", "Zu", "Ta", "Re", "Mas"]
-    name = ''
-    n.times do
-      name = name + components.sample
-    end
-    return name
   end
 
 end
