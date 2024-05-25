@@ -5,9 +5,15 @@
 <p>Epitaph: <%= @god.epitaph %></p>
 <p>Alignment: <%= @god.alignment.name %></p>
 <p>Domain: <%= @god.domain.name %></p>
+<p>Themes:</p>
+<ul>
+  <% @god.themes.each do |theme| %>
+    <li><%= theme %></li>
+  <% end %>
+</ul>
 <p>Tenets:</p>
 <ul>
   <% @god.tenets.each do |tenet| %>
-   <li><%= tenet %></li>
+    <li><%= tenet %></li>
   <% end %>
 </ul>

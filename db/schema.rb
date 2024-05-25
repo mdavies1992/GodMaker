@@ -30,10 +30,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_130736) do
     t.string "descriptors", default: [], array: true
     t.string "titles", default: [], array: true
     t.string "tenets", default: [], array: true
+    t.string "themes", default: [], array: true
   end
 
   create_table "generals", force: :cascade do |t|
     t.string "names", default: [], array: true
+    t.string "themes", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_130736) do
     t.string "name"
     t.string "epitaph"
     t.string "tenets", default: [], array: true
+    t.string "themes", default: [], array: true
     t.bigint "alignment_id", null: false
     t.bigint "domain_id", null: false
     t.datetime "created_at", null: false
@@ -58,6 +61,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_130736) do
     t.string "descriptors", default: [], array: true
     t.string "titles", default: [], array: true
     t.string "tenets", default: [], array: true
+    t.string "themes", default: [], array: true
   end
 
   create_table "y_alignments", force: :cascade do |t|
@@ -65,6 +69,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_130736) do
     t.string "descriptors", default: [], array: true
     t.string "titles", default: [], array: true
     t.string "tenets", default: [], array: true
+    t.string "themes", default: [], array: true
   end
 
   add_foreign_key "alignments", "x_alignments"

@@ -8,6 +8,7 @@ class GodsController < ApplicationController
   end
 
   def new
+    @global = General.first
     @god = God.new
   end
 
@@ -18,30 +19,30 @@ class GodsController < ApplicationController
     puts "Creating God"
 
     # - Name Choice / RNG
-    if params[:god][:random_name] == "1"
+    if params[:god][:random_name] == "0"
       @god.name =  @global.make_name
     end
 
 
     # - Alignment RNG
-    if params[:god][:random_alignment] == "1"
+    if params[:god][:random_alignment] == "0"
       @god.alignment =  Alignment.all.sample
     else
       @god.alignment = Alignment.find(params[:god][:alignment])
     end
 
     # - Domain choice/RNG
-    if params[:god][:random_domain] == "1"
+    if params[:god][:random_domain] == "0"
       @god.domain =  Domain.all.sample
     else
       @god.domain = Domain.find(params[:god][:domain])
     end
 
 
-
     god_descriptors = @god.alignment.descriptors + @god.alignment.x_alignment.descriptors + @god.alignment.y_alignment.descriptors  + @god.domain.descriptors
     god_titles = @god.alignment.titles + @god.alignment.x_alignment.titles + @god.alignment.y_alignment.titles  + @god.domain.titles
     @god.epitaph = "The #{god_descriptors.sample} #{god_titles.sample}"
+
     god_tenets = @god.domain.tenets
     god_tenets.shuffle!
     @god.tenets << god_tenets.pop
@@ -50,6 +51,16 @@ class GodsController < ApplicationController
       god_tenets.shuffle!
       @god.tenets << god_tenets.pop
     end
+
+    god_themes = @god.domain.themes
+    god_themes.shuffle!
+    @god.themes << god_themes.pop
+    god_themes = god_themes + @global.themes + @god.alignment.x_alignment.themes + @god.alignment.y_alignment.themes
+    2.times do
+      god_themes.shuffle!
+      @god.themes << god_themes.pop
+    end
+
     @god.save
     if @god.save
       redirect_to god_path(@god)

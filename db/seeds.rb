@@ -13,38 +13,44 @@ puts "-- Creating X-Axis alignments"
 lawful_descriptors = ["Mechanical", "Orderly", "Systematic", "Meticulous", "Calculated"];
 lawful_titles = ["Warden", "Sentinel", "Lawmaker", "Lord", "Weaver"];
 lawful_tenets = ["Respect the authority of the Law be it your own or those of the lands you are in, and enforce it where possible.", "Create order in realms of chaos, and fight those or that which promotes disharmony.", "Always go about your tasks in an orderly, systematic fashion. There is always a 'right' way to do things.", "Routines are paramount, and once created must be maintained. Create a routine to assess and improve your other routines, as necessary.", "Scheduling is the meaning of existence, without them nothing would come to pass. Punctuality is a holy mission."];
-XAlignment.create!(name: "Lawful", descriptors: lawful_descriptors, titles: lawful_titles, tenets: lawful_tenets )
+lawful_themes = ["Justice", "Gears", "Constructs", "Money", "Contracts"];
+XAlignment.create!(name: "Lawful", descriptors: lawful_descriptors, titles: lawful_titles, tenets: lawful_tenets, themes: lawful_themes )
 puts "Lawful created"
 
 neutral_descriptors = ["Balanced", "Shfiting", "Thoughtful", "Harmonious", "Resolved"];
 neutral_titles = ["Seer", "Keeper", "Mediator", "Scale", "Point"];
 neutral_tenets = ["Strive for thoughtfulness in any situation where you may act, or react, considering the world, yourself and those you may affect with your action or inaction.", "Try to gain independance from the sways of law and chaos, and know what is true to your own ways between these philosophies. Be neither restricted nor untethered.", "Consideration for those around you is a great and blessed thing. Try not to distrupt the world by your actions, and instead match its flow.", "Adaptability is a virtue you must uphold- be ready to adapt to a situation, and find a way to stay calm when things are chaotic- but also know when to act when things are stagnant.", "Respect the lands and places you find yourself in, and the customs of its people, but do not bend to them either."];
-XAlignment.create!(name: "Neutral", descriptors: neutral_descriptors, titles: neutral_titles, tenets: neutral_tenets )
+neutral_themes = ["Potential", "Indecision", "Games", "Sports", "Dance"];
+XAlignment.create!(name: "Neutral", descriptors: neutral_descriptors, titles: neutral_titles, tenets: neutral_tenets, themes: neutral_themes )
 puts "Neutral created"
 
 chaos_descriptors = ["Spotaneous", "Unbound", "Untethered", "Rebellious", "Wild"];
 chaos_titles = ["Havoc", "Cascade", "Flux", "Chaos", "Discord"];
 chaos_tenets = ["Freedom above all else, suffer not the chains of those who would put them on you or others.", "Plans are a comfort to those who wish to control the world, true, but they not for those with faith in chaos.", "Trust your inner gut and feelings above all else, no matter what others may tell you.", "Do not tell others how to act nor feel, and do not listen to those who tell you the same.", "Always strive to do something new, or go somewhere new, each and every day."];
-XAlignment.create!(name: "Chaotic", descriptors: chaos_descriptors, titles: chaos_titles, tenets: chaos_tenets )
+chaos_themes = ["Luck", "Misfortune", "Gambling", "Confusion", "Revelry"];
+XAlignment.create!(name: "Chaotic", descriptors: chaos_descriptors, titles: chaos_titles, tenets: chaos_tenets, themes: chaos_themes )
 puts "Chaotic created"
 
 puts "-- Creating Y-Axis alignments"
 good_descriptors = ["Holy", "Divine", "Blessed", "Radiant", "Heavenly"];
 good_titles = ["Angel", "Exemplar", "Grace", "Host", "Spirit"];
 good_tenets = ["Face down the forces of Evil, no matter where or what they are, or where they might be.", "Purify yourself, be selfless and true so that you may inspire those with good example.", "Do good deeds, inspire others and show praise to those whos acts are praiseworthy to encourage ever more.", "Conversion of those of evil or those on the path to evil to the side of good is paramount. Give mercy and understanding to those that need it most.", "Heal the lands where evil has taken root and corrupted, be it physical or spiritual."];
-YAlignment.create!(name: "Good", descriptors: good_descriptors, titles: good_titles, tenets: good_tenets )
+good_themes = ["Angels", "Celestials", "Patience", "Compassion", "Charity"];
+YAlignment.create!(name: "Good", descriptors: good_descriptors, titles: good_titles, tenets: good_tenets, themes: good_themes )
 puts "Good created"
 
 neutral_descriptors = ["Ethereal", "Impartial", "Immutable", "Neutral"];
 neutral_titles = ["Overseer", "Keeper", "Force", "Observer"];
 neutral_tenets = ["Undestand balance, and strive to maintain equilibrium and harmony in the universe, acknowledging the necessity of both light and darkness, good and evil.", "Judge actions based on their consequences and impact on the balance of existence rather than on moral absolutes.", "Respect free will and recognize the sovereignty of individuals to make their own choices, understanding that freedom of choice is essential for growth and development.", "Focus on the self and your understanding of the self. Though moral decisions can be used to react and interact with the world around you, you must maintain neutrality within the self."];
-YAlignment.create!(name: "Neutral", descriptors: neutral_descriptors, titles: neutral_titles, tenets: neutral_tenets )
+neutral_themes = ["Philosophy", "Boredom", "Apathy", "Stars", "Souls"];
+YAlignment.create!(name: "Neutral", descriptors: neutral_descriptors, titles: neutral_titles, tenets: neutral_tenets, themes: neutral_themes )
 puts "Neutral created"
 
 evil_descriptors = ["Evil", "Vile", "Nefarious", "Unholy"];
 evil_titles = ["Lord", "Master", "Shadow", "Malevolence"];
 evil_tenets = ["Harness a ruthless ambition without limits, where the ends you desire justifiy any means you must take to get them.", "Corrupt the Innocent and untainted, and know the delight in turning them to darkness.", "Celebrate acts of cruelty, betrayal, and destruction as virtuous deeds that are the hallmark of evil.", "Eradicate Hope, and seek to extinguish it, goodness and faith, wherever they are found, leaving only despair in their wake."];
-YAlignment.create!(name: "Evil", descriptors: evil_descriptors, titles: evil_titles, tenets: evil_tenets )
+evil_themes = ["Fear", "Fiends", "Murder", "Corruption", "Greed"];
+YAlignment.create!(name: "Evil", descriptors: evil_descriptors, titles: evil_titles, tenets: evil_tenets, themes: evil_themes )
 puts "Evil created"
 
 # Method-call the Core alignments
@@ -149,20 +155,58 @@ puts "-- Creating Domains"
 life_descriptors = ["Healing", "Giving", "Helping", "Aiding", "Flourishing", "Mending", "Merciful", "Kind", "Joyful", "Spiritual"];
 life_titles = ["Hand", "Guide", "Savior", "Touch", "Healer", "Salvation", "Caregiver", "Lifegiver", "Reprieve", "Calm"];
 life_tenets = ["Your job as a healer is never-ending, your mission to seek out those that need your skills.", "Learn of medecine and add to the knowledge of the faithful, so that you may improve your own work and the works of others in time.", "Once you complete treatment of the symptoms of those you heal, seek the truest cure to those ailments where you can, be it in the one healed or the world they come from.", "You must alot time to healing as charitable assistance, wherever possible and practical.", "Observe the medical world an discoveries that are made wherever they may occur, and study the worlds many ailments, rots and diseases. An enemy understood is an enemy that is nearing defeat.","Do not injure unless you know and are ready to provide the cure to that injury.", "Foster new life where possible, and promote the creation and protection of new life in the world.", "Teach others how to heal, and in time you may heal the world", "Treatment of the body is quite obvious, but do not neglect treatment of the mind and spirit also. Communicate and strive for understanding of one another, and do not flee from connection.", "Your body is a temple in itself- treat it well and right, and understand it all the more when it is in need of repair or improvement." ];
-Domain.create!(name: "Life", descriptors: life_descriptors, titles: life_titles, tenets: life_tenets )
+life_themes = ["Healing", "Breath", "Blood", "Medecine", "Disease", "Family", "Doctors", "Injury", "Revival", "Pain"];
+Domain.create!(name: "Life", descriptors: life_descriptors, titles: life_titles, tenets: life_tenets, themes: life_themes )
 puts "Life created"
 
 arcana_descriptors = ["Magical", "Mystical", "Enchanting", "Great", "All-knowing", "Mysterious", "Boundless", "Wise", "Otherworldly", "Cosmic"];
 arcana_titles = ["Arcane", "Sage", "Diviner", "Seer", "Diviner", "Master", "Weaver", "Mage", "Scrollmaster", "Teacher", "Entity"];
 arcana_tenets = ["Embrace the pursuit of arcane wisdom and understanding. Encourage the study of magic in all its forms.", "Safeguard magical knowledge from those who would seek to disrupt or abuse it.", "Stand against those who would seek to suppress or extinguish magic from the world. Protect magical knowledge and artifacts from destruction or misuse.", "Encourage innovation and experimentation within the bounds of your gods ethical guidelines, if any. Inspire creativity and ingenuity in the development of new spells and magical techniques.", "Every month, you must sacrifice a scroll of magical power you have found or written, via ritual or donation to the faith's order.", "Acknowledge and respect the origins of magic, whether it be through divine providence, natural forces, or cosmic energies. Treat the source of magic with reverence and gratitude.", "It is your divinely appointed task to create at least one new spell or piece of magical craft, or to rediscover such a wonder.", "Safeguard the secrets of magic from those who would misuse or exploit them for nefarious purposes. Exercise discretion in sharing arcane knowledge and only reveal it to those deemed worthy and trustworthy.", "Cultivate a spirit of curiosity and exploration, delving into the mysteries of magic with an open mind and a thirst for discovery. Remain ever-curious and unafraid to explore the unknown.", "Work towards uniting practitioners of magic, regardless of their traditions or beliefs. Foster cooperation and understanding among magical communities to strengthen the bonds of arcane knowledge."];
-Domain.create!(name: "Arcana", descriptors: arcana_descriptors, titles: arcana_titles, tenets: arcana_tenets )
+arcana_themes = ["Abjuration", "Illusion", "Necromancy", "Conjuration", "Evocation", "Divination", "Transmutation", "Enchantment", "Wizards", "Rituals"]
+Domain.create!(name: "Arcana", descriptors: arcana_descriptors, titles: arcana_titles, tenets: arcana_tenets, themes: arcana_themes )
 puts "Arcana created"
 
 war_descriptors = ["Supreme", "Bloodthirsty", "Undefeated", "Iron", "Mighty", "Valiant", "Indomitable", "Unyielding", "Relentless", "Proud"];
 war_titles = ["Warlord", "Fury", "General", "Vanquisher", "Marshal", "Warrior", "Lord", "Fury"];
 war_tenets = ["Uphold honor and integrity on the battlefield. Show respect for worthy opponents and face them will all your own skill and power, for to not do so is disrespect most shameful.", "Embrace discipline and training to hone your skills as a warrior and gain strength wherever you can, whenever you can. Strive for excellence in both mind and body.", "Forge bonds of camaraderie and loyalty with your fellow warriors. Together, stand as an indomitable force against adversity.", "Pay tribute to those who have fallen in battle. Honor their memory and ensure that their sacrifices are never forgotten through rituals or keepsakes.", "Fight not for personal glory alone, but for a greater cause or ideal. Dedicate your strength to the defense of justice, freedom, or the protection of your people.", "Pursue victory with unwavering determination. Spare no effort in achieving triumph on the battlefield.", "Be flexible and adaptable in the face of adversity. Embrace change and innovation to overcome challenges on the battlefield when needs arise in order to secure victory.", "Honor the spoils of victory, for that which has been taken through battle must be respected, and to act against those that have earned that right, or steal their spoils, is shameful.", "Maintence of your weapons and armour, and those of your allies, is a divine duty. A well-sharpened blade is a blessed blade.", "A quick prayer must be made before each battle you are involved in, if possible, or after each battle if not."];
-Domain.create!(name: "War", descriptors: war_descriptors, titles: war_titles, tenets: war_tenets )
+war_themes = ["Strategy", "Maps", "Negotation", "Military", "Honor", "Might", "Training", "Combat", "Anger", "Defense"];
+Domain.create!(name: "War", descriptors: war_descriptors, titles: war_titles, tenets: war_tenets, themes: war_themes)
 puts "War created"
+
+tempest_descriptors = ["Sparking", "Blustering", "Thunderous", "Wrathful", "Ocean's", "Sea's", "Crackling", "Roiling", "Crushing", "Cylconic"];
+tempest_titles = ["Storm", "Gale", "Wind", "Lightning", "Zenith", "Depths", "Sovereign", "Wave", "Roar", "Conductor"];
+tempest_tenets = ["Before any travel is made over a large body of water, an offering to your god must be made.","Storms are holy events to commune with your god, and must be aknowledged through prayer or ritual.", "At least once in your life, you must allow yourself to be struck by lightning as a test of body and faith.", "Embrace the primordial forces of nature, for within them lies the potential for creation and renewal. Embrace the storms as agents of change and transformation.", "Protect the skies and the creatures that dwell within them. Act as a guardian against threats to aerial life and ensure the safety of birds, flying creatures, and other inhabitants of the skies.", "Inspire creativity and innovation through the tempest's dynamic energy. Encourage the pursuit of new ideas and ventures, empowering individuals to harness the storm's power for innovation.", "Embrace the tempest as a purifying force that cleanses and renews. See destruction as a necessary precursor to rebirth and regeneration, clearing the path for new growth and possibility.", "Exercise restraint in the use of destructive power. Channel the fury of the tempest with wisdom and restraint, avoiding unnecessary destruction and collateral damage.", "The oceans depths are a divine realm of your god, and should be respected as such.", "You must conduct a prayer of thanks and to ask permission before you eat any food that has come from a body of water."];
+tempest_themes = ["Storms", "Lightning", "Thunder", "Oceans", "Fish", "Birds", "Ships", "Fishing", "Clouds", "Tornados"];
+Domain.create!(name: "Tempest", descriptors: tempest_descriptors, titles: tempest_titles, tenets: tempest_tenets, themes: tempest_themes )
+puts "Tempest created"
+
+death_descriptors = ["Reaping", "Grim", "Ghostly", "Necrotic", "Killing", "Haunting", "Undying", "Creeping", "Eternal", "Accursed"];
+death_titles = ["Death", "Toll", "Skull", "End", "Tomblord", "Silence", "Veil", "Chill", "Dusk", "Night"];
+death_tenets = ["As a divinely appointed task, all creatures you directly kill must be recorded, listed by name if known or description if a name is unknown.", "Death is an essential part of the natural order. Life must give way to death so that new life can emerge. Respect and honor the cycle of birth, life, death, and rebirth.", "Death knows no favorites. All beings, regardless of status, wealth, or power, must face their mortality. Treat all souls equally in their journey beyond.", "Understand that death is not an end but a transition. Embrace the finite nature of existence and find meaning in the fleeting moments of life.", "Offer mercy and compassion to those who suffer. Sometimes, death can be a release from pain and suffering. Show kindness and empathy in the act of ushering souls into the afterlife.", "Death reveals the ultimate truth of existence. Seek to understand and accept the inevitable truth of mortality, and help others confront their fears of death.", "Safeguard the souls of the departed and guide them to their rightful place in the afterlife. Ensure that no soul is lost or stranded in the limbo between worlds, or if needed left stranded and without use.", "Necromancy and the creation of undead creatures is a blessed act, and to be pursued or at least respected as a divine craft. ", "Preserve the memories of those who have passed on, ensuring that their legacies endure beyond their physical lives. ", "Cut through illusions and falsehoods to reveal the truth of existence. Challenge misconceptions and delusions about death, guiding beings toward a deeper understanding of the ultimate reality."];
+death_themes = ["Skeletons", "Zombies", "Ghosts", "Decay", "Disease", "Vampires", "Funerals", "Slaughter", "Ending", "Tragedy"];
+Domain.create!(name: "Death", descriptors: death_descriptors, titles: death_titles, tenets: death_tenets, themes: death_themes)
+puts "Death created"
+
+trickery_descriptors = ["Mercurial", "Duplicitous", "Two-faced", "Dishonest", "Mysterious", "Mischievious", "Shrouded", "Prowling", "Shadowy", "Subtle"];
+trickery_titles = ["Trickster", "Mirror", "Liar", "Enigma", "Illusion", "Mirage", "Jester", "Conjurer", "Phantasm", "Deceiver"];
+trickery_tenets = ["Embrace the art of deception as a fundamental aspect of existence. Recognize the power of illusion and subterfuge in shaping perception and manipulating reality.", "Cultivate skill in the arts of trickery and manipulation. Hone your ability to deceive and outwit adversaries, using guile and cunning to achieve your goals.", "Embrace trickery and unpredictability as catalysts for change and transformation. Revel in the uncertainty of the unknown, using it to sow confusion and disrupt the status quo.", "Be adaptable and versatile in your approach to challenges. Learn to think on your feet and improvise in the face of adversity, seizing opportunities as they arise.", "Use illusion and trickery as tools for liberation and freedom. Recognize that reality is subjective and mutable, and use the power of illusion to break free from constraints and limitations.", "Embrace unpredictability as a virtue to be cherished. Reject rigidity and predictability, and embrace the fluidity of change and transformation.", "Maintain balance in your relationships and alliances. Recognize that betrayal can be a double-edged sword, and strive to navigate the complexities of loyalty and betrayal with finesse and discretion.", "Acting and performance are divine skills to be honed, and as talents to be recognized. At least once, at some point in your life, you must perform in a publically accessible play.", "Embrace the complexity of morality and ethics. Understand that right and wrong are not always clear-cut and that actions must be evaluated in context.", "Find harmony amidst chaos and unpredictability. Embrace the ebb and flow of change, using trickery to navigate the turbulent currents of existence."];
+trickery_themes = ["Lies", "Pranks", "Drama", "Illusions", "Mirrors", "Jesters", "Stealth", "Mirages", "Surprise", "Betrayal"];
+Domain.create!(name: "Trickery", descriptors: trickery_descriptors, titles: trickery_titles, tenets: trickery_tenets, themes:trickery_themes )
+puts "Trickery created"
+
+nature_descriptors = ["Forest's", "Green", "Apex", "Nature's", "Earthsong", "Ferocious", "Druidic", "Harmonious", "Wild", "Untamed"];
+nature_titles = ["Shepherd", "Beast", "Essence", "Tamer", "Hunter", "Sentinel", "Predator", "Warden", "Chorus", "Watcher"];
+nature_tenets = ["Maintain harmony with the natural world, recognizing the interconnectedness of all living beings and ecosystems. Respect the balance of nature and strive to live in harmony with it.", "Act as a steward of the earth, safeguarding its beauty and diversity for future generations. Protect and nurture the natural world, ensuring its vitality and resilience.", "Honor and respect all forms of life, from the smallest microorganism to the largest sentient being.", "Offer guidance and protection to those who venture into the wilderness. Provide wisdom and strength to navigate the challenges of the natural world.", "Seek communion with nature through contemplation, meditation, and ritual. Connect with the rhythms of the earth and draw inspiration from it.", "As a holy rite, you must plant a tree or other aspect of nature in the world around you at least once per month, and you must have seeds on your person whenever possible.", "Trust in the primal instincts that guide both beasts and humans alike. Understand that intuition and natural impulses often lead to truths that transcend logic.", "Embody the virtues of strength, resilience, and adaptability. Learn from the beasts' ability to endure harsh environments and overcome challenges through sheer determination.", "Promote the nurturing and cultivation of plants as a sacred duty. Encourage individuals to tend to the earth and foster the growth of flora in all its forms.", "You are divinely tasked to have a vegetarian (or vegan) diet."];
+nature_themes = ["Trees", "Plants", "Fungi", "Animals", "Druids", "Rivers", "Fruit", "Earth", "Agriculture", "Survival"];
+Domain.create!(name: "Nature", descriptors: nature_descriptors, titles: nature_titles, tenets: nature_tenets, themes: nature_themes )
+puts "Nature created"
+
+light_descriptors = ["Illuminating", "Luminous", "Blinding", "Guiding", "Burning", "Resplendent", "Gleaming", "Dazzling", "Incandescent", "Focusing"];
+light_titles = ["Sun", "Dawn", "Torch", "Light", "Guide", "Beacon", "Point", "Iris", "Horizon", "Radiance"];
+light_tenets = ["Illuminate the self, and seek knowledge in the world for your own improvement and perhaps those that also seek it alongside you.", "Maintence and stocking of devices that give light (torches, lanterns, etc) is a divine duty and to do so for other individuals or communities is of great importance.", "You are forbidden by holy rites to never be in total darkness.", "Enjoy the gift of light, and the warmth of the sun whenever you have the oppurtunity to do so.", "Seek out those trapped in darkness, so that you may show them the light- be they in need of its guidance, or creatures that must be purged.", "Seek enlightenment and understanding in all aspects of life, allowing the radiant light of truth to guide your path.", "Appreciate the beauty and wonder of creation, honoring the divine spark within all living things.", "Reflect the divine grace and radiance of your god through acts of would please them, and either create or seek mementos of these acts for offerings.", "It is your sacred duty to route out the creatures of darkness and the night, such as shadows and vampires.", "Shed light equally upon all things, regardless of alignment or affiliation. Illuminate both darkness and light, revealing the truth in its entirety without bias or judgment."];
+light_themes = ["Sun", "Stars", "Moon", "Lantern", "Candles", "Torches", "Fire", "Blindness", "Colours", "Invisibility"];
+Domain.create!(name: "Light", descriptors: light_descriptors, titles: light_titles, tenets: light_tenets, themes: light_themes )
+puts "Light created"
 
 # _descriptors = [];
 # _titles = [];
@@ -174,6 +218,7 @@ puts "Making global details"
 global = General.new
 global.names = ['ae', 'ald', 'el', 'gal', 'thal', 'ar', 'mor', 'zan', 'drak', 'eld', 'fen', 'dor', 'thor', 'wyn', 'mire', 'gorn', 'zul', 'tas', 'ter', 'ghas', 'zir', 'wyr', "'", "-", "byr", "bir", "ch", "der", "dan", "dak", "fro", "fyr", "il", "ty", "tyr", "wul", "bren", "ka", "kha", "ky", "sin", "vel", "vil", "vy" ]
 # global.names = ["a", "ah", "ar", "ay", "ae", "at", "ay", "ald", "be", "ba", "bo", "by", "bi", "bel" "c" "cu", "ch", "cy", "co", "cr", "che", "d" "da", "do", "de", "di", "dei", "dy", "dr", "e", "el", "ey", "ed", "er", "ei", "f", "ft", "fo", "fh", "fy", "fa", "fi", "g", "gh", "gy", "ga", "go", "gu", "gi", "gr", "gw", "h", "ha", "hi", "hu", "he", "hy", "ht", "i", "in", "ir", "if", "ij", "ip", "iz", "ich", "it", "j", "jer", "p" "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "zed", "zer", "zul", "zas", "zo", "za", "zy" "-", "'"]
+global.themes = ["Divinity", "Power", "Greatness", "Glory", "Dragons", "Monsters", "Weaponry", "Armour", "Weapons", "Elements", "Friendship", "Creation", "Destruction", "Charisma", "Adventure", "Civilization", "Sadness", "Joy", "Meditation", "Memory", "Mystery"];
 global.save
 
 
@@ -183,6 +228,7 @@ new_god = God.new(name: global.make_name, alignment: Alignment.all.sample, domai
 god_descriptors = new_god.alignment.descriptors + new_god.alignment.x_alignment.descriptors + new_god.alignment.y_alignment.descriptors  + new_god.domain.descriptors
 god_titles = new_god.alignment.titles + new_god.alignment.x_alignment.titles + new_god.alignment.y_alignment.titles  + new_god.domain.titles
 new_god.epitaph = "The #{god_descriptors.sample} #{god_titles.sample}"
+
 god_tenets = new_god.domain.tenets
 god_tenets.shuffle!
 new_god.tenets << god_tenets.pop
@@ -191,6 +237,16 @@ god_tenets = god_tenets + new_god.alignment.tenets + new_god.alignment.x_alignme
   god_tenets.shuffle!
   new_god.tenets << god_tenets.pop
 end
+
+god_themes = new_god.domain.themes
+god_themes.shuffle!
+new_god.themes << god_themes.pop
+god_themes = god_themes + global.themes + new_god.alignment.x_alignment.themes + new_god.alignment.y_alignment.themes
+2.times do
+  god_themes.shuffle!
+  new_god.themes << god_themes.pop
+end
+
 new_god.save
 puts "God created."
 puts "Seeding complete."

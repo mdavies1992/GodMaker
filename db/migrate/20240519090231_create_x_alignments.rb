@@ -5,6 +5,7 @@ class CreateXAlignments < ActiveRecord::Migration[7.1]
       t.string :descriptors, array: true, default: []
       t.string :titles, array: true, default: []
       t.string :tenets, array: true, default: []
+      t.string :themes, array: true, default: []
     end
   end
 end
