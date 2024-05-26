@@ -247,6 +247,9 @@ god_themes = god_themes + global.themes + new_god.alignment.x_alignment.themes +
   new_god.themes << god_themes.pop
 end
 
+new_god.prompt = "Give me a short introductory description of a #{new_god.alignment.name} deity of #{new_god.domain.name}. They also incorporate themes of #{new_god.themes[0]}, #{new_god.themes[1]} and #{new_god.themes[2]}. Additionally, they have the title of '#{new_god.epitaph}'."
+new_god.img_prompt = "TODO"
+
 new_god.save
 puts "God created."
 puts "Seeding complete."
