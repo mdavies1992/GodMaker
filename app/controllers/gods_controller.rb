@@ -64,6 +64,14 @@ class GodsController < ApplicationController
     @god.prompt = "Give me a short introductory description of a #{@god.alignment.name} deity of #{@god.domain.name}. They also incorporate themes of #{@god.themes[0]}, #{@god.themes[1]} and #{@god.themes[2]}. Additionally, they have the title of '#{@god.epitaph}'."
     @god.img_prompt = "TODO"
 
+    client = OpenAI::Client.new
+    chaptgpt_response = client.chat(parameters: {
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: @god.prompt}]
+    })
+    @god.description = chaptgpt_response["choices"][0]["message"]["content"]
+
+
     @god.save
     if @god.save
       redirect_to god_path(@god)

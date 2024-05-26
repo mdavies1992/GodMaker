@@ -250,6 +250,13 @@ end
 new_god.prompt = "Give me a short introductory description of a #{new_god.alignment.name} deity of #{new_god.domain.name}. They also incorporate themes of #{new_god.themes[0]}, #{new_god.themes[1]} and #{new_god.themes[2]}. Additionally, they have the title of '#{new_god.epitaph}'."
 new_god.img_prompt = "TODO"
 
+client = OpenAI::Client.new
+  chaptgpt_response = client.chat(parameters: {
+    model: "gpt-3.5-turbo",
+    messages: [{ role: "user", content: new_god.prompt}]
+  })
+  new_god.description = chaptgpt_response["choices"][0]["message"]["content"]
+
 new_god.save
 puts "God created."
 puts "Seeding complete."
