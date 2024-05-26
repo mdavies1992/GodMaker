@@ -11,6 +11,8 @@
     <li><%= theme %></li>
   <% end %>
 </ul>
+<p>Description:</p>
+<%= @god.description %>
 <p>Tenets:</p>
 <ul>
   <% @god.tenets.each do |tenet| %>
