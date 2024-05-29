@@ -2,24 +2,16 @@ import { Controller } from "@hotwired/stimulus"
 
 
 export default class extends Controller {
+  static targets = ["name"];
+
   connect() {
-    console.log("Connected");
-  }
-  static targets = ["godInput"];
-
-  togglegodInput() {
-    if (this.checkboxTarget.checked) {
-      this.godInputTarget.style.display = "block";
-    } else {
-      this.godInputTarget.style.display = "none";
-    }
+    console.log("God Connected");
   }
 
-  get checkboxTarget() {
-    return this.targets.find("checkbox");
-  }
+  namecheck(event) {
+    const name = event.currentTarget.value
+    console.log(name);
+   }
 
-  get godInputTarget() {
-    return this.targets.find("input");
-  }
+
 }

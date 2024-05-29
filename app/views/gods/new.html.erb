@@ -1,9 +1,11 @@
 <h1>Gods#new</h1>
 <p>Find me in app/views/gods/new.html.erb</p>
-<div class="container">
+<div class="container", data-controller="god">
   <%= simple_form_for @god do |f| %>
-    <%= f.input :random_name, as: :boolean, label: "Choose a Name"%>
-    <%= f.input :name, label: "What is your God's name?", display: "hidden"%>
+    <%= f.input :random_name, as: :boolean, label: "Choose a Name?", input_HTML: { data: {action: 'change->god#namecheck'} }%>
+    <div data-god-target="name">
+      <%= f.input :name, label: "What is your God's name?"%>
+    </div>
     <%= f.input :random_alignment, as: :boolean, label: "Choose an Alignment"%>
     <%= f.input :alignment, collection: God::ALIGNMENTS, prompt: "Select an Alignment" %>
     <%= f.input :random_domain, as: :boolean, label: "Choose a Domain"%>
