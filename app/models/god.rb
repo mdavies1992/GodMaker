@@ -1,6 +1,8 @@
 class God < ApplicationRecord
   belongs_to :alignment
   belongs_to :domain
+  has_one_attached :photo
+
   DOMAINS = Domain.all
   ALIGNMENTS = Alignment.all
 

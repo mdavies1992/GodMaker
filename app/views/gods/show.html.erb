@@ -4,7 +4,11 @@
   <div class="row">
     <div class="col-6">
       <div class="d-flex justify-content-center">
-        <%= render 'shared/false_image' %>
+        <% if @god.photo.attached? then %>
+          <%= render 'shared/god_image', god: @god %>
+        <% else %>
+          <%= render 'shared/false_image', god: @god %>
+        <% end %>
       </div>
       <p>Name: <%= @god.name %></p>
       <p>Epitaph: <%= @god.epitaph %></p>

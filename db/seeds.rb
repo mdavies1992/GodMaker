@@ -1,3 +1,5 @@
+require "open-uri"
+
 # Clear it all out
 puts "Clearing DB"
 General.destroy_all
@@ -41,7 +43,7 @@ puts "Good created"
 
 neutral_descriptors = ["Ethereal", "Impartial", "Immutable", "Neutral"];
 neutral_titles = ["Overseer", "Keeper", "Force", "Observer"];
-neutral_tenets = ["Undestand balance, and strive to maintain equilibrium and harmony in the universe, acknowledging the necessity of both light and darkness, good and evil.", "Judge actions based on their consequences and impact on the balance of existence rather than on moral absolutes.", "Respect free will and recognize the sovereignty of individuals to make their own choices, understanding that freedom of choice is essential for growth and development.", "Focus on the self and your understanding of the self. Though moral decisions can be used to react and interact with the world around you, you must maintain neutrality within the self."];
+neutral_tenets = ["Understand balance, and strive to maintain equilibrium and harmony in the universe, acknowledging the necessity of both light and darkness, good and evil.", "Judge actions based on their consequences and impact on the balance of existence rather than on moral absolutes.", "Respect free will and recognize the sovereignty of individuals to make their own choices, understanding that freedom of choice is essential for growth and development.", "Focus on the self and your understanding of the self. Though moral decisions can be used to react and interact with the world around you, you must maintain neutrality within the self."];
 neutral_themes = ["Philosophy", "Boredom", "Apathy", "Stars", "Souls"];
 YAlignment.create!(name: "Neutral", descriptors: neutral_descriptors, titles: neutral_titles, tenets: neutral_tenets, themes: neutral_themes )
 puts "Neutral created"
@@ -248,7 +250,7 @@ god_themes = god_themes + global.themes + new_god.alignment.x_alignment.themes +
 end
 
 new_god.prompt = "Give me a short introductory description of a #{new_god.alignment.name} deity of #{new_god.domain.name}. They also incorporate themes of #{new_god.themes[0]}, #{new_god.themes[1]} and #{new_god.themes[2]}. Additionally, they have the title of '#{new_god.epitaph}'."
-new_god.img_prompt = "TODO"
+new_god.img_prompt = "Give me an image of a #{new_god.alignment.name} deity of #{new_god.domain.name}. They incorporate themes of #{new_god.themes[0]}, #{new_god.themes[1]} and #{new_god.themes[2]}. Dungeons and dragons, fantasy, illustrated, 2d, watercolours."
 
 client = OpenAI::Client.new
   chaptgpt_response = client.chat(parameters: {
@@ -256,6 +258,13 @@ client = OpenAI::Client.new
     messages: [{ role: "user", content: new_god.prompt}]
   })
   new_god.description = chaptgpt_response["choices"][0]["message"]["content"]
+
+  # puts '-' * 50
+  # puts "Sending request to OpenAI API to generate an illustration..."
+  # puts '-' * 50
+  # response = client.images.generate(parameters: { model: 'dall-e-3', prompt: new_god.img_prompt })
+  # url = response.dig("data", 0, "url")
+  # new_god.photo.attach(io: URI.open(url), filename: "godimage_#{SecureRandom.hex(8)}.png")
 
 new_god.save
 puts "God created."

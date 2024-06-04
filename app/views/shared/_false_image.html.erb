@@ -1,3 +1,12 @@
-<div class="false_card d-flex justify-content-center align-items-center">
-  <p>No God found!</p>
+<div class="false_card d-flex align-items-center">
+  <div class="row">
+    <h3 class="col-12 d-flex justify-content-center">No Divine Portrait.</h3>
+    <%= simple_form_for @god do |f| %>
+      <div class="p-3">
+        <%= f.input :photo, as: :file, label: "Upload an image:" %>
+        <div class=" d-flex justify-content-center">
+          <%= f.submit %>
+        </div>
+      <% end %></div>
+  </div>
 </div>
