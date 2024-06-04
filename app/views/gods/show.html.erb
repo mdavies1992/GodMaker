@@ -1,38 +1,59 @@
-<h1>Gods#show</h1>
-<p>Find me in app/views/gods/show.html.erb</p>
-<div class="container">
+<div class="container card">
+  <%# big breaker %>
   <div class="row">
+    <%# left side %>
     <div class="col-6">
-      <div class="d-flex justify-content-center">
-        <% if @god.photo.attached? then %>
-          <%= render 'shared/god_image', god: @god %>
-        <% else %>
-          <%= render 'shared/false_image', god: @god %>
-        <% end %>
+      <div class="row">
+        <div class="col-12 card">
+          <%# GOD PICTURE HERE  %>
+          <div class="d-flex justify-content-center">
+            <% if @god.photo.attached? then %>
+              <%= render 'shared/god_image', god: @god %>
+            <% else %>
+              <%= render 'shared/false_image', god: @god %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-12 card">
+          <p>Name: <%= @god.name %></p>
+        </div>
+        <div class="col-12 card">
+          <p>Epitaph: <%= @god.epitaph %></p>
+        </div>
+        <div class="col-6 card">
+          <p>Alignment: <%= @god.alignment.name %></p>
+        </div>
+        <div class="col-6 card">
+          <p>Domain: <%= @god.domain.name %></p>
+        </div>
+        <div class="col-12 card">
+          <p>Themes:</p>
+          <ul>
+            <% @god.themes.each do |theme| %>
+              <li><%= theme %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
-      <p>Name: <%= @god.name %></p>
-      <p>Epitaph: <%= @god.epitaph %></p>
-      <p>Alignment: <%= @god.alignment.name %></p>
-      <p>Domain: <%= @god.domain.name %></p>
-      <p>Themes:</p>
-      <ul>
-        <% @god.themes.each do |theme| %>
-          <li><%= theme %></li>
-        <% end %>
-      </ul>
     </div>
+    <%# Right Side  %>
     <div class="col-6">
-      <p>Description:</p>
-      <%= @god.description %>
-      <p>Tenets:</p>
-      <ul>
-        <% @god.tenets.each do |tenet| %>
-          <li><%= tenet %></li>
-        <% end %>
-      </ul>
+      <div class="row">
+        <div class="col-12 card">
+          <p>Description:</p>
+          <%= @god.description %>
+        </div>
+        <div class="col-12 card">
+          <p>Tenets:</p>
+          <ul>
+            <% @god.tenets.each do |tenet| %>
+              <li><%= tenet %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <p>Prompts:</p>
+      <p><%= @god.prompt %></p>
+      <p><%= @god.img_prompt %></p>
     </div>
   </div>
-  <p>Prompts:</p>
-  <p><%= @god.prompt %></p>
-  <p><%= @god.img_prompt %></p>
-</div>
