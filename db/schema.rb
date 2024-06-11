@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_04_092436) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_01_115411) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,6 +75,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_092436) do
     t.string "themes", default: [], array: true
     t.bigint "alignment_id", null: false
     t.bigint "domain_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "random_name"
@@ -85,6 +86,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_092436) do
     t.text "description"
     t.index ["alignment_id"], name: "index_gods_on_alignment_id"
     t.index ["domain_id"], name: "index_gods_on_domain_id"
+    t.index ["user_id"], name: "index_gods_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -121,4 +123,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_092436) do
   add_foreign_key "alignments", "y_alignments"
   add_foreign_key "gods", "alignments"
   add_foreign_key "gods", "domains"
+  add_foreign_key "gods", "users"
 end

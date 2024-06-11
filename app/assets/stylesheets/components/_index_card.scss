@@ -1,0 +1,75 @@
+// .card-index {
+//   text-decoration: none;
+//   background-color: gray;
+//   border-radius: 12px;
+//   border-left: 16px solid;
+//   border-image-slice: 1;
+//   margin: 6px;
+//   margin-bottom: 12px;
+//   display: flex;
+//   align-items: center;
+// }
+
+.god-icon {
+  text-decoration: none;
+font-size: 72px;
+padding: 8px;
+padding-left: 16px;
+}
+
+.card-name {
+font-size: 24px;
+font-weight: bold;
+}
+
+.card-desc {
+  font-size: 16px;
+}
+
+.rmv-txt {
+  text-decoration: none !important;
+}
+.card-product {
+  overflow: hidden;
+  height: 100px;
+  border-radius: 12px;
+  background: rgb(128, 128, 128);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-left: 16px solid;
+  border-image-slice: 1;
+  position:relative;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-god-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%
+}

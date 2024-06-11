@@ -2,11 +2,13 @@ require "open-uri"
 
 class GodsController < ApplicationController
   def index
-    @gods = God.all
+    @user = current_user
+    @gods = @user.gods
   end
 
   def show
     @god = God.find(params[:id])
+    @ali = @god.alignment.name.gsub(" ", "")
   end
 
   def new
@@ -37,6 +39,7 @@ class GodsController < ApplicationController
     @global = General.first
     @god = God.new(god_params)
     @domains = Domain.all
+    @user = current_user
     puts "Creating God"
 
     # - Name Choice / RNG
@@ -83,7 +86,7 @@ class GodsController < ApplicationController
     end
 
     @god.prompt = "Give me a short introductory description of a #{@god.alignment.name} deity of #{@god.domain.name}. They also incorporate themes of #{@god.themes[0]}, #{@god.themes[1]} and #{@god.themes[2]}. Additionally, they have the title of '#{@god.epitaph}'."
-    @god.img_prompt = "Give me an image of a #{@god.alignment.name} deity of #{@god.domain.name}. They incorporate themes of #{@god.themes[0]}, #{@god.themes[1]} and #{@god.themes[2]}. Dungeons and dragons, fantasy, illustrated, 2d, watercolours."
+    @god.img_prompt = "An image of a #{@god.alignment.name} deity of #{@god.domain.name}, no text or typography in the image. They incorporate themes of #{@god.themes[0]}, #{@god.themes[1]} and #{@god.themes[2]}. Fantasy, illustrated, 2d, watercolours."
 
 
     client = OpenAI::Client.new
@@ -93,10 +96,11 @@ class GodsController < ApplicationController
     })
     @god.description = chaptgpt_response["choices"][0]["message"]["content"]
 
-    # response = client.images.generate(parameters: { model: 'dall-e-3', prompt: @god.img_prompt })
-    # url = response.dig("data", 0, "url")
-    # @god.photo.attach(io: URI.open(url), filename: "godimage_#{SecureRandom.hex(8)}.png")
+    response = client.images.generate(parameters: { model: 'dall-e-3', prompt: @god.img_prompt, size: "1024x1024", quality: "standard" })
+    url = response.dig("data", 0, "url")
+    @god.photo.attach(io: URI.open(url), filename: "godimage_#{SecureRandom.hex(8)}.png")
 
+@god.user = @user
 
     @god.save
     if @god.save

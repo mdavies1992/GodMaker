@@ -7,6 +7,7 @@ class CreateGods < ActiveRecord::Migration[7.1]
       t.string :themes, array: true, default: []
       t.references :alignment, null: false, foreign_key: true
       t.references :domain, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

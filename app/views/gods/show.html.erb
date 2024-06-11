@@ -1,50 +1,54 @@
-<div class="container card">
+<div class="container">
   <%# big breaker %>
   <div class="row">
     <%# left side %>
-    <div class="col-6">
+    <div class="col-5">
       <div class="row">
-        <div class="col-12 card">
+        <div class="col-12">
           <%# GOD PICTURE HERE  %>
           <div class="d-flex justify-content-center">
             <% if @god.photo.attached? then %>
-              <%= render 'shared/god_image', god: @god %>
+              <%= render 'shared/god_image', god: @god, ali: @ali %>
             <% else %>
               <%= render 'shared/false_image', god: @god %>
             <% end %>
           </div>
         </div>
-        <div class="col-12 card">
-          <p>Name: <%= @god.name %></p>
+        <div class="col-12">
+          <h1 class="d-flex justify-content-center god_name"><%= @god.name %></p>
         </div>
-        <div class="col-12 card">
-          <p>Epitaph: <%= @god.epitaph %></p>
+        <div class="col-12">
+          <h2 class="d-flex justify-content-center god_epitaph">" <%= @god.epitaph %> "</p>
         </div>
-        <div class="col-6 card">
-          <p>Alignment: <%= @god.alignment.name %></p>
+        <div class="col-6">
+          <span class="d-flex justify-content-center">Alignment: <%= @god.alignment.name %></span>
         </div>
-        <div class="col-6 card">
-          <p>Domain: <%= @god.domain.name %></p>
+        <div class="col-6">
+          <span class="d-flex justify-content-center">Domain: <%= @god.domain.name %></span>
         </div>
-        <div class="col-12 card">
-          <p>Themes:</p>
-          <ul>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              <h3>Themes:</h3>
+            </div>
             <% @god.themes.each do |theme| %>
-              <li><%= theme %></li>
+              <div class="col-4">
+                <%= render 'shared/god_theme', theme: theme %>
+              </div>
             <% end %>
-          </ul>
+          </div>
         </div>
       </div>
     </div>
     <%# Right Side  %>
-    <div class="col-6">
+    <div class="col-7">
       <div class="row">
-        <div class="col-12 card">
-          <p>Description:</p>
+        <div class="col-12 mb-3">
+          <h3>Description:</h3>
           <%= @god.description %>
         </div>
-        <div class="col-12 card">
-          <p>Tenets:</p>
+        <div class="col-12">
+          <h3>Follower Tenets:</h3>
           <ul>
             <% @god.tenets.each do |tenet| %>
               <li><%= tenet %></li>
@@ -52,7 +56,7 @@
           </ul>
         </div>
       </div>
-      <p>Prompts:</p>
+      <h5>Prompts:</h5>
       <p><%= @god.prompt %></p>
       <p><%= @god.img_prompt %></p>
     </div>

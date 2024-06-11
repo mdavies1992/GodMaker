@@ -1,0 +1,41 @@
+<div class="card-product <%= god.alignment.name.gsub(" ", "") %>">
+  <div>
+    <% case god.domain.name %>
+    <% when "Life" %>
+      <i class="fa-solid fa-staff-snake god-icon"></i>
+    <% when "Nature" %>
+      <i class="fa-solid fa-tree god-icon"></i>
+    <% when "War" %>
+      <i class="fa-solid fa-shield-halved god-icon"></i>
+    <% when "Death" %>
+      <i class="fa-solid fa-skull god-icon"></i>
+    <% when "Tempest" %>
+      <i class="fa-solid fa-cloud-bolt god-icon"></i>
+    <% when "Trickery" %>
+      <i class="fa-solid fa-masks-theater god-icon"></i>
+    <% when "Light" %>
+      <i class="fa-regular fa-sun god-icon"></i>
+    <% when "Arcana" %>
+      <i class="fa-solid fa-wand-magic-sparkles god-icon"></i>
+    <% when "Grave" %>
+      <i class="fa-solid fa-ghost"></i>
+    <% when "Order" %>
+      <i class="fa-solid fa-gavel"></i>
+    <% when "Twilight" %>
+      <i class="fa-regular fa-moon"></i>
+    <% when "Forge" %>
+      <i class="fa-solid fa-hammer"></i>
+    <% when "Peace" %>
+      <i class="fa-solid fa-dove"></i>
+    <% when "Knowledge" %>
+      <i class="fa-solid fa-book"></i>
+    <% else %>
+      <i class="fa-solid fa-question god-icon"></i>
+    <% end %>
+  </div>
+  <div class="card-product-infos">
+    <h2 class="card-name"><%= god.name %></h2>
+    <p class="card-desc"><%= god.alignment.name %> deity of <%= god.domain.name %></p>
+  </div>
+  <%= link_to "", god_path(god), class: "card-god-link" %>
+</div>

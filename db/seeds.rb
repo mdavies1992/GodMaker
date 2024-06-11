@@ -225,47 +225,48 @@ global.save
 
 
 #Create God
-puts "Creating God"
-new_god = God.new(name: global.make_name, alignment: Alignment.all.sample, domain: Domain.all.sample)
-god_descriptors = new_god.alignment.descriptors + new_god.alignment.x_alignment.descriptors + new_god.alignment.y_alignment.descriptors  + new_god.domain.descriptors
-god_titles = new_god.alignment.titles + new_god.alignment.x_alignment.titles + new_god.alignment.y_alignment.titles  + new_god.domain.titles
-new_god.epitaph = "The #{god_descriptors.sample} #{god_titles.sample}"
+# puts "Creating God"
+# new_god = God.new(name: global.make_name, alignment: Alignment.all.sample, domain: Domain.all.sample)
+# god_descriptors = new_god.alignment.descriptors + new_god.alignment.x_alignment.descriptors + new_god.alignment.y_alignment.descriptors  + new_god.domain.descriptors
+# god_titles = new_god.alignment.titles + new_god.alignment.x_alignment.titles + new_god.alignment.y_alignment.titles  + new_god.domain.titles
+# new_god.epitaph = "The #{god_descriptors.sample} #{god_titles.sample}"
 
-god_tenets = new_god.domain.tenets
-god_tenets.shuffle!
-new_god.tenets << god_tenets.pop
-god_tenets = god_tenets + new_god.alignment.tenets + new_god.alignment.x_alignment.tenets + new_god.alignment.y_alignment.tenets
-3.times do
-  god_tenets.shuffle!
-  new_god.tenets << god_tenets.pop
-end
+# god_tenets = new_god.domain.tenets
+# god_tenets.shuffle!
+# new_god.tenets << god_tenets.pop
+# god_tenets = god_tenets + new_god.alignment.tenets + new_god.alignment.x_alignment.tenets + new_god.alignment.y_alignment.tenets
+# 3.times do
+#   god_tenets.shuffle!
+#   new_god.tenets << god_tenets.pop
+# end
 
-god_themes = new_god.domain.themes
-god_themes.shuffle!
-new_god.themes << god_themes.pop
-god_themes = god_themes + global.themes + new_god.alignment.x_alignment.themes + new_god.alignment.y_alignment.themes
-2.times do
-  god_themes.shuffle!
-  new_god.themes << god_themes.pop
-end
+# god_themes = new_god.domain.themes
+# god_themes.shuffle!
+# new_god.themes << god_themes.pop
+# god_themes = god_themes + global.themes + new_god.alignment.x_alignment.themes + new_god.alignment.y_alignment.themes
+# 2.times do
+#   god_themes.shuffle!
+#   new_god.themes << god_themes.pop
+# end
 
-new_god.prompt = "Give me a short introductory description of a #{new_god.alignment.name} deity of #{new_god.domain.name}. They also incorporate themes of #{new_god.themes[0]}, #{new_god.themes[1]} and #{new_god.themes[2]}. Additionally, they have the title of '#{new_god.epitaph}'."
-new_god.img_prompt = "Give me an image of a #{new_god.alignment.name} deity of #{new_god.domain.name}. They incorporate themes of #{new_god.themes[0]}, #{new_god.themes[1]} and #{new_god.themes[2]}. Dungeons and dragons, fantasy, illustrated, 2d, watercolours."
+# new_god.prompt = "Give me a short introductory description of a #{new_god.alignment.name} deity of #{new_god.domain.name}. They also incorporate themes of #{new_god.themes[0]}, #{new_god.themes[1]} and #{new_god.themes[2]}. Additionally, they have the title of '#{new_god.epitaph}'."
+# new_god.img_prompt = "Give me an image of a #{new_god.alignment.name} deity of #{new_god.domain.name}. They incorporate themes of #{new_god.themes[0]}, #{new_god.themes[1]} and #{new_god.themes[2]}. Dungeons and dragons, fantasy, illustrated, 2d, watercolours."
 
-client = OpenAI::Client.new
-  chaptgpt_response = client.chat(parameters: {
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: new_god.prompt}]
-  })
-  new_god.description = chaptgpt_response["choices"][0]["message"]["content"]
+# client = OpenAI::Client.new
+#   chaptgpt_response = client.chat(parameters: {
+#     model: "gpt-3.5-turbo",
+#     messages: [{ role: "user", content: new_god.prompt}]
+#   })
+#   new_god.description = chaptgpt_response["choices"][0]["message"]["content"]
 
-  # puts '-' * 50
-  # puts "Sending request to OpenAI API to generate an illustration..."
-  # puts '-' * 50
-  # response = client.images.generate(parameters: { model: 'dall-e-3', prompt: new_god.img_prompt })
-  # url = response.dig("data", 0, "url")
-  # new_god.photo.attach(io: URI.open(url), filename: "godimage_#{SecureRandom.hex(8)}.png")
+#   puts '-' * 50
+#   puts "Sending request to OpenAI API to generate an illustration..."
+#   puts '-' * 50
+#   response = client.images.generate(parameters: { model: 'dall-e-3', prompt: new_god.img_prompt })
+#   url = response.dig("data", 0, "url")
+#   new_god.photo.attach(io: URI.open(url), filename: "godimage_#{SecureRandom.hex(8)}.png")
 
-new_god.save
-puts "God created."
+
+# new_god.save
+# puts "God created."
 puts "Seeding complete."

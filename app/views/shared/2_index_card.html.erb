@@ -1,0 +1,15 @@
+<div class="card-index <%= god.alignment.name.gsub(" ", "") %>">
+  <div class="card-icon">
+    <% case god.domain.name %>
+    <% when "Life" %>
+      <i class="fa-solid fa-shield-halved god-icon"></i>
+    <% else %>
+      <i class="fa-solid fa-shield god-icon"></i>
+    <% end %>
+    <div>
+      <span class="card-name"><%= god.name %></p>
+      <span class="card-desc"><%= god.alignment.name %> deity of <%= god.domain.name %></span>
+    </div>
+  </div>
+  <%= link_to "", god_path(god), class: "card-god-link" %>
+</div>
