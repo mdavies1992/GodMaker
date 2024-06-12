@@ -6,3 +6,32 @@ body {
   font-family: "Roboto", sans-serif;
   margin:0px;
 }
+
+.title-card{
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  margin: 10%;
+
+  h1 {
+    color: white;
+    font-size: 64px;
+    font-weight: bold;
+  }
+
+  p {
+    color: gray;
+    font-style: italic;
+    font-size: 32px;
+    width: 60%;
+    text-align: center;
+  }
+
+  i {
+    font-size: 60px;
+    color: rgb(176, 176, 116);
+  }
+}
