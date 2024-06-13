@@ -63,8 +63,8 @@ class GodsController < ApplicationController
     end
 
 
-    god_descriptors = @god.alignment.descriptors + @god.alignment.x_alignment.descriptors + @god.alignment.y_alignment.descriptors  + @god.domain.descriptors
-    god_titles = @god.alignment.titles + @god.alignment.x_alignment.titles + @god.alignment.y_alignment.titles  + @god.domain.titles
+    god_descriptors = @global.descriptions + @god.alignment.descriptors + @god.alignment.x_alignment.descriptors + @god.alignment.y_alignment.descriptors  + @god.domain.descriptors
+    god_titles = @global.titles + @god.alignment.titles + @god.alignment.x_alignment.titles + @god.alignment.y_alignment.titles  + @god.domain.titles
     @god.epitaph = "The #{god_descriptors.sample} #{god_titles.sample}"
 
     god_tenets = @god.domain.tenets

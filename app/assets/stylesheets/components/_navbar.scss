@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(127, 127, 127);
+  background-color: #d7d7d7;
+background-image: linear-gradient(147deg, #353535 0%, #d7d7d7 33%, #353535 90%);
+box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,14 +16,70 @@
 
 .nav-icon {
   font-size: 32px;
+  background: -webkit-linear-gradient(#eee489, #9b925f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.nav-link {
+  color: rgb(187, 187, 187);
   &:hover {
     color: rgb(180, 180, 54);
    }
 }
 
-.nav-link {
-  &:hover {
-    color: rgb(180, 180, 54);
-   }
+.nav-btn {
+  background-color: silver;
+  border-radius: 12px;
+  border: #d7d7d7 2px solid;
+  color: black;
+  font-weight: bold;
+  box-shadow: 2 2 2;
+}
+
+.btn-gold{
+  position: relative;
+  display: inline-block;
+  .btn-text{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: #cfb286;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .st0{
+    opacity: 0;
+  }
+  .btn-text, .st0, .st1, .st2{
+    transition: all .4s ease-out;
+    transform-origin: center;
+  }
+  &:hover{
+    .st0{
+      opacity: 1;
+    }
+    .st1{
+      transform: scale(0.98, 0.99);
+    }
+    .st0, .st2{
+      transform: scale(0.97, 0.95);
+    }
+    .btn-text{
+      color: white;
+    }
+  }
+  &:active{
+    .st1{
+      transform: scale(0.94, 0.88);
+    }
+    .st0, .st2{
+      transform: scale(0.95, 0.93);
+    }
+  }
 }

@@ -3,9 +3,9 @@
     <h3 class="col-12 d-flex justify-content-center">No Divine Portrait.</h3>
     <%= simple_form_for @god do |f| %>
       <div class="p-3">
-        <%= f.input :photo, as: :file, label: "Upload an image:" %>
+        <%= f.input :photo, as: :file, label: "Upload an image:", class: "upload-btn" %>
         <div class=" d-flex justify-content-center">
-          <%= f.submit %>
+          <input type="submit" name="commit" value="Update God" data-disable-with="Update God" class="upload-btn">
         </div>
       <% end %></div>
   </div>

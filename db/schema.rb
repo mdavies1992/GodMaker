@@ -64,6 +64,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_115411) do
   create_table "generals", force: :cascade do |t|
     t.string "names", default: [], array: true
     t.string "themes", default: [], array: true
+    t.string "descriptions", default: [], array: true
+    t.string "titles", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,3 +5,15 @@
   border-radius: 16px;
   margin: 16px;
 }
+
+.upload-btn {
+  /*  style your button here  */
+  padding: 1rem 2rem;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.upload-btn input[type="file"] {
+  display: none;
+}

@@ -1,5 +1,5 @@
-<h1>Gods#new</h1>
-<p>Find me in app/views/gods/new.html.erb</p>
+<h1>Forge a New God</h1>
+<p>Check the boxes below if you want to specify any particular details, or/then press the button and seize the spark of new Divinity!</p>
 <div class="container", data-controller="god">
   <%= simple_form_for @god do |f| %>
     <%= f.input :random_name, as: :boolean, label: "Choose a Name?", input_html: { data: {action: 'change->god#namecheck'} }%>
@@ -8,11 +8,11 @@
     </div>
     <%= f.input :random_alignment, as: :boolean, label: "Choose an Alignment", input_html: { data: {action: 'change->god#alignmentcheck'} }%>
     <div data-god-target="alignment" class="d-none">
-      <%= f.input :alignment, collection: God::ALIGNMENTS, prompt: "Select an Alignment" %>
+      <%= f.input :alignment, collection: God::ALIGNMENTS, label: "What is your God's Alignment?", prompt: "Select an Alignment" %>
     </div>
     <%= f.input :random_domain, as: :boolean, label: "Choose a Domain", input_html: { data: {action: 'change->god#domaincheck'} }%>
     <div data-god-target="domain" class="d-none">
-      <%= f.input :domain, collection: God::DOMAINS, prompt: "Select a Domain" %>
+      <%= f.input :domain, collection: God::DOMAINS, label: "What is your God's Divine Domain?", prompt: "Select a Domain" %>
     </div>
     <%= f.submit%>
   <% end %>
