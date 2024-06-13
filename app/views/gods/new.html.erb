@@ -9,6 +9,10 @@
     <%= f.input :random_alignment, as: :boolean, label: "Choose an Alignment", input_html: { data: {action: 'change->god#alignmentcheck'} }%>
     <div data-god-target="alignment" class="d-none">
       <%= f.input :alignment, collection: God::ALIGNMENTS, label: "What is your God's Alignment?", prompt: "Select an Alignment" %>
+      <%# <%= f.input :alignment,
+            :as => :check_boxes,
+            :collection => God::ALIGNMENTS
+            %>
     </div>
     <%= f.input :random_domain, as: :boolean, label: "Choose a Domain", input_html: { data: {action: 'change->god#domaincheck'} }%>
     <div data-god-target="domain" class="d-none">
