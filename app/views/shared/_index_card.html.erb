@@ -38,4 +38,7 @@
     <p class="card-desc"><%= god.alignment.name %> deity of <%= god.domain.name %></p>
   </div>
   <%= link_to "", god_path(god), class: "card-god-link" %>
+  <%= link_to god_path(god), data: { turbo_method: :delete, turbo_confirm: 'This will remove this god from existence, permanently. Are you sure?' } do %>
+    <i class="fas fa-trash card-god-delete"></i>
+  <% end %>
 </div>

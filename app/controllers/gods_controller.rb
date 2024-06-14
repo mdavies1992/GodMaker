@@ -112,6 +112,15 @@ class GodsController < ApplicationController
     end
   end
 
+
+  def destroy
+    @god = God.find(params[:id])
+    @god.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to gods_path, status: :see_other
+  end
+
+
 private
 
   def god_params

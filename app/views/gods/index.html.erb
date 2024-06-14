@@ -1,4 +1,4 @@
-<h1>Your Pantheon of Gods:</h1>
+<h1 class="d-flex justify-content-center">Your Pantheon of Gods:</h1>
 <% if @gods.count > 0  %>
   <div class="row m-0">
     <% @gods.each do |god| %>
@@ -9,5 +9,6 @@
     <% end %>
   </div>
 <% else %>
-  <p>"No Gods found!"</p>
+  <p class="d-flex justify-content-center">"No Gods found- Go create some!"</p>
 <% end %>
+<%# ye %>

@@ -1,6 +1,6 @@
 <div class="img-container">
   <%= cl_image_tag god.photo.key, class:"image border-gradient #{ali}" %>
-  <%= link_to remove_photo_god_path(god), method: :delete, data: { turbo_confirm: "Are you sure?" }, class:'remove-btn' do %>
+  <%= link_to remove_photo_god_path(god), data: { turbo_method: :delete, turbo_confirm: 'This action will remove the gods image, permanently. Are you sure?' }, class:'remove-btn' do %>
     <i class="fa-solid fa-user-minus"></i>
   <% end %>
 </div>

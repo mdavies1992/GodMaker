@@ -59,3 +59,14 @@
 .ChaoticEvil {
   border-image-source: linear-gradient(to top, #262626, #7021c4, #262626);
 }
+
+.god-backing {
+  color: rgb(208, 208, 208);
+  font-family: "Roboto", sans-serif;
+  background: rgba(152, 152, 152, 0.266);
+  border-style: solid;
+  border-color: rgba(235, 235, 235, 0.497);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 8px;
+  border-radius: 12px;
+}

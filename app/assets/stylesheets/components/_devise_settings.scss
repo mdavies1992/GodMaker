@@ -1,0 +1,65 @@
+.devise-card {
+  color: rgb(208, 208, 208);
+  font-family: "Roboto", sans-serif;
+  background: rgba(152, 152, 152, 0.266);
+  border-style: solid;
+  border-color: rgba(235, 235, 235, 0.497);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 8px;
+  border-radius: 12px;
+  margin: auto;
+  width: 40%;
+
+  .form-text {
+    color: rgb(192, 192, 192);
+    font-style: italic;
+  }
+
+ .btn-devise {
+  background: rgba(152, 152, 152, 0.266);
+  color: rgb(192, 192, 192);
+  font-weight: bold;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(235, 235, 235, 0.715);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  margin-bottom: 16px;
+ }
+
+ .link-devise {
+  text-decoration: none;
+  background: rgba(152, 152, 152, 0.266);
+  color: rgb(192, 192, 192);
+  font-weight: bold;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(235, 235, 235, 0.715);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 8px;
+  margin-inline: 10px;
+ }
+
+ .btn-create {
+  background: -webkit-linear-gradient(#eee489, #9b925f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgb(227, 227, 186);
+  font-size: 20px;
+  font-weight: bold;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(205, 209, 71, 0.871);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 8px;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.2s;
+      box-shadow: 2px 2px 15px rgb(214, 216, 61);
+    }
+ }
+}
