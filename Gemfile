@@ -52,6 +52,7 @@ gem "sassc-rails"
 gem "ruby-openai"
 gem "cloudinary"
 gem "devise"
+gem "geocoder"
 
 group :development, :test do
   gem "dotenv-rails"

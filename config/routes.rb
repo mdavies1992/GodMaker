@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :gods, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-  member do
-    get :remove_photo
+    member do
+      get :remove_photo
+    end
+    resources :artifacts, only: [:new, :create]
   end
 
-
-  end
+  resources :artifacts, only: [:show]
 end

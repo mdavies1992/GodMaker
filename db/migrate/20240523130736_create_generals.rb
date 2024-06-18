@@ -5,6 +5,7 @@ class CreateGenerals < ActiveRecord::Migration[7.1]
       t.string :themes, array: true, default: []
       t.string :descriptions, array: true, default: []
       t.string :titles, array: true, default: []
+      t.string :minorquests, array: true, default: []
       t.timestamps
     end
   end

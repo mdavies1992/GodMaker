@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_01_115411) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_18_072500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_115411) do
     t.index ["y_alignment_id"], name: "index_alignments_on_y_alignment_id"
   end
 
+  create_table "artifacts", force: :cascade do |t|
+    t.string "name"
+    t.bigint "god_id"
+    t.bigint "item_type_id"
+    t.text "quest_one"
+    t.text "quest_two"
+    t.text "quest_three"
+    t.text "ability_one"
+    t.text "ability_two"
+    t.text "ability_three"
+    t.index ["god_id"], name: "index_artifacts_on_god_id"
+    t.index ["item_type_id"], name: "index_artifacts_on_item_type_id"
+  end
+
   create_table "domains", force: :cascade do |t|
     t.string "name"
     t.string "descriptors", default: [], array: true
@@ -66,6 +80,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_115411) do
     t.string "themes", default: [], array: true
     t.string "descriptions", default: [], array: true
     t.string "titles", default: [], array: true
+    t.string "minorquests", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -89,6 +104,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_115411) do
     t.index ["alignment_id"], name: "index_gods_on_alignment_id"
     t.index ["domain_id"], name: "index_gods_on_domain_id"
     t.index ["user_id"], name: "index_gods_on_user_id"
+  end
+
+  create_table "item_types", force: :cascade do |t|
+    t.string "name"
+    t.string "itemclass"
+    t.string "i_titles", default: [], array: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -123,6 +144,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_115411) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "alignments", "x_alignments"
   add_foreign_key "alignments", "y_alignments"
+  add_foreign_key "artifacts", "gods"
+  add_foreign_key "artifacts", "item_types"
   add_foreign_key "gods", "alignments"
   add_foreign_key "gods", "domains"
   add_foreign_key "gods", "users"

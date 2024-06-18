@@ -3,6 +3,7 @@ require "open-uri"
 # Clear it all out
 puts "Clearing DB"
 General.destroy_all
+Artifact.destroy_all
 God.destroy_all
 Domain.destroy_all
 Alignment.destroy_all
@@ -220,10 +221,20 @@ puts "Making global details"
 global = General.new
 global.names = ['ae', 'ald', 'el', 'gal', 'thal', 'ar', 'mor', 'zan', 'drak', 'eld', 'fen', 'dor', 'thor', 'wyn', 'mire', 'gorn', 'zul', 'tas', 'ter', 'ghas', 'zir', 'wyr', "bir", "ch", "der", "dan", "dak", "fro", "fyr", "il", "tel", "tyr", "wul", "bren", "ka", "kha", "ky", "sin", "vel", "vil", "vy" ]
 # global.names = ["a", "ah", "ar", "ay", "ae", "at", "ay", "ald", "be", "ba", "bo", "by", "bi", "bel" "c" "cu", "ch", "cy", "co", "cr", "che", "d" "da", "do", "de", "di", "dei", "dy", "dr", "e", "el", "ey", "ed", "er", "ei", "f", "ft", "fo", "fh", "fy", "fa", "fi", "g", "gh", "gy", "ga", "go", "gu", "gi", "gr", "gw", "h", "ha", "hi", "hu", "he", "hy", "ht", "i", "in", "ir", "if", "ij", "ip", "iz", "ich", "it", "j", "jer", "p" "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "zed", "zer", "zul", "zas", "zo", "za", "zy" "-", "'"]
-global.themes = ["Divinity", "Power", "Greatness", "Glory", "Dragons", "Monsters", "Weaponry", "Armour", "Weapons", "Elements", "Friendship", "Creation", "Destruction", "Charisma", "Adventure", "Civilization", "Sadness", "Joy", "Meditation", "Memory", "Mystery", "Giants", "Anger", "Jealousy", "Spite", "Love", "Arts", "Singing", "Games", "Dice", "Cards", "Swords", "Axes", "Bows", "Shields", "Spears", "Dungeons", "Ice", "Metal", "Sand", "Ooze", "Humans", "Elves", "Dwarves", "Orcs", "Gnomes", "Halflings", "Crystals", "Warriors", "Wizards", "Bards", "Monks", "Travelling", "Food", "Drink", "Alchohol", "Hatred", "Sleep", "Dreams", "Nightmares", "Goblins", "Secrets"];
+global.themes = ["Divinity", "Power", "Greatness", "Glory", "Dragons", "Monsters", "Weaponry", "Armour", "Weapons", "Elements", "Friendship", "Creation", "Destruction", "Charisma", "Adventure", "Civilization", "Sadness", "Joy", "Meditation", "Memory", "Mystery", "Giants", "Anger", "Jealousy", "Spite", "Love", "Arts", "Singing", "Snow", "Dice", "Cards", "Swords", "Axes", "Bows", "Shields", "Spears", "Dungeons", "Ice", "Metal", "Sand", "Ooze", "Humans", "Elves", "Dwarves", "Orcs", "Gnomes", "Halflings", "Crystals", "Warriors", "Wizards", "Bards", "Monks", "Travelling", "Food", "Drink", "Alchohol", "Hatred", "Sleep", "Dreams", "Nightmares", "Goblins", "Secrets"];
 global.descriptions = ["Great", "Divine", "Ascended", "High"]
 global.titles = ["God", "Goddess", "Lord", "Lady", "King", "Queen", "Force", "One"]
 global.save
+
+
+#Item Types
+puts "Making Item Types"
+puts "Making Sword"
+sword_titles = ["Blade"]
+sword_class = "Weapon"
+ItemType.create!(name: "Sword", itemclass: sword_class, i_titles: sword_titles)
+puts "Sword created"
+
 
 
 #Create God
