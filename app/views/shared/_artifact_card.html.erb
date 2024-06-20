@@ -7,16 +7,16 @@
     <span><%= "A Divine Artifact of #{@artifact.god.name}, this #{artifact.type.category} functions as a mundane example of its kind until attuned to, which requires completion of the Attunement quest listed below. Once attuned, this Artifact confers its minor property to the user and the user can unlock further power by completing the lesser quest listed below, gaining access to the lesser properties of this Artifact. Similarly, once the lesser quest has been completed, the attuned user can complete the major quest to unlock the major properties of this Artifact. A character can unattune to the Artifact and reattune later, and provided they have the permission of #{@artifact.god.name} any previously completed quests are treated as completed for the purposes of reattuning and unlocking lesser and/or major properties." %></span>
     <br>
     <br>
-    <span class="artifact-section-ul">Attunement Quest:</span> <%= @artifact.quest_one %>
+    <span class="artifact-section-ul">Attunement Quest:</span> <%= @artifact.quest_one.gsub('GODNAME', "#{@artifact.god.name}") %>
     <br>
     <span class="artifact-section-ul">Minor Properties:</span>
     <% case @artifact.type.category%>
     <% when "Weapon" %>
-      <%="The Artifact becomes a magical +1 Weapon, and signifies that it (and the attuned user) are marked by #{artifact.god.name}. Additionally, whilst attuned a character #{@artifact.ability_one}." %>
+      <%="The Artifact becomes a magical +1 Weapon, and signifies that it (and the attuned user) are marked by #{artifact.god.name}. Additionally, whilst attuned a character #{@artifact.ability_one}" %>
     <% when "Armour" %>
       <%="The Artifact becomes magical and gives a +1 bonus to armour class whilst worn, as well as signifying that it (and the attuned user) are marked by #{artifact.god.name}. Additionally, whilst attuned a character #{@artifact.ability_one}." %>
     <% else %>
-      <%="The Artifact becomes magical, and signifies that it (and the attuned user) are marked by #{artifact.god.name}. Additionally, whilst attuned a character #{@artifact.ability_one}." %>
+      <%="The Artifact becomes magical, and signifies that it (and the attuned user) are marked by GODNAME. Additionally, whilst attuned a character #{@artifact.ability_one}." %>
     <% end %>
   </span>
 </span>

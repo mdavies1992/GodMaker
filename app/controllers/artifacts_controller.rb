@@ -18,19 +18,20 @@ class ArtifactsController < ApplicationController
     @global = General.first
     @god = God.find(params[:god_id])
     @type = Type.first
+    descriptors =  @god.alignment.descriptors + @god.alignment.x_alignment.descriptors + @god.alignment.y_alignment.descriptors  + @god.domain.descriptors
 
     # Determine Item Type
 
     @artifact.type = @type
 
     # Determine Name
-    @artifact.name = "The Testing Blade"
+    @artifact.name = @type.titles.sample.gsub("DESC", descriptors.sample)
 
     # Determine Attunement Quest
-    @artifact.quest_one = "Attune."
+    @artifact.quest_one = @global.minorquests.sample
 
     # Determine Minor Ability
-    @artifact.ability_one = "Cast Light"
+    @artifact.ability_one = @god.domain.ability_one.sample
 
     # Quest 1
     @artifact.quest_two = "Lesser Quest."

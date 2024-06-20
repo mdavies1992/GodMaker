@@ -21,7 +21,7 @@ lawful_themes = ["Justice", "Gears", "Constructs", "Money", "Contracts", "Ritual
 XAlignment.create!(name: "Lawful", descriptors: lawful_descriptors, titles: lawful_titles, tenets: lawful_tenets, themes: lawful_themes )
 puts "Lawful created"
 
-neutral_descriptors = ["Balanced", "Shfiting", "Thoughtful", "Harmonious", "Resolved", "Patient", "Reserved", "Quiet", "Calm", "Turning"];
+neutral_descriptors = ["Balanced", "Shifting", "Thoughtful", "Harmonious", "Resolved", "Patient", "Reserved", "Quiet", "Calm", "Turning"];
 neutral_titles = ["Seer", "Keeper", "Mediator", "Scale", "Point", "Watcher", "Observer", "Voice", "Reflection", "Thinker"];
 neutral_tenets = ["Strive for thoughtfulness in any situation where you may act, or react, considering the world, yourself and those you may affect with your action or inaction.", "Try to gain independance from the sways of law and chaos, and know what is true to your own ways between these philosophies. Be neither restricted nor untethered.", "Consideration for those around you is a great and blessed thing. Try not to distrupt the world by your actions, and instead match its flow.", "Adaptability is a virtue you must uphold- be ready to adapt to a situation, and find a way to stay calm when things are chaotic- but also know when to act when things are stagnant.", "Respect the lands and places you find yourself in, and the customs of its people, but do not bend to them either."];
 neutral_themes = ["Potential", "Indecision", "Games", "Sports", "Dance", "Patience", "Art", "Writing", "Creativity", "Adaption"];
@@ -202,14 +202,39 @@ nature_descriptors = ["Forest's", "Green", "Apex", "Nature's", "Earthsong", "Fer
 nature_titles = ["Shepherd", "Beast", "Essence", "Tamer", "Hunter", "Sentinel", "Predator", "Warden", "Chorus", "Watcher", "Sovereign", "Lady", "Lord", "Arbiter", "Spirit", "Vine", "Overseer", "Balance", "Patron", "Bringer"];
 nature_tenets = ["Maintain harmony with the natural world, recognizing the interconnectedness of all living beings and ecosystems. Respect the balance of nature and strive to live in harmony with it.", "Act as a steward of the earth, safeguarding its beauty and diversity for future generations. Protect and nurture the natural world, ensuring its vitality and resilience.", "Honor and respect all forms of life, from the smallest microorganism to the largest sentient being.", "Offer guidance and protection to those who venture into the wilderness. Provide wisdom and strength to navigate the challenges of the natural world.", "Seek communion with nature through contemplation, meditation, and ritual. Connect with the rhythms of the earth and draw inspiration from it.", "As a holy rite, you must plant a tree or other aspect of nature in the world around you at least once per month, and you must have seeds on your person whenever possible.", "Trust in the primal instincts that guide both beasts and humans alike. Understand that intuition and natural impulses often lead to truths that transcend logic.", "Embody the virtues of strength, resilience, and adaptability. Learn from the beasts' ability to endure harsh environments and overcome challenges through sheer determination.", "Promote the nurturing and cultivation of plants as a sacred duty. Encourage individuals to tend to the earth and foster the growth of flora in all its forms.", "You are divinely tasked to have a vegetarian (or vegan) diet."];
 nature_themes = ["Trees", "Plants", "Fungi", "Animals", "Druids", "Rivers", "Fruit", "Earth", "Agriculture", "Survival", "Savagery", "Spring", "Summer", "Autumn", "Winter", "Horses", "Fish", "Birds", "Fey", "Mountains"];
-Domain.create!(name: "Nature", descriptors: nature_descriptors, titles: nature_titles, tenets: nature_tenets, themes: nature_themes )
+la1 = []
+la2 = []
+la2w = []
+la2a = []
+la3 = []
+la3w = []
+la3a = []
+lq2 = []
+lq3 = []
+Domain.create!(name: "Nature", descriptors: nature_descriptors, titles: nature_titles, tenets: nature_tenets, themes: nature_themes, ability_one: la1, ability_two: la2, ability_two_weapon: la2w, ability_two_armor: la2a, ability_three: la3,  ability_three_weapon: la3w, ability_three_armor: la3a, quest_two: lq2, quest_three: lq3 )
 puts "Nature created"
 
 light_descriptors = ["Illuminating", "Luminous", "Blinding", "Guiding", "Burning", "Resplendent", "Gleaming", "Dazzling", "Incandescent", "Focusing", "Blazing", "Clearing", "Invigorating", "Hopeful", "Celestial", "Solar", "Soaring", "Shining", "Warm", "Pure", "Glowing"];
 light_titles = ["Sun", "Dawn", "Torch", "Light", "Guide", "Beacon", "Point", "Iris", "Horizon", "Radiance", "Monarch", "One", "Eternal", "Incarnate", "Sunrise", "Shimmer", "Champion", "Flame", "Bringer", "Harbinger"];
 light_tenets = ["Illuminate the self, and seek knowledge in the world for your own improvement and perhaps those that also seek it alongside you.", "Maintence and stocking of devices that give light (torches, lanterns, etc) is a divine duty and to do so for other individuals or communities is of great importance.", "You are forbidden by holy rites to never be in total darkness.", "Enjoy the gift of light, and the warmth of the sun whenever you have the oppurtunity to do so.", "Seek out those trapped in darkness, so that you may show them the light- be they in need of its guidance, or creatures that must be purged.", "Seek enlightenment and understanding in all aspects of life, allowing the radiant light of truth to guide your path.", "Appreciate the beauty and wonder of creation, honoring the divine spark within all living things.", "Reflect the divine grace and radiance of your god through acts of would please them, and either create or seek mementos of these acts for offerings.", "It is your sacred duty to route out the creatures of darkness and the night, such as shadows and vampires.", "Shed light equally upon all things, regardless of alignment or affiliation. Illuminate both darkness and light, revealing the truth in its entirety without bias or judgment."];
 light_themes = ["Sun", "Stars", "Moon", "Lantern", "Candles", "Torches", "Fire", "Blindness", "Colours", "Invisibility", "Hope", "Inspiration", "Guidance", "Revelation", "Cooking", "Burns", "Branding", "Comfort", "Warmth", "Rest"];
-Domain.create!(name: "Light", descriptors: light_descriptors, titles: light_titles, tenets: light_tenets, themes: light_themes )
+la1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"gains 30ft of Darkvision. If the attuned character already has Darkvision, its range increases by 30ft.",
+"gains immunity to the Blinded condition, and their eyes can glow with a divine light if they so choose.",
+"can cast the Light cantrip using the artifact as a spellcasting focus.",
+"can cast the Create Bonfire cantrip using the artifact as a spellcasting focus. The spell attack modifier for this artifacts spells and abilities is +5, and any Saving DCs are 13.",
+"can cast Guiding Bolt as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down). The spell attack modifier for this artifacts spells and abilities is +5, and any Saving DCs are 13."]
+la2 = []
+la2w = []
+la2a = []
+la3 = []
+la3w = []
+la3a = []
+lq2 = []
+lq3 = []
+Domain.create!(name: "Light", descriptors: light_descriptors, titles: light_titles, tenets: light_tenets, themes: light_themes, ability_one: la1, ability_two: la2, ability_two_weapon: la2w, ability_two_armor: la2a, ability_three: la3,  ability_three_weapon: la3w, ability_three_armor: la3a, quest_two: lq2, quest_three: lq3 )
 puts "Light created"
 
 # _descriptors = [];
@@ -225,18 +250,22 @@ global.names = ['ae', 'ald', 'el', 'gal', 'thal', 'ar', 'mor', 'zan', 'drak', 'e
 global.themes = ["Divinity", "Power", "Greatness", "Glory", "Dragons", "Monsters", "Weaponry", "Armour", "Weapons", "Elements", "Friendship", "Creation", "Destruction", "Charisma", "Adventure", "Civilization", "Sadness", "Joy", "Meditation", "Memory", "Mystery", "Giants", "Anger", "Jealousy", "Spite", "Love", "Arts", "Singing", "Snow", "Dice", "Cards", "Swords", "Axes", "Bows", "Shields", "Spears", "Dungeons", "Ice", "Metal", "Sand", "Ooze", "Humans", "Elves", "Dwarves", "Orcs", "Gnomes", "Halflings", "Crystals", "Warriors", "Wizards", "Bards", "Monks", "Travelling", "Food", "Drink", "Alchohol", "Hatred", "Sleep", "Dreams", "Nightmares", "Goblins", "Secrets"];
 global.descriptions = ["Great", "Divine", "Ascended", "High"]
 global.titles = ["God", "Goddess", "Lord", "Lady", "King", "Queen", "Force", "One"]
+global.minorquests = ["You must conduct a Ritual or Prayer for GODNAME successfully, which requires knowledge of this prayer or ritual, 10 minutes to conduct the prayer or ritual and a successful Intelligence (Religion) check, DC 13.",
+ "You must travel to a location under the watch or protection of GODNAME, or otherwise a location affected by the deities presence, and attune there.",
+"You can only attune at a certain date, or time of day of significance to GODNAME, as determined by their teachings.",
+"Before being able to attune, you must make a willing sacrifice of 300gp or equivilent items or value to GODNAME at one of their shrines or places of worship."]
 global.save
 
 
 #Item Types
 puts "Making Item Types"
 puts "Making Sword"
-sword = Type.new
-sword.name = "Sword"
-sword.category = "Weapon"
-sword.titles = ["Blade"]
-sword.save
-puts "Sword created"
+battleaxe = Type.new
+battleaxe.name = "Battleaxe"
+battleaxe.category = "Weapon"
+battleaxe.titles = ["The DESC Blade", "The DESC Axe", "Battleaxe of DESC Might", "DESC Bearded Axe"]
+battleaxe.save
+puts "Battleaxe created"
 
 
 

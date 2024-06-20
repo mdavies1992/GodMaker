@@ -73,6 +73,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_072500) do
     t.string "titles", default: [], array: true
     t.string "tenets", default: [], array: true
     t.string "themes", default: [], array: true
+    t.string "ability_one", default: [], array: true
+    t.string "ability_two", default: [], array: true
+    t.string "ability_two_weapon", default: [], array: true
+    t.string "ability_two_armor", default: [], array: true
+    t.string "ability_three", default: [], array: true
+    t.string "ability_three_weapon", default: [], array: true
+    t.string "ability_three_armor", default: [], array: true
+    t.string "quest_two", default: [], array: true
+    t.string "quest_three", default: [], array: true
   end
 
   create_table "generals", force: :cascade do |t|
