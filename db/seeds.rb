@@ -4,6 +4,7 @@ require "open-uri"
 puts "Clearing DB"
 General.destroy_all
 Artifact.destroy_all
+Type.destroy_all
 God.destroy_all
 Domain.destroy_all
 Alignment.destroy_all
@@ -230,9 +231,11 @@ global.save
 #Item Types
 puts "Making Item Types"
 puts "Making Sword"
-sword_titles = ["Blade"]
-sword_class = "Weapon"
-ItemType.create!(name: "Sword", itemclass: sword_class, i_titles: sword_titles)
+sword = Type.new
+sword.name = "Sword"
+sword.category = "Weapon"
+sword.titles = ["Blade"]
+sword.save
 puts "Sword created"
 
 

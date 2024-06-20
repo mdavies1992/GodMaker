@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_072500) do
   create_table "artifacts", force: :cascade do |t|
     t.string "name"
     t.bigint "god_id"
-    t.bigint "item_type_id"
+    t.bigint "type_id"
     t.text "quest_one"
     t.text "quest_two"
     t.text "quest_three"
@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_072500) do
     t.text "ability_two"
     t.text "ability_three"
     t.index ["god_id"], name: "index_artifacts_on_god_id"
-    t.index ["item_type_id"], name: "index_artifacts_on_item_type_id"
+    t.index ["type_id"], name: "index_artifacts_on_type_id"
   end
 
   create_table "domains", force: :cascade do |t|
@@ -106,10 +106,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_072500) do
     t.index ["user_id"], name: "index_gods_on_user_id"
   end
 
-  create_table "item_types", force: :cascade do |t|
+  create_table "types", force: :cascade do |t|
     t.string "name"
-    t.string "itemclass"
-    t.string "i_titles", default: [], array: true
+    t.string "category"
+    t.string "titles", default: [], array: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -145,7 +145,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_072500) do
   add_foreign_key "alignments", "x_alignments"
   add_foreign_key "alignments", "y_alignments"
   add_foreign_key "artifacts", "gods"
-  add_foreign_key "artifacts", "item_types"
+  add_foreign_key "artifacts", "types"
   add_foreign_key "gods", "alignments"
   add_foreign_key "gods", "domains"
   add_foreign_key "gods", "users"

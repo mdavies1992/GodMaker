@@ -3,6 +3,7 @@ class ArtifactsController < ApplicationController
   def show
     @artifact = Artifact.find(params[:id])
     @god = @artifact.god
+    @type = @artifact.type
     @ali = @god.alignment.name.gsub(" ", "")
   end
 
@@ -16,9 +17,11 @@ class ArtifactsController < ApplicationController
     @artifact = Artifact.new
     @global = General.first
     @god = God.find(params[:god_id])
+    @type = Type.first
 
     # Determine Item Type
-    @type = ItemType.first
+
+    @artifact.type = @type
 
     # Determine Name
     @artifact.name = "The Testing Blade"
@@ -44,6 +47,7 @@ class ArtifactsController < ApplicationController
     @artifact.god = @god
 
     @artifact.save
+
     if @artifact.save
       redirect_to god_path(@god)
       puts 'saved'
