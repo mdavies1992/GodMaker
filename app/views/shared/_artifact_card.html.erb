@@ -12,11 +12,11 @@
     <span class="artifact-section-ul">Minor Properties:</span>
     <% case @artifact.type.category%>
     <% when "Weapon" %>
-      <%="The Artifact becomes a magical +1 Weapon, and signifies that it (and the attuned user) are marked by #{artifact.god.name}. Additionally, whilst attuned a character #{@artifact.ability_one}" %>
-    <% when "Armour" %>
-      <%="The Artifact becomes magical and gives a +1 bonus to armour class whilst worn, as well as signifying that it (and the attuned user) are marked by #{artifact.god.name}. Additionally, whilst attuned a character #{@artifact.ability_one}." %>
+      <%="The Artifact becomes a magical +1 Weapon, and signifies that it (and the attuned user) are marked by #{artifact.god.name}.  The spell attack modifier for any spells or abilities this Artifact provides is +5, and any Saving DCs are 13. Additionally, whilst attuned a character #{@artifact.ability_one}" %>
+    <% when "Armor" %>
+      <%="The Artifact becomes magical and gives a +1 bonus to armour class whilst worn, as well as signifying that it (and the attuned user) are marked by #{artifact.god.name}. The spell attack modifier for any spells or abilities this Artifact provides is +5, and any Saving DCs are 13. Additionally, whilst attuned a character #{@artifact.ability_one}" %>
     <% else %>
-      <%="The Artifact becomes magical, and signifies that it (and the attuned user) are marked by GODNAME. Additionally, whilst attuned a character #{@artifact.ability_one}." %>
+      <%="The Artifact becomes magical, and signifies that it (and the attuned user) are marked by #{artifact.god.name}.  The spell attack modifier for any spells or abilities this Artifact provides is +5, and any Saving DCs are 13. Additionally, whilst attuned a character #{@artifact.ability_one}" %>
     <% end %>
   </span>
 </span>
@@ -27,9 +27,9 @@
 <span class="artifact-section-ul">Lesser Properties:</span>
 <% case @artifact.type.category%>
 <% when "Weapon" %>
-  <%="The Artifact becomes a +2 magical Weapon. Additionally, whilst attuned a character #{@artifact.ability_two}." %>
-<% when "Armour" %>
-  <%="The Artifact's magical bonus to AC becomes +2. Additionally, whilst attuned a character #{@artifact.ability_two}." %>
+  <%="The Artifact becomes a +2 magical Weapon.  The spell attack modifier for any spells or abilities this Artifact provides is +8, and any Saving DCs are 16. Additionally, whilst attuned to the user #{@artifact.ability_two}" %>
+<% when "Armor" %>
+  <%="The Artifact's magical bonus to AC becomes +2.  The spell attack modifier for any spells or abilities this Artifact provides is +8, and any Saving DCs are 16. Additionally, whilst attuned to the user #{@artifact.ability_two}" %>
 <% else %>
   <%= "Whilst attuned to this item, you can #{@artifact.ability_two}" %>
 <% end %>
@@ -42,11 +42,11 @@
 <span class="artifact-section-ul">Major Properties:</span>
 <% case @artifact.type.category%>
 <% when "Weapon" %>
-  <%="The Artifact becomes a +3 magical Weapon. Additionally, whilst attuned a character #{@artifact.ability_three}." %>
-<% when "Armour" %>
-  <%="The Artifact's magical bonus to AC becomes +3. Additionally, whilst attuned a character #{@artifact.ability_three}." %>
+  <%="The Artifact becomes a +3 magical Weapon. The spell attack modifier for any spells or abilities this Artifact provides is +11, and any Saving DCs are 19. Additionally, whilst attuned a character #{@artifact.ability_three}" %>
+<% when "Armor" %>
+  <%="The Artifact's magical bonus to AC becomes +3.  The spell attack modifier for any spells or abilities this Artifact provides is +11, and any Saving DCs are 19. Additionally, whilst attuned a character #{@artifact.ability_three}" %>
 <% else %>
-  <%= "Whilst attuned to this item, you can #{@artifact.ability_three}" %>
+  <%= " The spell attack modifier for any spells or abilities this Artifact provides is +11, and any Saving DCs are 19. Whilst attuned to this item, you can #{@artifact.ability_three}" %>
 <% end %>
 </span>
 </span>

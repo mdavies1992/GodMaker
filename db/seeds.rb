@@ -224,16 +224,19 @@ la1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus
 "gains 30ft of Darkvision. If the attuned character already has Darkvision, its range increases by 30ft.",
 "gains immunity to the Blinded condition, and their eyes can glow with a divine light if they so choose.",
 "can cast the Light cantrip using the artifact as a spellcasting focus.",
-"can cast the Create Bonfire cantrip using the artifact as a spellcasting focus. The spell attack modifier for this artifacts spells and abilities is +5, and any Saving DCs are 13.",
-"can cast Guiding Bolt as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down). The spell attack modifier for this artifacts spells and abilities is +5, and any Saving DCs are 13."]
-la2 = []
-la2w = []
-la2a = []
-la3 = []
-la3w = []
-la3a = []
-lq2 = []
-lq3 = []
+"can cast the Create Bonfire cantrip using the artifact as a spellcasting focus.",
+"can cast Guiding Bolt as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down)."]
+la2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"can cast the Daylight spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the next Dawn. ",
+"the attuned user of the Artifact and allies within 20ft of them can see in magical darkness, and gain 60ft of darkvision.",
+"can create a 20ft. (originating from the Artifact) cone of dazzling light. Creatures in this cone must immediately make a Constitution saving throw or become blinded for the next minute, repeating the saving throw if blinded to end the effect early."]
+la2w = ["the Artifact deals an additional 4 (1d6) Radiant damage on hit.", "can cast the spell Blinding Smite through the Artifact, without using a spell slot. Once cast in this way, it cannot do so again until the next Dawn."]
+la2a = ["gains Resistance to Radiant damage whilst attuned to this Artifact.", ", as a reaction, the user can gain advantage on a saving throw provided they are in bright light. They may use this ability a number of times equal to their proficiency bonus (rounded down), after which they must wait until the next Dawn to use it again."]
+la3 = ["once per day, as an action you can give yourself and your allies within 30ft of you inspiration. Additionally, creatures affected are healed for up to 2d12 missing hit points.", "can cast the spell Flame Strike without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the next Dawn.", "can cast the spell Wall of Light without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the next Dawn."]
+la3w = ["while attuned, and Radiant and Fire damage you deal ignores resistance. Additionally, you gain a pool of 1d4's equal to your proficiency bonus that can be added to any damage roll you deal whilst attuned (only once per roll), dealing bonus fire or radiant damage (chosen when you use this ability) equal to the total.  rolled. Any expended die are refreshed upon completing a long rest."]
+la3a = ["you can target allies with touch spells and abilities if they are in bright light. Additionally, you can cast the spell Bless, without spending a spell slot, a number of times per long rest equal to your proficiency bonus. The spell attack modifier for this artifacts spells and abilities is +11, and any Saving DCs are 19. "]
+lq2 = ["You must travel to a shrine or temple of GODNAME to recieve a blessed flame, which you may transfer onto any vehicle (like a torch, or lantern) of your choice. This flame must be taken (without being extinguished) to another place of divine signifcance to the deity, to ignite a divine bonfire there.", "You must gather reagents equalling 1000gp to conduct a sacred ritual of GODNAME to infuse their Artifact with further power. During this ritual, the forces of darkness will manifest to assault you and your allies and try to stop the ritual at all costs. As such, you must repel them or risk failure and possibly death."]
+lq3 = ["You must find and defeat a creature of powerful darkness (at least CR 13, such as a Vampire), and force them to confront the divine light of GODNAME."]
 Domain.create!(name: "Light", descriptors: light_descriptors, titles: light_titles, tenets: light_tenets, themes: light_themes, ability_one: la1, ability_two: la2, ability_two_weapon: la2w, ability_two_armor: la2a, ability_three: la3,  ability_three_weapon: la3w, ability_three_armor: la3a, quest_two: lq2, quest_three: lq3 )
 puts "Light created"
 
@@ -258,16 +261,136 @@ global.save
 
 
 #Item Types
-puts "Making Item Types"
-puts "Making Sword"
+puts "-----Making Item Types"
+puts "--Making Weapons"
+puts "Making Battleaxe"
 battleaxe = Type.new
 battleaxe.name = "Battleaxe"
 battleaxe.category = "Weapon"
-battleaxe.titles = ["The DESC Blade", "The DESC Axe", "Battleaxe of DESC Might", "DESC Bearded Axe"]
+battleaxe.titles = ["The DESC Reaver", "The DESC Axe", "Battleaxe of DESC Might", "DESC Bearded Axe"]
 battleaxe.save
 puts "Battleaxe created"
 
+puts "Making Dagger"
+dagger = Type.new
+dagger.name = "dagger"
+dagger.category = "Weapon"
+dagger.titles = ["The DESC Dagger", "The DESC Blade", "DESC-piercer", "Knife of DESC"]
+dagger.save
+puts "Dagger created"
 
+puts "Making Flail"
+flail = Type.new
+flail.name = "flail"
+flail.category = "Weapon"
+flail.titles = ["The DESC Breaker", "The DESC Flail", "Flail of DESC Might", "DESC Hand"]
+flail.save
+puts "Flail created"
+
+puts "Making greatsword"
+greatsword = Type.new
+greatsword.name = "Greatsword"
+greatsword.category = "Weapon"
+greatsword.titles = ["The DESC Greatsword", "DESC Broadsword", "DESC Zweihander", "The DESC Blade"]
+greatsword.save
+puts "greatsword created"
+
+puts "Making longbow"
+longbow = Type.new
+longbow.name = "Longbow"
+longbow.category = "Weapon"
+longbow.titles = ["DESCbow", "The DESC Longbow", "Longbow of DESC skill", "DESC-piercer"]
+longbow.save
+puts "longbow created"
+
+puts "Making Quarterstaff"
+quarterstaff = Type.new
+quarterstaff.name = "Quarterstaff"
+quarterstaff.category = "Weapon"
+quarterstaff.titles = ["Staff of DESC Wisdom", "The DESC Quarterstaff", "Cane of DESC", "Balanced staff of DESC Will"]
+quarterstaff.save
+puts "quarterstaff created"
+
+puts "Making rapier"
+rapier = Type.new
+rapier.name = "Rapier"
+rapier.category = "Weapon"
+rapier.titles = ["DESC-piercer", "The DESC Rapier", "Rapier of DESC Skill", "DESC-strike"]
+rapier.save
+puts "rapier created"
+
+puts "Making trident"
+trident = Type.new
+trident.name = "Trident"
+trident.category = "Weapon"
+trident.titles = ["The DESC Trident", "The DESC Fork", "Trident of DESC Strength", "The Reach of DESC"]
+trident.save
+puts "trident created"
+
+puts "Making halberd"
+halberd = Type.new
+halberd.name = "Halberd"
+halberd.category = "Weapon"
+halberd.titles = ["The DESC Halberd", "The DESC Reaver", "Halberd of DESC Might", "The Reach of DESC"]
+halberd.save
+puts "halberd created"
+
+puts "Making warhammer"
+warhammer = Type.new
+warhammer.name = "Warhammer"
+warhammer.category = "Weapon"
+warhammer.titles = ["The DESC Warhammer", "The DESC Breaker", "DESC-crusher", "The Fist of DESC"]
+warhammer.save
+puts "warhammer created"
+
+puts "--Making Armour"
+puts "Making Breastplate"
+breastplate = Type.new
+breastplate.name = "Breastplate"
+breastplate.category = "Armor"
+breastplate.titles = ["The DESC Breastplate", "The DESC Breastplate of Protection", "Breastplate of DESC Defense", "The DESC Guard"]
+breastplate.save
+puts "Breastplate created"
+
+puts "Making halfplate"
+halfplate = Type.new
+halfplate.name = "Halfplate"
+halfplate.category = "Armor"
+halfplate.titles = ["The DESC Halfplate", "The DESC Halfplate of Protection", "DESC Protector", "The DESC Guard"]
+halfplate.save
+puts "halfplate created"
+
+puts "Making padded armour"
+paddedarmour = Type.new
+paddedarmour.name = "Padded armour"
+paddedarmour.category = "Armor"
+paddedarmour.titles = ["The DESC Robe", "Robes of the DESC Mind",  "DESC Garb", "DESC-Cloth"]
+paddedarmour.save
+puts "padded armour created"
+
+puts "Making scale mail"
+scalemail = Type.new
+scalemail.name = "Scale mail"
+scalemail.category = "Armor"
+scalemail.titles = ["The DESC Scale Mail", "DESC Scales", "DESC Protector", "The DESC Guard"]
+scalemail.save
+puts "scale mail created"
+
+puts "Making Shield"
+shield = Type.new
+shield.name = "shield"
+shield.category = "Armor"
+shield.titles = ["The DESC Shield", "The DESC Buckler", "DESC-Guard", "Shield of DESC"]
+shield.save
+puts "shield created"
+
+puts "Making studded"
+studded = Type.new
+studded.name = "Studded Leather Armour"
+studded.category = "Armor"
+studded.titles = ["The DESC Studded Armour", "DESC Garb", "The Gear of DESC Agility", "DESC-Skin"]
+studded.save
+puts "studded created"
 
 #Create God
 # puts "Creating God"
