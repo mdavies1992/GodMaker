@@ -89,16 +89,16 @@ class GodsController < ApplicationController
     @god.img_prompt = "An image of a #{@god.alignment.name} deity of #{@god.domain.name}, no text. They incorporate themes of #{@god.themes[0]}, #{@god.themes[1]} and #{@god.themes[2]}. Fantasy, illustrated, 2d, watercolours."
 
 
-    # client = OpenAI::Client.new
-    # chaptgpt_response = client.chat(parameters: {
-    #   model: "gpt-3.5-turbo",
-    #   messages: [{ role: "user", content: @god.prompt}]
-    # })
-    # @god.description = chaptgpt_response["choices"][0]["message"]["content"]
+    client = OpenAI::Client.new
+    chaptgpt_response = client.chat(parameters: {
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: @god.prompt}]
+    })
+    @god.description = chaptgpt_response["choices"][0]["message"]["content"]
 
-    # response = client.images.generate(parameters: { model: 'dall-e-3', prompt: @god.img_prompt, size: "1024x1024", quality: "standard" })
-    # url = response.dig("data", 0, "url")
-    # @god.photo.attach(io: URI.open(url), filename: "godimage_#{SecureRandom.hex(8)}.png")
+    response = client.images.generate(parameters: { model: 'dall-e-3', prompt: @god.img_prompt, size: "1024x1024", quality: "standard" })
+    url = response.dig("data", 0, "url")
+    @god.photo.attach(io: URI.open(url), filename: "godimage_#{SecureRandom.hex(8)}.png")
 
 @god.user = @user
 
