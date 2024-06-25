@@ -1,4 +1,8 @@
-<h1>New Artifact for <%= @god.name %></h1>
-<%= simple_form_for [@god, @artifact] do |f| %>
-  <%= f.submit %>
-<% end %>
+<div class="devise-card">
+  <h1>New Artifact for <%= @god.name %></h1>
+  <%= simple_form_for [@god, @artifact] do |f| %>
+    <span class="d-flex justify-content-center">
+      <input type="submit" name="commit" value="Create Artifact" data-disable-with="Create Artifact" class="btn-create">
+    </span>
+  <% end %>
+</div>

@@ -57,16 +57,63 @@
         </div>
         <div class="col-12 mb-3 god-backing">
           <h2>Artifacts:</h2>
-          <%= link_to "new artifact", new_god_artifact_path(@god), class: "btn btn-success" %>
-          <% @god.artifacts.each do |artifact| %>
-            <%= link_to "#{artifact.name}", artifact_path(artifact), class: "btn btn-primary" %>
-          <% end %>
+          <div class="row d-flex justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+              <%# <%= link_to "new artifact", new_god_artifact_path(@god), class: "btn btn-success" %>
+              <a class="btn-gold" href="/gods/<%= @god.id %>/artifacts/new">
+                <span class="btn-text">New Artifact</span>
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="228px" height="48px" viewBox="0 0 337 68" style="enable-background:new 0 0 337 68;" xml:space="preserve">
+                  <style type="text/css">
+                    .st0 {
+                      fill: url(#SVGID_1_);
+                    }
+
+                    .st1 {
+                      fill: url(#SVGID_2_);
+                    }
+
+                    .st2 {
+                      fill: url(#SVGID_3_);
+                    }
+                  </style>
+                  <g>
+                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="14.1012" y1="34" x2="322.8987" y2="34">
+                      <stop offset="0" style="stop-color:#E2D8AB" />
+                      <stop offset="1" style="stop-color:#9E805D" />
+                    </linearGradient>
+                    <polygon class="st0" points="310,12 27,12 14.1,24.9 14.1,43.1 27,56 310,56 322.9,43.1 322.9,24.9 	" />
+                  </g>
+                  <g>
+                    <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="168.5" y1="4.6422" x2="168.5" y2="63.3578">
+                      <stop offset="0" style="stop-color:#E2D8AB" />
+                      <stop offset="1" style="stop-color:#9E805D" />
+                    </linearGradient>
+                    <path class="st1" d="M311.9,8.1L327,23.3v21.4l-15.1,15.1H25.1L10,44.7V23.3L25.1,8.1H311.9 M313.3,4.6H23.7L6.5,21.8v24.3
+		l17.2,17.2h289.6l17.2-17.2V21.8L313.3,4.6L313.3,4.6z" />
+                  </g>
+                  <g>
+                    <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="168.5" y1="12" x2="168.5" y2="56">
+                      <stop offset="0" style="stop-color:#E2D8AB" />
+                      <stop offset="1" style="stop-color:#9E805D" />
+                    </linearGradient>
+                    <path class="st2" d="M309.5,13.2l12.2,12.2v17.2l-12.2,12.2h-282L15.3,42.6V25.4l12.2-12.2H309.5 M310,12H27L14.1,24.9v18.2L27,56
+		h283l12.9-12.9V24.9L310,12L310,12z" />
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <% @god.artifacts.each do |artifact| %>
+              <%# <%= link_to "#{artifact.name}", artifact_path(artifact), class: "btn btn-primary" %>
+              <div class="col-4">
+                <%= render 'shared/artifact_card_mini', artifact: artifact %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
     <%# seperation of Prompt Button & text (hidden) %>
     <div class="d-flex justify-content-center my-3">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Prompts</button>
     </div>
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
@@ -76,4 +123,47 @@
           <p><%= @god.img_prompt %></p>
         </div>
       </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <a class="btn-gold" href="/gods"  data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">
+        <span class="btn-text">AI Prompts</span>
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="228px" height="48px" viewBox="0 0 337 68" style="enable-background:new 0 0 337 68;" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: url(#SVGID_1_);
+            }
+
+            .st1 {
+              fill: url(#SVGID_2_);
+            }
+
+            .st2 {
+              fill: url(#SVGID_3_);
+            }
+          </style>
+          <g>
+            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="14.1012" y1="34" x2="322.8987" y2="34">
+              <stop offset="0" style="stop-color:#E2D8AB" />
+              <stop offset="1" style="stop-color:#9E805D" />
+            </linearGradient>
+            <polygon class="st0" points="310,12 27,12 14.1,24.9 14.1,43.1 27,56 310,56 322.9,43.1 322.9,24.9 	" />
+          </g>
+          <g>
+            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="168.5" y1="4.6422" x2="168.5" y2="63.3578">
+              <stop offset="0" style="stop-color:#E2D8AB" />
+              <stop offset="1" style="stop-color:#9E805D" />
+            </linearGradient>
+            <path class="st1" d="M311.9,8.1L327,23.3v21.4l-15.1,15.1H25.1L10,44.7V23.3L25.1,8.1H311.9 M313.3,4.6H23.7L6.5,21.8v24.3
+		l17.2,17.2h289.6l17.2-17.2V21.8L313.3,4.6L313.3,4.6z" />
+          </g>
+          <g>
+            <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="168.5" y1="12" x2="168.5" y2="56">
+              <stop offset="0" style="stop-color:#E2D8AB" />
+              <stop offset="1" style="stop-color:#9E805D" />
+            </linearGradient>
+            <path class="st2" d="M309.5,13.2l12.2,12.2v17.2l-12.2,12.2h-282L15.3,42.6V25.4l12.2-12.2H309.5 M310,12H27L14.1,24.9v18.2L27,56
+		h283l12.9-12.9V24.9L310,12L310,12z" />
+          </g>
+        </svg>
+      </a>
     </div>

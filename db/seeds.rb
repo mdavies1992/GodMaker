@@ -202,16 +202,30 @@ nature_descriptors = ["Forest's", "Green", "Apex", "Nature's", "Earthsong", "Fer
 nature_titles = ["Shepherd", "Beast", "Essence", "Tamer", "Hunter", "Sentinel", "Predator", "Warden", "Chorus", "Watcher", "Sovereign", "Lady", "Lord", "Arbiter", "Spirit", "Vine", "Overseer", "Balance", "Patron", "Bringer"];
 nature_tenets = ["Maintain harmony with the natural world, recognizing the interconnectedness of all living beings and ecosystems. Respect the balance of nature and strive to live in harmony with it.", "Act as a steward of the earth, safeguarding its beauty and diversity for future generations. Protect and nurture the natural world, ensuring its vitality and resilience.", "Honor and respect all forms of life, from the smallest microorganism to the largest sentient being.", "Offer guidance and protection to those who venture into the wilderness. Provide wisdom and strength to navigate the challenges of the natural world.", "Seek communion with nature through contemplation, meditation, and ritual. Connect with the rhythms of the earth and draw inspiration from it.", "As a holy rite, you must plant a tree or other aspect of nature in the world around you at least once per month, and you must have seeds on your person whenever possible.", "Trust in the primal instincts that guide both beasts and humans alike. Understand that intuition and natural impulses often lead to truths that transcend logic.", "Embody the virtues of strength, resilience, and adaptability. Learn from the beasts' ability to endure harsh environments and overcome challenges through sheer determination.", "Promote the nurturing and cultivation of plants as a sacred duty. Encourage individuals to tend to the earth and foster the growth of flora in all its forms.", "You are divinely tasked to have a vegetarian (or vegan) diet."];
 nature_themes = ["Trees", "Plants", "Fungi", "Animals", "Druids", "Rivers", "Fruit", "Earth", "Agriculture", "Survival", "Savagery", "Spring", "Summer", "Autumn", "Winter", "Horses", "Fish", "Birds", "Fey", "Mountains"];
-la1 = []
-la2 = []
-la2w = []
-la2a = []
-la3 = []
-la3w = []
-la3a = []
-lq2 = []
-lq3 = []
-Domain.create!(name: "Nature", descriptors: nature_descriptors, titles: nature_titles, tenets: nature_tenets, themes: nature_themes, ability_one: la1, ability_two: la2, ability_two_weapon: la2w, ability_two_armor: la2a, ability_three: la3,  ability_three_weapon: la3w, ability_three_armor: la3a, quest_two: lq2, quest_three: lq3 )
+naturea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"is uneffected by Difficult terrain.",
+"gains a 1d4 bonus to any Intelligence (Nature) checks they make.",
+"can cast the Druidcraft cantrip using the artifact as a spellcasting focus.",
+"can cast the Thorn Whip cantrip using the artifact as a spellcasting focus.",
+"can cast Entangle as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down)."]
+naturea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"can cast the Summon Beast spell without using a spell slot through this Artifact, without requiring any materials. When cast in this way, the spell level equals your proficiency bonus.",
+"the user gains the effects of the 'Speak with animals' spell, permanently, so long as you are attuned.",
+"the user gains a 10Ft. bonus to your speed."]
+naturea2w = ["the Artifact deals an additional 4 (1d6) Acid damage on hit.",
+"can cast Hold Person through the Artifact a number of times equal to your proficiency bonus (rounded down) before you must complete a Long rest before you can do so again. "]
+naturea2a = ["gains Resistance to Poison damage and immunity to the Poisoned condition whilst attuned to this Artifact.",
+"can, as a reaction to taking damage from a creature within 30ft. of themselves that they can see, make that creature immediately make a dexterity saving throw against the Artifacts Save DC. They take 4d8 piercing damage from thorns or spines you create, or half as much on a successful saving throw. Once you have used this ability, you may not do so until the next Dawn."]
+naturea3 = ["gain an aura that extends 20ft. from you whilst attuned. When you gain this ability, or any time you complete a long rest whilst this artifact is attuned, you may choose a damage type from this list: Fire, Cold, Lightning, Acid, Poison. You and allies (whilst within your aura) have Resistance to this chosen damage.",
+"can cast the spell Tree Stride without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the next Dawn. ",
+"can cast the spell Wrath of Nature without using a spell slot through this Artifact. Once cast in this way, it cannot do so again until the next Dawn."]
+naturea3w = ["can, as an action, choose up to 6 creature (this can include themselves)- these creatures may use their reaction to immediately move up to their movement speed and begin to stampede as divine spirits of nature embolden them. During this movement, they can move through enemies (but cannot end their movement within an enemies space). Any enemy a stampeding creature passes through immediately takes 2d10 bludgeoning damage. A creature cannot take damage from this ability more than once for each stampeding creature (but can take damage from more than one stampeding creature). Once you have used this ability, you may not do so again until you complete a Long Rest."]
+naturea3a = ["as an Action, you may call upon the powers of nature and the Artifacts deity to wrap yourself in natures embrace as you assume the form of a treant or similar guardian of nature's might. For the next minute or until you dispel the effect early as a bonus action, your size becomes huge, you gain resistance to non-magical damage and any damage you deal increases by 3d4.  Once you have used this ability, you cannot do so again until you complete a Long Rest."]
+natureq2 = ["You must travel to a holy site for GODNAME, such as a temple of Grove, and take from a blessed tree there a divine fruit and consume it.", "You must complete a ritual that uses 500gp (Nature or Arcana check required, DC 15) to summon a young spirit of nature, such as an infant animal or treant sapling (use a statblock for a Familiar for this creature, and it functions as per the Find Familiar spell except it cannot be put into a pocket dimension). You must protect and raise this young spirit on behalf of GODNAME for a month, and may be judged according to the quality of your care."]
+natureq3 = ["You must defeat a creature that threatens the natural world and the domain of GODNAME, such as an Evil Dragon or Nefarious Elemental (Min. CR 13)"]
+Domain.create!(name: "Nature", descriptors: nature_descriptors, titles: nature_titles, tenets: nature_tenets, themes: nature_themes, ability_one: naturea1, ability_two: naturea2, ability_two_weapon: naturea2w, ability_two_armor: naturea2a, ability_three: naturea3,  ability_three_weapon: naturea3w, ability_three_armor: naturea3a, quest_two: natureq2, quest_three: natureq3 )
 puts "Nature created"
 
 light_descriptors = ["Illuminating", "Luminous", "Blinding", "Guiding", "Burning", "Resplendent", "Gleaming", "Dazzling", "Incandescent", "Focusing", "Blazing", "Clearing", "Invigorating", "Hopeful", "Celestial", "Solar", "Soaring", "Shining", "Warm", "Pure", "Glowing"];
@@ -273,7 +287,7 @@ puts "Battleaxe created"
 
 puts "Making Dagger"
 dagger = Type.new
-dagger.name = "dagger"
+dagger.name = "Dagger"
 dagger.category = "Weapon"
 dagger.titles = ["The DESC Dagger", "The DESC Blade", "DESC-piercer", "Knife of DESC"]
 dagger.save
@@ -281,7 +295,7 @@ puts "Dagger created"
 
 puts "Making Flail"
 flail = Type.new
-flail.name = "flail"
+flail.name = "Flail"
 flail.category = "Weapon"
 flail.titles = ["The DESC Breaker", "The DESC Flail", "Flail of DESC Might", "DESC Hand"]
 flail.save
@@ -378,7 +392,7 @@ puts "scale mail created"
 
 puts "Making Shield"
 shield = Type.new
-shield.name = "shield"
+shield.name = "Shield"
 shield.category = "Armor"
 shield.titles = ["The DESC Shield", "The DESC Buckler", "DESC-Guard", "Shield of DESC"]
 shield.save
