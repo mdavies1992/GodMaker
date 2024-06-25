@@ -55,15 +55,25 @@
             <% end %>
           </ul>
         </div>
+        <div class="col-12 mb-3 god-backing">
+          <h2>Artifacts:</h2>
+          <%= link_to "new artifact", new_god_artifact_path(@god), class: "btn btn-success" %>
+          <% @god.artifacts.each do |artifact| %>
+            <%= link_to "#{artifact.name}", artifact_path(artifact), class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
-      <h5>Prompts:</h5>
-      <p><%= @god.prompt %></p>
-      <p><%= @god.img_prompt %></p>
     </div>
-  </div>
-  <%= link_to "new artifact", new_god_artifact_path(@god), class: "btn btn-primary" %>
-  <h2>Gods artifacts:</h2>
-  <% @god.artifacts.each do |artifact| %>
-    <%= link_to "#{artifact.name}", artifact_path(artifact), class: "btn btn-primary" %>
-  <% end %>
-  tenets
+    <%# seperation of Prompt Button & text (hidden) %>
+    <div class="d-flex justify-content-center my-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Prompts</button>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <h5>Prompts:</h5>
+          <p><%= @god.prompt %></p>
+          <p><%= @god.img_prompt %></p>
+        </div>
+      </div>
+    </div>
