@@ -1,0 +1,7 @@
+<div class="arti-container">
+  <div class="mini-card d-flex align-items-center">
+    <%= image_tag "#{artifact.type.name.gsub(" ","")}_img.webp", class: "artifact-img" %>
+    <%= artifact.name %>
+  </div>
+  <%= link_to "", artifact_path(artifact), class: "card-artifact-link" %>
+</div>
