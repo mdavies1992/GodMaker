@@ -181,7 +181,29 @@ tempest_descriptors = ["Sparking", "Blustering", "Thunderous", "Wrathful", "Ocea
 tempest_titles = ["Storm", "Gale", "Wind", "Lightning", "Zenith", "Depths", "Sovereign", "Wave", "Roar", "Conductor", "Tempest", "Bringer", "Rider", "Cyclone", "Arc", "Flash", "Crash", "Echo", "Heart", "End"];
 tempest_tenets = ["Before any travel is made over a large body of water, an offering to your god must be made.","Storms are holy events to commune with your god, and must be aknowledged through prayer or ritual.", "At least once in your life, you must allow yourself to be struck by lightning as a test of body and faith.", "Embrace the primordial forces of nature, for within them lies the potential for creation and renewal. Embrace the storms as agents of change and transformation.", "Protect the skies and the creatures that dwell within them. Act as a guardian against threats to aerial life and ensure the safety of birds, flying creatures, and other inhabitants of the skies.", "Inspire creativity and innovation through the tempest's dynamic energy. Encourage the pursuit of new ideas and ventures, empowering individuals to harness the storm's power for innovation.", "Embrace the tempest as a purifying force that cleanses and renews. See destruction as a necessary precursor to rebirth and regeneration, clearing the path for new growth and possibility.", "Exercise restraint in the use of destructive power. Channel the fury of the tempest with wisdom and restraint, avoiding unnecessary destruction and collateral damage.", "The oceans depths are a divine realm of your god, and should be respected as such.", "You must conduct a prayer of thanks and to ask permission before you eat any food that has come from a body of water."];
 tempest_themes = ["Storms", "Lightning", "Thunder", "Oceans", "Fish", "Birds", "Ships", "Fishing", "Clouds", "Tornados", "Sandstorms", "Hurricanes", "Inspiration", "Creativity", "Dust", "Sharks", "Whales", "Octopi", "Krakens", "Coral"];
-Domain.create!(name: "Tempest", descriptors: tempest_descriptors, titles: tempest_titles, tenets: tempest_tenets, themes: tempest_themes )
+tempesta1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"can speak to and understand the speech of Aquatic Beasts and monsters.",
+"always know which way is North, what direction the wind is blowing, and what the weather will be like in your current region the following day.",
+"can cast the Gust cantrip using the artifact as a spellcasting focus.",
+"can cast the Shocking Grasp cantrip using the artifact as a spellcasting focus.",
+"can cast the spell Thunderwave using the artifact as a spellcasting focus without using a spell slot. You may do this a number of times equal to half your proficiency bonus (rounded down) before you must complete a long rest before you can do so again."]
+tempesta2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"can cast the spell Thunder Step using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Lightning Bolt using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest."]
+tempesta2w = ["the Artifact deals an additional 4 (1d6) Lightning damage on hit.",
+"can, as an action, transform yourself into a living bolt of lightning. For the remainder of your turn, you gain the effects of the dash and disengage actions and you may move through enemy spaces. The first time you move through each enemy creature, they take 1d12 lightning damage. Once you have used this ability, you cannot do so again until you complete a long rest."]
+tempesta2a = ["gains Resistance to Lightning and Thunder damage whilst attuned to this Artifact.",
+"can, as a reaction to recieving damage from a creature within 60ft. of you that you can see, force that creature to make a constitution saving throw against your Artifact Save DC. On failure, that creature takes 4d8 thunder damage and can be moved up to 10ft. in a straight line towards or away from the user (your choice). Once you have used this ability, you may not do so again until you complete a long rest."]
+tempesta3 = ["gains a 30ft. Fly speed, or if they already possess a fly speed it increases by 30ft. Additionally, they can hover in place freely and are immune to the prone condition.",
+"can cast the spell Maelstrom using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can as an action throw tempest bolts at up to 6 creatures (only one bolt per creature) they can see within 100ft. of them they can see. When an enemy is targeted by a bolt, they must make a dexterity saving throw against the Artifact Save DC, taking 5d8 lightning damage or half as much on a success. When an ally is targeted by a bolt they are infused with energy, gaining 1d12+4 temproary hit points and inspiration "]
+tempesta3w = ["can cast the spell Chain Lightning using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest."]
+tempesta3a = ["can, as an action, summon forth divine winds and become the eye of the storm. For the next minute, or until the attuned user uses a bonus action to end this effect early, they have a 30ft. aura that extends from them, Enemies that start their turn in this aura immediately take 1d8 bludgeoning damage from the turbulent winds, and allies gain the benefit of the dash action immediately. Additionally, any ranged attacks that target creatures in this aura, or would pass through the area of this aura to target a creature, have disadvantage. Once this ability is used, the user cannot do so again until they complete a long rest."]
+tempestq2 = ["As of starting this quest, you must sail across the open sea or bodies of water for a total of 7 days (You may split this time among multiple journeys). However, before each voyage and each evening during an ocean voyage, you must make a 10 minute prayer to GODNAME.", "You must collect reagents worth 500gp to conduct a ritual that will summon a living storm (An air elemental, CR 6) which you must defeat in order to empower your weapon."]
+tempestq3 = ["You must defeat a Kraken and bathe your artifact in its electrified blood."]
+Domain.create!(name: "Tempest", descriptors: tempest_descriptors, titles: tempest_titles, tenets: tempest_tenets, themes: tempest_themes, ability_one: tempesta1, ability_two: tempesta2, ability_two_weapon: tempesta2w, ability_two_armor: tempesta2a, ability_three: tempesta3,  ability_three_weapon: tempesta3w, ability_three_armor: tempesta3a, quest_two: tempestq2, quest_three: tempestq3 )
 puts "Tempest created"
 
 death_descriptors = ["Reaping", "Grim", "Ghostly", "Necrotic", "Killing", "Haunting", "Undying", "Creeping", "Eternal", "Accursed", "Quiet", "Silent", "Whispering", "Fearful", "Rotting", "Final", "Waking", "Restful", "Dark", "Eternal"];
@@ -221,23 +243,23 @@ trickery_descriptors = ["Mercurial", "Duplicitous", "Two-faced", "Dishonest", "M
 trickery_titles = ["Trickster", "Mirror", "Liar", "Enigma", "Illusion", "Mirage", "Jester", "Conjurer", "Phantasm", "Deceiver", "Manipulator", "Wit", "Master", "Mistress", "Thief", "Shadow", "Paradox", "Mist", "Doubt", "Reflection"];
 trickery_tenets = ["Embrace the art of deception as a fundamental aspect of existence. Recognize the power of illusion and subterfuge in shaping perception and manipulating reality.", "Cultivate skill in the arts of trickery and manipulation. Hone your ability to deceive and outwit adversaries, using guile and cunning to achieve your goals.", "Embrace trickery and unpredictability as catalysts for change and transformation. Revel in the uncertainty of the unknown, using it to sow confusion and disrupt the status quo.", "Be adaptable and versatile in your approach to challenges. Learn to think on your feet and improvise in the face of adversity, seizing opportunities as they arise.", "Use illusion and trickery as tools for liberation and freedom. Recognize that reality is subjective and mutable, and use the power of illusion to break free from constraints and limitations.", "Embrace unpredictability as a virtue to be cherished. Reject rigidity and predictability, and embrace the fluidity of change and transformation.", "Maintain balance in your relationships and alliances. Recognize that betrayal can be a double-edged sword, and strive to navigate the complexities of loyalty and betrayal with finesse and discretion.", "Acting and performance are divine skills to be honed, and as talents to be recognized. At least once, at some point in your life, you must perform in a publically accessible play.", "Embrace the complexity of morality and ethics. Understand that right and wrong are not always clear-cut and that actions must be evaluated in context.", "Find harmony amidst chaos and unpredictability. Embrace the ebb and flow of change, using trickery to navigate the turbulent currents of existence."];
 trickery_themes = ["Lies", "Pranks", "Drama", "Illusions", "Mirrors", "Jesters", "Stealth", "Mirages", "Surprise", "Betrayal", "Cunning", "Doubt", "Transformation", "Stalking", "Spies", "Thievery", "Masks", "Duality", "Gambling", "Riddles"];
-deatha1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+trickerya1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
 "has a +2 bonus to intelligence (Religion) checks.",
 "gains one additional hit die to their maximum, while attuned.",
 "is uneffected by Difficult terrain.",
 ""]
-deatha2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+trickerya2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
 ""]
-deatha2w = ["the Artifact deals an additional 4 (1d6) Acid damage on hit.",
+trickerya2w = ["the Artifact deals an additional 4 (1d6) Acid damage on hit.",
 ""]
-deatha2a = ["",
+trickerya2a = ["",
 ]
-deatha3 = []
-deatha3w = [""]
-deatha3a = [""]
-deathq2 = [""]
-deathq3 = ["You must d"]
-Domain.create!(name: "Trickery", descriptors: trickery_descriptors, titles: trickery_titles, tenets: trickery_tenets, themes:trickery_themes )
+trickerya3 = []
+trickerya3w = [""]
+trickerya3a = [""]
+trickeryq2 = [""]
+trickeryq3 = [""]
+Domain.create!(name: "Trickery", descriptors: trickery_descriptors, titles: trickery_titles, tenets: trickery_tenets, themes:trickery_themes, ability_one: trickerya1, ability_two: trickerya2, ability_two_weapon: trickerya2w, ability_two_armor: trickerya2a, ability_three: trickerya3,  ability_three_weapon: trickerya3w, ability_three_armor: trickerya3a, quest_two: trickeryq2, quest_three: trickeryq3 )
 puts "Trickery created"
 
 nature_descriptors = ["Forest's", "Green", "Apex", "Nature's", "Earthsong", "Ferocious", "Druidic", "Harmonious", "Wild", "Untamed", "Savage", "Blooming", "Enchanting", "Falling", "Waning", "Creeping", "Stalking", "Soaring", "Capricious", "Sturdy"];
