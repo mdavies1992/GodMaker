@@ -160,21 +160,92 @@ life_descriptors = ["Healing", "Giving", "Helping", "Aiding", "Flourishing", "Me
 life_titles = ["Hand", "Guide", "Savior", "Touch", "Healer", "Salvation", "Caregiver", "Lifegiver", "Reprieve", "Calm", "Vessel", "Spirit", "Start", "Mirth", "Warden", "Saint", "Lifebringer", "Nurturer", "Protector", "Genesis"];
 life_tenets = ["Your job as a healer is never-ending, your mission to seek out those that need your skills.", "Learn of medicine and add to the knowledge of the faithful, so that you may improve your own work and the works of others in time.", "Once you complete treatment of the symptoms of those you heal, seek the truest cure to those ailments where you can, be it in the one healed or the world they come from.", "You must alot time to healing as charitable assistance, wherever possible and practical.", "Observe the medical world an discoveries that are made wherever they may occur, and study the worlds many ailments, rots and diseases. An enemy understood is an enemy that is nearing defeat.","Do not injure unless you know and are ready to provide the cure to that injury.", "Foster new life where possible, and promote the creation and protection of new life in the world.", "Teach others how to heal, and in time you may heal the world", "Treatment of the body is quite obvious, but do not neglect treatment of the mind and spirit also. Communicate and strive for understanding of one another, and do not flee from connection.", "Your body is a temple in itself- treat it well and right, and understand it all the more when it is in need of repair or improvement." ];
 life_themes = ["Healing", "Breath", "Blood", "Medicine", "Disease", "Family", "Doctors", "Injury", "Revival", "Pain", "Celebration", "Compassion", "Alchemy", "Potions", "Food", "Rest", "Bandages", "Sanctuary", "Calm", "Youth"];
-Domain.create!(name: "Life", descriptors: life_descriptors, titles: life_titles, tenets: life_tenets, themes: life_themes )
+lifea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"gains a 1d4 bonus to any Wisdom (Medicine) checks they make.",
+"has advantage on saving throws to resist Poison and Disease.",
+"can cast the Resistance cantrip using the artifact as a spellcasting focus.",
+"can cast the Word of Radiance cantrip using the artifact as a spellcasting focus.",
+"can cast Cure Wounds as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down), after which you must complete a long rest before you can do so again."]
+lifea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"can cast the spell Aura of Vitality using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Beacon of Hope using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"gain a pool of healing, equal to three times your character level. As an action, you may restore missing hit points to a creature you can touch, subtracting from this pool as you wish. Your pool is restored to its maximum value upon completition of a long rest."]
+lifea2w = ["the Artifact deals an additional 4 (1d6) Radiant damage on hit.",
+"can, when you hit with this weapon, send a bolt of healing energy to yourself or an ally within 30ft. of the struck target. The bolt heals a creature for up to 1d8 missing hit points. You may use this ability a number of times equal to your proficiency bonus, regaining any expended uses upon completion of a long rest."]
+lifea2a = ["gains, whilst attuned to this Artifact, an additional 2 maximum hit points per character level they have.",
+"can cast the spell Warding Bond using the artifact as a spellcasting focus without using a spell slot.any When cast in this way, you do not require material components and neither you or your target need to be holding any materials required by the spell normally. Once you have used this ability, you cannot do so again until you complete a long rest."]
+lifea3 = ["can, as a reaction to yourself or an ally you can see within 60ft of you being subject to a successful attack (but before damage is rolled). You or that ally gains resistance to the damage dealt by that attack. You may use this ability a number of times equal to proficiency bonus, regaining any expended uses on completion of a long rest.",
+"can cast the spell Raise Dead using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Mass Cure Wounds using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest."]
+lifea3w = ["can regain missing hit points equal to half the damage dealt by this weapon (rounded down). "]
+lifea3a = ["gain a 20ft. life-giving aura. The attuned user and allies that begin their turn within this aura that have half or less of their maximum hit points regain up to 1d10 missing hit points."]
+lifeq2 = ["You must gather 500gp of reagents and travel to a location rife with plague or sickness to conduct a healing ritual of GODNAME, summoning forth an avatar of that sickness (CR 6), which you must defeat to cleanse things for good.",
+"You must travel to a shrine or temple of GODNAME and speak to the faithful there, such as a cleric or priest. You must drink a concotion and infect yourself with a diesease that will wrack your body with pain and ailment (with effects at your DM's discretion), and suffer that illness for a week, so that you might appreciate your life and the suffering felt by others all the more. Actions to evade this suffeirng and cheat this lesson may be looked at in disdain by the healing deity, and may extend or fail this quest."]
+lifeq3 = ["As of starting this quest, through your own actions (which can be abilities, items, or otherwise) you must heal 1000 total missing hit points to friendly, willing creatures."]
+Domain.create!(name: "Life", descriptors: life_descriptors, titles: life_titles, tenets: life_tenets, themes: life_themes, ability_one: lifea1, ability_two: lifea2, ability_two_weapon: lifea2w, ability_two_armor: lifea2a, ability_three: lifea3,  ability_three_weapon: lifea3w, ability_three_armor: lifea3a, quest_two: lifeq2, quest_three: lifeq3 )
 puts "Life created"
 
 arcana_descriptors = ["Magical", "Mystical", "Enchanting", "Great", "All-knowing", "Mysterious", "Boundless", "Wise", "Otherworldly", "Cosmic", "Ancient", "Powerful", "Cunning", "Learned", "Potent", "Esoteric", "Eldritch", "Enigmatic", "Shifting", "Roiling"];
 arcana_titles = ["Arcane", "Sage", "Diviner", "Seer", "Diviner", "Master", "Weaver", "Mage", "Scrollmaster", "Teacher", "Entity", "Guardian", "Binder", "Custodian", "Sigil", "Runecarver", "Genesis", "Lord", "Lady", "Magus", "Warden"];
 arcana_tenets = ["Embrace the pursuit of arcane wisdom and understanding. Encourage the study of magic in all its forms.", "Safeguard magical knowledge from those who would seek to disrupt or abuse it.", "Stand against those who would seek to suppress or extinguish magic from the world. Protect magical knowledge and artifacts from destruction or misuse.", "Encourage innovation and experimentation within the bounds of your gods ethical guidelines, if any. Inspire creativity and ingenuity in the development of new spells and magical techniques.", "Every month, you must sacrifice a scroll of magical power you have found or written, via ritual or donation to the faith's order.", "Acknowledge and respect the origins of magic, whether it be through divine providence, natural forces, or cosmic energies. Treat the source of magic with reverence and gratitude.", "It is your divinely appointed task to create at least one new spell or piece of magical craft, or to rediscover such a wonder.", "Safeguard the secrets of magic from those who would misuse or exploit them for nefarious purposes. Exercise discretion in sharing arcane knowledge and only reveal it to those deemed worthy and trustworthy.", "Cultivate a spirit of curiosity and exploration, delving into the mysteries of magic with an open mind and a thirst for discovery. Remain ever-curious and unafraid to explore the unknown.", "Work towards uniting practitioners of magic, regardless of their traditions or beliefs. Foster cooperation and understanding among magical communities to strengthen the bonds of arcane knowledge."];
 arcana_themes = ["Abjuration", "Illusion", "Necromancy", "Conjuration", "Evocation", "Divination", "Transmutation", "Enchantment", "Wizards", "Rituals", "Spellbooks", "Wands", "Orbs", "Crystals", "Portals", "Elementals", "Abberations", "Runes", "Sorcery", "Pacts"]
-Domain.create!(name: "Arcana", descriptors: arcana_descriptors, titles: arcana_titles, tenets: arcana_tenets, themes: arcana_themes )
+arcanaa1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"gains a 1d4 bonus to any Intelligence (Arcana) checks they make.",
+"can cast the spell Detect Magic using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the Mage Hand cantrip using the artifact as a spellcasting focus.",
+"can cast the Prestigitation cantrip using the artifact as a spellcasting focus.",
+"can cast the spell Magic Missile using the artifact as a spellcasting focus without using a spell slot. You may do this a number of times equal to half your proficiency bonus (rounded down) before you must complete a long rest before you can do so again."]
+arcanaa2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"can, as a reaction to an ally within 60ft. you casting a spell, bolster it with divine arcane magic. If that spell requires an attack roll, it is done with advantage. If it requires a saving throw, the Save DC is increased by 2. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Slow using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest."]
+arcanaa2w = ["the Artifact deals an additional 4 (1d6) Force damage on hit.",
+"can cast the spell Dispel Magic using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest."]
+arcanaa2a = ["has advantage on saving throws against spells and magical effects",
+"can cast the spell Shield using the artifact as a spellcasting focus without using a spell slot. You may do this a number of times equal to your proficiency bonus before you must complete a long rest before you can do so again."]
+arcanaa3 = ["can, once per day, choose and immediately cast any spell of 3rd level or lower that has a casting time of one action. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Bigby's Hand using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Summon Draconic Spirit using the artifact as a spellcasting focus without using a spell slot, and not requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."]
+arcanaa3w = ["can cast the spell Counterspell using the artifact as a spellcasting focus without using a spell slot. You may do this a number of times equal to half your proficiency bonus (rounded down) before you must complete a long rest before you can do so again. When you cast Counterspell in this way, if the spell is stopped the caster of that spell takes 2d10 force damage."]
+arcanaa3a = ["gains resistance to damage dealt by spells."]
+arcanaq2 = ["You must find and sacrifice scrolls of magic that have spells equalling a total of spell level 10 to GODNAME at one of their hallowed grounds, such as a temple or shrine. (Cantrips count as spell level 0.5)",
+"You must travel to a location suffused wild with magical energies, and conduct an arcane ritual to GODNAME that summons a elemental embodiment of those energies (CR 6). Once defeated, the elemental will be absorbed into the Artifact, bolstering its power."]
+arcanaq3 = ["You must find and defeat a powerful spellcaster, (Min CR 13, such as an evil Archmage or Lich) and prove the arcane might of GODNAME on their behalf."]
+Domain.create!(name: "Arcana", descriptors: arcana_descriptors, titles: arcana_titles, tenets: arcana_tenets, themes: arcana_themes, ability_one: arcanaa1, ability_two: arcanaa2, ability_two_weapon: arcanaa2w, ability_two_armor: arcanaa2a, ability_three: arcanaa3,  ability_three_weapon: arcanaa3w, ability_three_armor: arcanaa3a, quest_two: arcanaq2, quest_three: arcanaq3  )
 puts "Arcana created"
 
 war_descriptors = ["Supreme", "Bloodthirsty", "Undefeated", "Iron", "Mighty", "Valiant", "Indomitable", "Unyielding", "Relentless", "Proud", "Towering", "Triumphant", "Skilled", "Wrathful", "Deadly", "Screaming", "Striking", "Barbaric", "Unstoppable", "Esteemed"];
 war_titles = ["Warlord", "Fury", "General", "Vanquisher", "Marshal", "Warrior", "Lord", "Fury", "Sentinel", "Conquerer", "Avatar", "Master", "Colossus", "Hellion", "Blade", "Bannerlord", "Breaker", "Juggernaut", "Force", "Champion"];
 war_tenets = ["Uphold honor and integrity on the battlefield. Show respect for worthy opponents and face them will all your own skill and power, for to not do so is disrespect most shameful.", "Embrace discipline and training to hone your skills as a warrior and gain strength wherever you can, whenever you can. Strive for excellence in both mind and body.", "Forge bonds of camaraderie and loyalty with your fellow warriors. Together, stand as an indomitable force against adversity.", "Pay tribute to those who have fallen in battle. Honor their memory and ensure that their sacrifices are never forgotten through rituals or keepsakes.", "Fight not for personal glory alone, but for a greater cause or ideal. Dedicate your strength to the defense of justice, freedom, or the protection of your people.", "Pursue victory with unwavering determination. Spare no effort in achieving triumph on the battlefield.", "Be flexible and adaptable in the face of adversity. Embrace change and innovation to overcome challenges on the battlefield when needs arise in order to secure victory.", "Honor the spoils of victory, for that which has been taken through battle must be respected, and to act against those that have earned that right, or steal their spoils, is shameful.", "Maintence of your weapons and armour, and those of your allies, is a divine duty. A well-sharpened blade is a blessed blade.", "A quick prayer must be made before each battle you are involved in, if possible, or after each battle if not."];
 war_themes = ["Strategy", "Maps", "Negotation", "Military", "Honor", "Might", "Training", "Combat", "Anger", "Defense", "Victory", "Defeat", "Surprise", "Logistics", "Morale", "Chanting", "Bloodlust", "Barbarians", "Knights", "Archers"];
-Domain.create!(name: "War", descriptors: war_descriptors, titles: war_titles, tenets: war_tenets, themes: war_themes)
+wara1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"gains a bonus to their initiative rolls equal to their proficiency bonus.",
+"can cast the spell Spiritual Weapon using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the Sword Burst cantrip using the artifact as a spellcasting focus.",
+"can cast the Blade Ward cantrip using the artifact as a spellcasting focus.",
+"can cast the spell Shield of Faith using the artifact as a spellcasting focus without using a spell slot. You may do this a number of times equal to half your proficiency bonus (rounded down) before you must complete a long rest before you can do so again."]
+wara2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"can cast the spell Haste using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Crusader's Mantle using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"has a number of d6s equal to your proficiency bonus. Whenever you or an ally within 30ft of you fails an attack roll or saving throw, you may expend one of these die and roll it, adding to that roll a bonus equal to the result, potentially turning it into a success. You regain any expended die upon completing a long rest."]
+wara2w = ["the Artifact deals an additional 4 (1d6) Force damage on hit.",
+"can, when attacking with this weapon, treat a 19 when rolling to hit as a critical hit. If you already possess a similar ability or feature, increase your critical hit range by 1 instead."]
+wara2a = ["gains, whilst attuned to this Artifact, an additional 2 maximum hit points per character level they have.",
+"can, when taking damage from an attack or effect of an enemy creature, immediately deal 2d6 radiant damage to that creature. You can use this ability a number of times equal to half your proficiency bonus (rounded down), regaining any expended uses upon completion of a long rest."]
+wara3 = ["can, whenever you roll for initiative and are not surprised, let out a divine war-cry before battle begins. When you do so, you and your allies within 120ft. of you immediately gain 1d12+4 tempoary hit points.",
+"can cast the spell Conjure Volley using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"once per day, can give your allies within 30ft 2d12 healing and inspiration"]
+wara3w = ["may roll with advantage when attacking with this weapon."]
+wara3a = ["can, whenever you take damage, afterwards gain resistance to that damage type until the end of your next turn."]
+warq2 = ["You must gather reagents of 500gp and travel to a sacred site of GODNAME, such as their temple or a blessed battlefield. There, you will conduct a ritual that will summon forth a phantasmal duplicate of yourself, whom you must defeat in a one on one duel to the death. Outside intervention or assistance is prohibited, and may earn you the scorn of the deity of war.",
+"As of starting this quest, you must deal a combined total of 300 damage to noteworthy hostile creatures you face in your travels. Creatures that pose no threat, or trying to cheat this quest, may earn you scorn from GODNAME, and either not be counted towards this total or even outright fail you in this quest for cowardice."]
+warq3 = ["You must directly contribute to the deaths of scores of creatures, whose CR totals 100 combined. This count begins once you are eligible for this quest (and does not count kills beforehand) and GODNAME may choose to not count kills as they see fit, should it displease them."]
+Domain.create!(name: "War", descriptors: war_descriptors, titles: war_titles, tenets: war_tenets, themes: war_themes, ability_one: wara1, ability_two: wara2, ability_two_weapon: wara2w, ability_two_armor: wara2a, ability_three: wara3,  ability_three_weapon: wara3w, ability_three_armor: wara3a, quest_two: warq2, quest_three: warq3)
 puts "War created"
 
 tempest_descriptors = ["Sparking", "Blustering", "Thunderous", "Wrathful", "Ocean's", "Sea's", "Crackling", "Roiling", "Crushing", "Cylconic", "Menacing", "Fierce", "Unyielding", "Elemental", "Formidable", "Turbulent", "Imposing", "Mercurial", "Tranquil", "Booming"];
@@ -246,19 +317,27 @@ trickery_themes = ["Lies", "Pranks", "Drama", "Illusions", "Mirrors", "Jesters",
 trickerya1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
 "has a +2 bonus to intelligence (Religion) checks.",
 "gains one additional hit die to their maximum, while attuned.",
-"is uneffected by Difficult terrain.",
-""]
+"can cast the spell Invisibility without using a spell slot through this Artifact. Once cast in this way, it cannot do so again until the next Dawn.",
+"has advantage on saving throws against spells and effects that would charm them.",
+"can cast the Minor Illusion cantrip using the artifact as a spellcasting focus.",
+"can cast the Vicious Mockery cantrip using the artifact as a spellcasting focus.",
+"can cast the spell Disguise Self using the artifact as a spellcasting focus without using a spell slot. You may do this a number of times equal to half your proficiency bonus (rounded down) before you must complete a long rest before you can do so again."]
 trickerya2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
-""]
-trickerya2w = ["the Artifact deals an additional 4 (1d6) Acid damage on hit.",
-""]
-trickerya2a = ["",
-]
-trickerya3 = []
-trickerya3w = [""]
-trickerya3a = [""]
-trickeryq2 = [""]
-trickeryq3 = [""]
+"can cast the spell Major Image without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the next Dawn.",
+"can cast the spell Antagonize without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the next Dawn. ",
+"can cast the spell Misty Step using the artifact as a spellcasting focus without using a spell slot. You may do this a number of times equal to half your proficiency bonus (rounded down) before you must complete a long rest before you can do so again."]
+trickerya2w = ["the Artifact deals an additional 4 (1d6) Psychic damage on hit.",
+"can, whenever you hit a creature, reduce its AC by 1. This effect can stack up to five times, and if you don't hit that creature during one of your turns any AC reduction on it ends."]
+trickerya2a = ["gains Resistance to Psychic damage whilst attuned to this Artifact.",
+"can cast the spell Blink without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the next Dawn. "]
+trickerya3 = ["gains Truesight 60ft. and other creatures that have Truesight are unable to see their true form or other details than what they wish to present. Additionally, their mind and thoughts cannot be read unless they wish it to be.",
+"can cast the spell Dominate Person without using a spell slot through this Artifact. Once cast in this way, it cannot do so again until the next Dawn.",
+"can, as an action, split yourself into three phantasmal clones that cannot attack or take reactions, and have 1 hit point each, and has an AC equal to your current AC. Each clone immediately takes a turn of their own, and has the benefits of the dash and disengage actions. At the start of your next turn, you may choose one clone out of however many remain, and reappear in that space. Any remaining clones disappear, and if only one clone remains at any time before this, you immediately reappear in that remaining clones space. Once you have used this ability, you cannot do so again until you complete a long rest."]
+trickerya3w = ["may, upon hitting a creature with this artifact, choose to make that hit a critical hit instead. Once you have used this ability, you may not do so again until you complete a long rest."]
+trickerya3a = ["can, when they fail a saving throw, choose to succeed instead. They may do this a number of times equal to half their proficiency bonus (rounded down), regaining any expended uses upon completion of a Long rest."]
+trickeryq2 = ["You must gather reagents of 500gp and travel to a sacred site of GODNAME, such as their temple or a blessed battlefield. There, you will conduct a ritual that will summon forth a phantasmal duplicate of yourself, whom you must defeat in a one on one duel to the death. Outside intervention or assistance is prohibited (though you may use any tactics or underhand strategies of your own design), and may earn you the scorn of the deity of trickery should they notice.",
+"You must travel to at least 3 locations that are relevant or blessed by GODNAME. At each, there is a challenge or puzzle you must complete."]
+trickeryq3 = ["You must steal an item worth a small fortune (min. 5,000GP) and present it to a shrine or temple of GODNAME as an offering, who may decline it if your tale of trickery and subtlety as to how you acquired it does not impress them."]
 Domain.create!(name: "Trickery", descriptors: trickery_descriptors, titles: trickery_titles, tenets: trickery_tenets, themes:trickery_themes, ability_one: trickerya1, ability_two: trickerya2, ability_two_weapon: trickerya2w, ability_two_armor: trickerya2a, ability_three: trickerya3,  ability_three_weapon: trickerya3w, ability_three_armor: trickerya3a, quest_two: trickeryq2, quest_three: trickeryq3 )
 puts "Trickery created"
 
