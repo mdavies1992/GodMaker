@@ -397,11 +397,81 @@ lq3 = ["You must find and defeat a creature of powerful darkness (at least CR 13
 Domain.create!(name: "Light", descriptors: light_descriptors, titles: light_titles, tenets: light_tenets, themes: light_themes, ability_one: la1, ability_two: la2, ability_two_weapon: la2w, ability_two_armor: la2a, ability_three: la3,  ability_three_weapon: la3w, ability_three_armor: la3a, quest_two: lq2, quest_three: lq3 )
 puts "Light created"
 
+twilight_descriptors = [];
+twilight_titles = [];
+twilight_tenets = [];
+twilight_themes = [];
+twilighta1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+""]
+twilighta2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose."]
+twilighta2w = []
+twilighta2a = []
+twilighta3 = []
+twilighta3w = []
+twilighta3a = []
+twilightq2 = []
+twilightq3 = []
+Domain.create!(name: "Twilight", descriptors: twilight_descriptors, titles: twilight_titles, tenets: twilight_tenets, themes: twilight_themes, ability_one: twilighta1, ability_two: twilighta2, ability_two_weapon: twilighta2w, ability_two_armor: twilighta2a, ability_three: twilighta3,  ability_three_weapon: twilighta3w, ability_three_armor: twilighta3a, quest_two: twilightq2, quest_three: twilightq3  )
+puts "Twilight created"
+
+grave_descriptors = [];
+grave_titles = [];
+grave_tenets = [];
+grave_themes = [];
+gravea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+""]
+gravea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose."]
+gravea2w = []
+gravea2a = []
+gravea3 = []
+gravea3w = []
+gravea3a = []
+graveq2 = []
+graveq3 = []
+Domain.create!(name: "Grave", descriptors: grave_descriptors, titles: grave_titles, tenets: grave_tenets, themes: grave_themes, ability_one: gravea1, ability_two: gravea2, ability_two_weapon: gravea2w, ability_two_armor: gravea2a, ability_three: gravea3,  ability_three_weapon: gravea3w, ability_three_armor: gravea3a, quest_two: graveq2, quest_three: graveq3  )
+puts "Grave created"
+
+forge_descriptors = [];
+forge_titles = [];
+forge_tenets = [];
+forge_themes = [];
+forgea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+""]
+forgea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose."]
+forgea2w = []
+forgea2a = []
+forgea3 = []
+forgea3w = []
+forgea3a = []
+forgeq2 = []
+forgeq3 = []
+Domain.create!(name: "Forge", descriptors: forge_descriptors, titles: forge_titles, tenets: forge_tenets, themes: forge_themes, ability_one: forgea1, ability_two: forgea2, ability_two_weapon: forgea2w, ability_two_armor: forgea2a, ability_three: forgea3,  ability_three_weapon: forgea3w, ability_three_armor: forgea3a, quest_two: forgeq2, quest_three: forgeq3  )
+puts "Forge created"
+
 # _descriptors = [];
-# _titles = [];
-# _tenets = [];
-# Domain.create!(name: "", descriptors: _descriptors, titles: _titles, tenets: _tenets )
-# puts " created"
+# abc_titles = [];
+# abc_tenets = [];
+# abc_themes = [];
+# abca1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+# "has a +2 bonus to intelligence (Religion) checks.",
+# "gains one additional hit die to their maximum, while attuned.",
+# ""]
+# abca2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose."]
+# abca2w = []
+# abca2a = []
+# abca3 = []
+# abca3w = []
+# abca3a = []
+# abcq2 = []
+# abcq3 = []
+# # Domain.create!(name: "Xyz", descriptors: abc_descriptors, titles: abc_titles, tenets: abc_tenets, themes: abc_themes, ability_one: abca1, ability_two: abca2, ability_two_weapon: abca2w, ability_two_armor: abca2a, ability_three: abca3,  ability_three_weapon: abca3w, ability_three_armor: abca3a, quest_two: abcq2, quest_three: abcq3  )
+# puts "Xyz created"
 
 puts "Making global details"
 global = General.new
