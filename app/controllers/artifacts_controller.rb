@@ -75,4 +75,12 @@ class ArtifactsController < ApplicationController
 
   end
 
+  def destroy
+    @artifact = Artifact.find(params[:id])
+    @god = @artifact.god
+    @artifact.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to god_path(@god), status: :see_other
+  end
+
 end

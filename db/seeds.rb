@@ -454,7 +454,7 @@ forgeq3 = []
 Domain.create!(name: "Forge", descriptors: forge_descriptors, titles: forge_titles, tenets: forge_tenets, themes: forge_themes, ability_one: forgea1, ability_two: forgea2, ability_two_weapon: forgea2w, ability_two_armor: forgea2a, ability_three: forgea3,  ability_three_weapon: forgea3w, ability_three_armor: forgea3a, quest_two: forgeq2, quest_three: forgeq3  )
 puts "Forge created"
 
-# _descriptors = [];
+# abc_descriptors = [];
 # abc_titles = [];
 # abc_tenets = [];
 # abc_themes = [];

@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :artifacts, only: [:new, :create]
   end
 
-  resources :artifacts, only: [:show]
+  resources :artifacts, only: [:show, :destroy]
 end
