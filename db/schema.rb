@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_18_072500) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_01_145159) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_072500) do
     t.text "ability_one"
     t.text "ability_two"
     t.text "ability_three"
+    t.boolean "random_type"
     t.index ["god_id"], name: "index_artifacts_on_god_id"
     t.index ["type_id"], name: "index_artifacts_on_type_id"
   end

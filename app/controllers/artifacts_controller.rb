@@ -24,6 +24,12 @@ class ArtifactsController < ApplicationController
 
     @artifact.type = @type
 
+    # if params[:artifact][:random_type] == "0"
+    #   @artifact.type =  Type.all.sample
+    # else
+    #   @artifact.type = type.find(params[:god][:alignment])
+    # end
+
     # Determine Name
     @artifact.name = @type.titles.sample.gsub("DESC", descriptors.sample)
 
