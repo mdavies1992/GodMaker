@@ -435,22 +435,43 @@ graveq3 = []
 Domain.create!(name: "Grave", descriptors: grave_descriptors, titles: grave_titles, tenets: grave_tenets, themes: grave_themes, ability_one: gravea1, ability_two: gravea2, ability_two_weapon: gravea2w, ability_two_armor: gravea2a, ability_three: gravea3,  ability_three_weapon: gravea3w, ability_three_armor: gravea3a, quest_two: graveq2, quest_three: graveq3  )
 puts "Grave created"
 
-forge_descriptors = [];
-forge_titles = [];
-forge_tenets = [];
-forge_themes = [];
+forge_descriptors = ["Ingenious", "Skilled", "Molten", "Steel", "Metal", "Wooden", "Crystal", "Elegant", "Excellent", "Subtle", "Patient", "Knowing", "Adept", "Meticulous", "Arcane", "Precise", "Wondrous", "Golden", "Inspiring", "Brilliant"];
+forge_titles = ["Craftsman", "Forge", "Anvil", "Ember", "Smith", "Maker", "Shaper", "Hammer", "Hand", "Master", "Mistress", "Weaver", "Binder", "Architect", "Enchanter", "Eye", "Guide", "Teacher", "Carver"];
+forge_tenets = ["All works, big or small, are to be respected for their craft and the efforts of their crafter.",
+"You are tasked to donate whatever spare materials you can to other aspiring crafters, and offer guidance when possible to those that need it.",
+"Whenever to create something new, you must conduct a small prayer.",
+"Embrace new ideas and techniques. Innovation is the heart of progress, and creativity is the spark that ignites it.",
+"Value physical and mental strength. The forge represents endurance and resilience; setbacks are merely challenges to be overcome.",
+"Treat all tools and materials with reverence. They are the means through which creation is made possible and should be handled with care and respect.",
+"Understand that mastery and creation take time. Patience and perseverance are virtues that lead to true craftsmanship.",
+"Embrace the transformative power of fire. Just as fire refines and purifies metal, so too should adversity refine and strengthen the spirit.",
+"Aim to leave a lasting legacy through your creations. Your works should stand the test of time and inspire (be it positive or negative) future generations of craftsmen and creators.",
+"Take pride in your work and ensure it brings honor to you and your god. Every piece is a testament to your dedication and devotion."];
+forge_themes = ["Construction", "Destruction", "Metal", "Blacksmiths", "Armour", "Weaponry", "Enchantment", "Alchemy", "Potions", "Weaving", "Tailors", "Architecture", "Buildings", "Civilization", "Gems", "Jewelry", "Woodworking", "Cooking", "Castles", "Golems"];
 forgea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
 "has a +2 bonus to intelligence (Religion) checks.",
 "gains one additional hit die to their maximum, while attuned.",
-""]
-forgea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose."]
-forgea2w = []
-forgea2a = []
-forgea3 = []
-forgea3w = []
-forgea3a = []
-forgeq2 = []
-forgeq3 = []
+"can cast the Heat Metal spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+"can cast Shield of Faith as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down), regaining any expended uses when you complete a long rest.",
+"can cast the Mending cantrip using the artifact as a spellcasting focus.",
+"can cast the Resistance cantrip using the artifact as a spellcasting focus.",
+"can cast Identify as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down), regaining any expended uses when you complete a long rest."]
+forgea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"has, whilst attuned to this item, an additional attunement slot. As well as this, you ignore any class or racial prerequisites for attuning to items.",
+"can cast the Gylph of Warding spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+"can cast the Summon Construct spell without using a spell slot through this Artifact, without need of any components.  Once cast in this way, it cannot do so again until the user completes a Long Rest."]
+forgea2w = ["gains Resistance to Fire damage whilst attuned to this Artifact.",
+"can, when taking damage from an attack or effect of an enemy creature, immediately deal 2d6 radiant damage to that creature. You can use this ability a number of times equal to half your proficiency bonus (rounded down), regaining any expended uses upon completion of a long rest."]
+forgea2a = ["the Artifact deals an additional 4 (1d6) Fire damage on hit.",
+"can, upon hitting a target with this artifact, cause it to be branded until the end of your next turn. Attacks against a branded creature have advantage, and the brand ends early when the creature is struck by an attack."]
+forgea3 = ["you can, as an action, fortify your party with divine force or summoned metal. Choose up to 4 creatures- for the next minute, they gain a bonus to their Armour class from this blessing equal to your proficiency bonus. Once you have used this ability, you cannot use it again until you complete a long rest.",
+"can reduce the costs of creating magic items, or scrolls, by half. Additionally, you become proficient in all tools. If you are already proficient, you gain expertise instead, and if you already have expertise, you have permanent advantage with that tool instead.",
+"can cast the Creation spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest."]
+forgea3w = ["can, as a bonus action, turn your Artifact into a true divinely-blessed masterpiece for the next minute, transforming in a blazing light. Whilst transformed, it becomes a +6 weapon."]
+forgea3a = ["can, when they fail a saving throw, choose to succeed instead. They may do this a number of times equal to half their proficiency bonus (rounded down), regaining any expended uses upon completion of a Long rest."]
+forgeq2 = ["You must construct a divine hammer using a recipe (which can be found at any libraries or shrines of GODNAME) using 200gp worth of reagents. Then, you must crash the hammer upon a blessed anvil, to summon forth a great construct (CR 6) whom you must defeat to prove yourself.",
+"You must find (or create) 5 unique or otherwise rare recipes, schematics, blueprints or similar in the world and bring them to a holy site of GODNAME, such as a temple or shrine for donation. "]
+forgeq3 = ["You must construct, through whatever means and skills you see fit, a magical item, object or structure worth at least 10,000GP. Though you may work with others, and source materials wherever you see fit, know that your creation will be judged by GODNAME, who may look down upon some methods that cheat this quests intent and can reject your creation if they see fit."]
 Domain.create!(name: "Forge", descriptors: forge_descriptors, titles: forge_titles, tenets: forge_tenets, themes: forge_themes, ability_one: forgea1, ability_two: forgea2, ability_two_weapon: forgea2w, ability_two_armor: forgea2a, ability_three: forgea3,  ability_three_weapon: forgea3w, ability_three_armor: forgea3a, quest_two: forgeq2, quest_three: forgeq3  )
 puts "Forge created"
 
