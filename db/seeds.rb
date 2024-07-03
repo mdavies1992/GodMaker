@@ -239,7 +239,7 @@ wara2a = ["gains, whilst attuned to this Artifact, an additional 2 maximum hit p
 "can, when taking damage from an attack or effect of an enemy creature, immediately deal 2d6 radiant damage to that creature. You can use this ability a number of times equal to half your proficiency bonus (rounded down), regaining any expended uses upon completion of a long rest."]
 wara3 = ["can, whenever you roll for initiative and are not surprised, let out a divine war-cry before battle begins. When you do so, you and your allies within 120ft. of you immediately gain 1d12+4 tempoary hit points.",
 "can cast the spell Conjure Volley using the artifact as a spellcasting focus without using a spell slot. Once you have used this ability, you cannot do so again until you complete a long rest.",
-"once per day, can give your allies within 30ft 2d12 healing and inspiration"]
+"can, as an action, heal yourself and allies within 30ft of you for up to 2d12 missing hit points, as well as granting each healed character inspiration if they don't already have it. Once you use this ability, you cannot use it again until you complete a long rest."]
 wara3w = ["may roll with advantage when attacking with this weapon."]
 wara3a = ["can, whenever you take damage, afterwards gain resistance to that damage type until the end of your next turn."]
 warq2 = ["You must gather reagents of 500gp and travel to a sacred site of GODNAME, such as their temple or a blessed battlefield. There, you will conduct a ritual that will summon forth a phantasmal duplicate of yourself, whom you must defeat in a one on one duel to the death. Outside intervention or assistance is prohibited, and may earn you the scorn of the deity of war.",
@@ -397,22 +397,42 @@ lq3 = ["You must find and defeat a creature of powerful darkness (at least CR 13
 Domain.create!(name: "Light", descriptors: light_descriptors, titles: light_titles, tenets: light_tenets, themes: light_themes, ability_one: la1, ability_two: la2, ability_two_weapon: la2w, ability_two_armor: la2a, ability_three: la3,  ability_three_weapon: la3w, ability_three_armor: la3a, quest_two: lq2, quest_three: lq3 )
 puts "Light created"
 
-twilight_descriptors = [];
-twilight_titles = [];
-twilight_tenets = [];
-twilight_themes = [];
+twilight_descriptors = ["Crescent", "Cosmic", "Dark", "Calm", "Quiet", "Mysterious", "Cold", "Fearful", "Comforting", "Obscuring", "Hiding", "Hidden", "Silver", "Shrouded", "Nocturnal", "Whispering", "Ethereal", "Ghostly", "Tranquil"];
+twilight_titles = ["Moon", "Star", "Night", "Sky", "Shadow", "Master", "Mistress", "Shade", "Eclipse", "Dusk", "Veil", "Gloom", "Phantasm", "Specter", "Herald", "Nightfall", "Luminary", "Guide", "Watcher", "Wind"];
+twilight_tenets = ["Understand and respect the moments of change and transformation. The twilight is a time of transition between day and night; honor the shifts in life and nature.",
+"Celebrate the beauty and mystery of both dawn and dusk. These times symbolize beginnings and endings, and both are to be revered.",
+"Appreciate the unknown and the unseen. Twilight is a time of shadows and subtle light; value what is hidden and mysterious.",
+"Travelling by night is a daunting task, and should be respected as such. That said, there is no bravery without fear, and to assist those facing the night is a righteous act.",
+"Recognize and respect the dual nature of existence. Light and dark, joy and sorrow, life and death—each has its place and importance.",
+"The night is most joyous when peaceful- it is your duty to strike down the beasts and monsters that would make it not so.",
+"Understand that transitions take time. Just as the sky slowly changes during twilight, practice patience in your endeavors and growth.",
+"Respect the mysteries of the universe. Twilight is a time of shadows and half-light; embrace the unknown with curiosity and reverence.",
+"Honor the wisdom of those who have come before. Twilight represents the end of the day, symbolizing the wisdom that comes with age.",
+"Use the twilight hours for introspection and contemplation. Reflect on the day that has passed and prepare for the night ahead."];
+twilight_themes = ["Moon", "Stars", "Night", "Darkness", "Shadow", "Sleep", "Dreams", "Silence", "Quiet", "Nightmares", "Bats", "Owls", "Sunsets", "Constellations", "Fear", "Paranoia", "Apathy", "Calm", "Cold", "Clarity"];
 twilighta1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
 "has a +2 bonus to intelligence (Religion) checks.",
 "gains one additional hit die to their maximum, while attuned.",
-""]
-twilighta2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose."]
-twilighta2w = []
-twilighta2a = []
-twilighta3 = []
-twilighta3w = []
-twilighta3a = []
-twilightq2 = []
-twilightq3 = []
+"can cast False Life as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down), regaining any expended uses when you complete a long rest.",
+"can cast the Moonbeam spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+"gains 30ft of Darkvision. If the attuned character already has Darkvision, its range increases by 30ft.",
+"gains immunity to the Frightened condition, and your skin or eyes become more pale, like soft moonlight.",
+"can cast the Sleep spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest. As well as this, you have immunity to spells and effects that would compel you to sleep."]
+twilighta2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"can, as an action, blanket yourself or any ally within 60ft. of you that you can see in a twilight veil until the end of your next turn. Whilst veiled, a creature is invisible, can move through enemy spaces (but cannot end inside of an enemy space) and gains a 10ft bonus to their speed. This veil ends early if the creature attacks, casts a spell or performs any action that would affect another creature. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the Fear spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+"can cast the Summon Shadowspawn spell without using a spell slot through this Artifact, without need of any components.  Once cast in this way, it cannot do so again until the user completes a Long Rest."]
+twilighta2w = ["the Artifact deals an additional 4 (1d6) Necrotic damage on hit.",
+"can, whenever you strike with your Artifact, you can choose to invoke a burst of twilight shadow and step through it, teleporting to an unoccupied space you can see within 30ft. of you. You may do this only once per round, and only a number of times equal to half of your proficiency bonus (rounded down). You regain any expended uses of this ability when you complete a long rest."]
+twilighta2a = ["gains Resistance to Necrotic damage whilst attuned to this Artifact.",
+"can cast the Shadow of Moil spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest."]
+twilighta3 = ["can, as an action, heal yourself and allies within 30ft of you for up to 2d12 missing hit points, as well as granting each healed character inspiration if they don't already have it. Once you use this ability, you cannot use it again until you complete a long rest.",
+"can, as an action and in a location that is outside, summon forth a spectral eclipsing moon high above the battlefield for the next minute. When summoned, you can choose if the moon provides bright or dim light to the surrounding 1-mile area, and it makes a spell attack (using this Artifacts spell attack modifier) against an enemy that you can see, dealing 4d8 radiant damage on hit. Once you have used this ability, you may not do so again until you complete a long rest.",
+"can cast the Negative Energy Flood spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest."]
+twilighta3w = ["As an action, you can envelop a target creature you can see within 100ft of you in shadow. They may choose to make a Strength saving throw against your Artifact DC to fight off these shadows. On failure, if they choose to not make this saving throw, they are transported to a pocket dimension of darkness for up to 3 rounds where they are blinded and restrained (returning in the same space or closest unoccupied space at the end of the artifact users turns), or until the user of the Artifact wills them back as a bonus action. On a successful saving throw, the creature is not transported and takes 3d12 necrotic damage. Once you have used this ability, you may not do so again until you complete a long rest."]
+twilighta3a = ["can extend a 20ft. aura from themselves that gives the user and allies within the auras radius darkvision 60ft, the ability to see in magical darkness, as well as the benefits of half cover whilst in darkness."]
+twilightq2 = ["To show faith in GODNAME's blessing, you must travel through the wilderness in the dead of night (as of starting this quest) a total of 40 hours. You are permitted to have travelling companions.", "You must travel to a sacred site of GODNAME and, using 250GP worth of reagents, perform a rite of shadow to summon forth a spectral foe (CR6) who you must defeat, absorbing its essence into the Artifact."]
+twilightq3 = ["You must find and defeat a creature of powerful darkness (at least CR 13, such as a Vampire), and force upon them humility in the face of the divine shadow of GODNAME."]
 Domain.create!(name: "Twilight", descriptors: twilight_descriptors, titles: twilight_titles, tenets: twilight_tenets, themes: twilight_themes, ability_one: twilighta1, ability_two: twilighta2, ability_two_weapon: twilighta2w, ability_two_armor: twilighta2a, ability_three: twilighta3,  ability_three_weapon: twilighta3w, ability_three_armor: twilighta3a, quest_two: twilightq2, quest_three: twilightq3  )
 puts "Twilight created"
 
