@@ -436,22 +436,43 @@ twilightq3 = ["You must find and defeat a creature of powerful darkness (at leas
 Domain.create!(name: "Twilight", descriptors: twilight_descriptors, titles: twilight_titles, tenets: twilight_tenets, themes: twilight_themes, ability_one: twilighta1, ability_two: twilighta2, ability_two_weapon: twilighta2w, ability_two_armor: twilighta2a, ability_three: twilighta3,  ability_three_weapon: twilighta3w, ability_three_armor: twilighta3a, quest_two: twilightq2, quest_three: twilightq3  )
 puts "Twilight created"
 
-grave_descriptors = [];
-grave_titles = [];
-grave_tenets = [];
-grave_themes = [];
+grave_descriptors = ["Sullen", "Solemn", "Pensive", "Quiet", "Whispering", "Ghostly", "Kind", "Listening", "Calm", "Vengeful", "Cold", "Stern", "Deathly", "Ancient", "Ghoulish", "Uncaring", "Still", "Stalwart", "Frozen", "Silent"];
+grave_titles = ["Gravelord", "Judge", "Skull", "Tomblord", "Cryptkeeper", "Keeper", "Guide", "Shepherd", "Steward", "Guardian", "Watcher", "Speaker", "Reaper", "Specter", "Arbiter", "Teacher", "Corpse", "Archivist", "Death", "Gloom"];
+grave_tenets = ["Graveyards are sacred places, to be defended and kept immaculate as much as possible.",
+"You must conduct funeral rites whenever possible and not inconvenient, for both allies and enemies.",
+"Each night, you are tasked to light a candle, incense or similar and conduct a small prayer or ritual to speak with the departed.",
+"You are forbidden from striking creatures in mourning, and must leave them be at the very least.",
+"Understand that death is not an end but a transition. Embrace the finite nature of existence and find meaning in the fleeting moments of life.",
+"Safeguard the souls of the departed and guide them to their rightful place in the afterlife. Ensure that no soul is lost or stranded in the limbo between worlds, or if needed left stranded and without use.",
+"Preserve the memories of those who have passed on, ensuring that their legacies endure beyond their physical lives. ",
+"Stonework and masonry of tombstones and crypts is a divine skill to hone as best you can. You are tasked to make your own tombstone or equivilent marker for the event of your passing, and must update it semi-regularly with your wisdom for others.",
+"Undead are a blight upon the living, and a mockery of the balance between life and death. Through whatever means you see fit, you must annihilate any rogue undead you find whenver you can.",
+"Listen out for, and be present for, the lamentations of both the living and the dead. Guide them both where they are supposed to be, with whatever wisdoms you have."];
+grave_themes = ["Funerals", "Records", "Ancestors", "Memory", "Ghosts", "Skeletons", "Zombies", "Undead", "Corpses", "Loss", "Grief", "Acceptance", "Duty", "Rememberance", "Fear", "Afterlife", "Rituals", "Crypts", "Gravestones", "Tombs"];
 gravea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
 "has a +2 bonus to intelligence (Religion) checks.",
 "gains one additional hit die to their maximum, while attuned.",
-""]
-gravea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose."]
-gravea2w = []
-gravea2a = []
-gravea3 = []
-gravea3w = []
-gravea3a = []
-graveq2 = []
-graveq3 = []
+"can cast Bane as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down). The spell attack modifier for this artifacts spells and abilities is +5, and any Saving DCs are 13.",
+"gains immunity to the Frightened condition, and your skin becomes more sallow and corpse-like.",
+"can cast the Spare the Dying cantrip using the artifact as a spellcasting focus.",
+"can cast the Toll the Dead cantrip using the artifact as a spellcasting focus.",
+"can sense the presence and location of corpses within 30ft. of you, whilst attuned. Undead creatures can also understand your speech (but may not be able to reply, but if they can you can understand them.)"]
+gravea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"can cast the Revivify spell without using a spell slot through this Artifact, without need of any components.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+"can cast the Summon Undead spell without using a spell slot through this Artifact, without need of any components.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+"can cast the spell Spirit Shroud using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."]
+gravea2w = ["the Artifact deals an additional 4 (1d6) Necrotic damage on hit.",
+"can, when you hit with this weapon, send a bolt of healing energy to yourself or an ally within 30ft. of the struck target. The bolt heals a creature for up to 1d8 missing hit points. You may use this ability a number of times equal to your proficiency bonus, regaining any expended uses upon completion of a long rest."]
+gravea2a = ["gains Resistance to Necrotic damage whilst attuned to this Artifact.",
+"can cast the spell Death Ward using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."]
+gravea3 = ["When reduced to 0 hit points, you may choose to have your soul rise from your body. Your soul is connected to your body and occupies the same space it does at all times, and cannot be targeted or effected by anything (though your body still can, as per normal rules). For the next minute, you regain at least one missing hit point, or you are killed outright, your unleashed soul can launch a ghostly blast at creatures within 120ft. of you can see. These blasts are spell attacks using your Artifacts modifier, and deal 2d10 necrotic damage. Once you have used this ability, you may not use it again until you complete a long rest.",
+"can, as an action, target a creature you can see within 120ft. of you and have them hear the call of their own grave. They must succeed on a Wisdom Saving throw against this Artifacts Save DC; on failure, they cannot benefit from any immunities or resistances they have for the next minute. At the end of their turns, they may repeat this saving throw to end the effect early.Once you have used this ability, you may not do so again until you complete a long rest.",
+"can cast the spell Raise Dead using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."]
+gravea3w = ["can, as a reaction to slaying a creature with your artifact via a spell or ability from your artifact, seal that creatures soul within it. Whilst a creatures soul is sealed within the artifact, it cannot be resurrected, and your Artifact can hold up to a number of souls equal to your proficiency bonus. The attuned user of the Artifact can release a soul from their artifact to give themselves a burst of energy, granting them advantage on a roll they would make."]
+gravea3a = ["can cast the Antilife Shell spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest."]
+graveq2 = ["You must gather 250gp of reagents and travel to a sacred site of the depearted of GODNAME, such as a blessed graveyard or shrine. There, you must conduct a ritual to commune with the spirits to understand their wisdom and, if necessary, fulfill their requests from beyond the grave. With the spirits satisfied and giving their blessing, your Artifact will be infused with further strength.",
+"You must directly contribute to the cleansing of the unclean in this world, whose CR totals 30 combined. For the purposes of calculating CR for this total, Undead contribute double their CR to this total. This count begins once you are eligible for this quest (and does not count kills beforehand) and GODNAME may choose to not count kills as they see fit, should it displease them."]
+graveq3 = ["You must travel to the location of a disturbed grave of a mighty undead creature (CR 13 or higher) and show it the path and might of GODNAME by defeating it."]
 Domain.create!(name: "Grave", descriptors: grave_descriptors, titles: grave_titles, tenets: grave_tenets, themes: grave_themes, ability_one: gravea1, ability_two: gravea2, ability_two_weapon: gravea2w, ability_two_armor: gravea2a, ability_three: gravea3,  ability_three_weapon: gravea3w, ability_three_armor: gravea3a, quest_two: graveq2, quest_three: graveq3  )
 puts "Grave created"
 

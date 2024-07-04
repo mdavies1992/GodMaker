@@ -1,12 +1,14 @@
 <div class="devise-card" data-controller="artifact">
-  <h1>New Artifact for <%= @god.name %></h1>
+  <h1 class="d-flex justify-content-center">New Artifact for <%= @god.name %></h1>
   <%= simple_form_for [@god, @artifact] do |f| %>
-    <span class="">
+    <div class="d-flex justify-content-center">
       <%= f.input :random_type, as: :boolean, label: "Choose a type? (Leave unchecked to let fate decide!)", input_html: { data: {action: 'change->artifact#typecheck'} }%>
-      <div data-artifact-target="type" class="d-none">
-        <%= f.input :type, collection: Artifact::TYPE, label: "What is your Artifact's Type?", prompt: "Select a Type" %>
-      </div>
-      <input type="submit" name="commit" value="Create Artifact" data-disable-with="Create Artifact" class="btn-create">
-    </span>
+    </div>
+    <div data-artifact-target="type" class="d-none">
+      <%= f.input :type, collection: Artifact::TYPE, label: "What is your Artifact's Type?", prompt: "Select a Type" %>
+    </div>
+    <div class="d-flex justify-content-center">
+      <input type="submit" name="commit" value="Create Artifact" data-disable-with="Create Artifact" class="btn-create ">
+    </div>
   <% end %>
 </div>
