@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :gods, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
-      get :remove_photo
+      delete :remove_photo
     end
     resources :artifacts, only: [:new, :create]
   end

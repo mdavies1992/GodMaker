@@ -17,14 +17,9 @@ class ArtifactsController < ApplicationController
     @artifact = Artifact.new
     @global = General.first
     @god = God.find(params[:god_id])
-
-    # @type = Type.all.sample
     descriptors =  @god.alignment.descriptors + @god.alignment.x_alignment.descriptors + @god.alignment.y_alignment.descriptors  + @god.domain.descriptors
 
     # Determine Item Type
-
-    # @artifact.type = @type
-
     if params[:artifact][:random_type] == "0"
       @artifact.type =  Type.all.sample
     else
