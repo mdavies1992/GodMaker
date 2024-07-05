@@ -17,21 +17,22 @@ class ArtifactsController < ApplicationController
     @artifact = Artifact.new
     @global = General.first
     @god = God.find(params[:god_id])
-    @type = Type.all.sample
+
+    # @type = Type.all.sample
     descriptors =  @god.alignment.descriptors + @god.alignment.x_alignment.descriptors + @god.alignment.y_alignment.descriptors  + @god.domain.descriptors
 
     # Determine Item Type
 
-    @artifact.type = @type
+    # @artifact.type = @type
 
-    # if params[:artifact][:random_type] == "0"
-    #   @artifact.type =  Type.all.sample
-    # else
-    #   @artifact.type = type.find(params[:god][:alignment])
-    # end
+    if params[:artifact][:random_type] == "0"
+      @artifact.type =  Type.all.sample
+    else
+      @artifact.type = Type.find(params[:artifact][:type])
+    end
 
     # Determine Name
-    @artifact.name = @type.titles.sample.gsub("DESC", descriptors.sample)
+    @artifact.name = @artifact.type.titles.sample.gsub("DESC", descriptors.sample)
 
     # Determine Attunement Quest
     @artifact.quest_one = @global.minorquests.sample
