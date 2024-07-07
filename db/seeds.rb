@@ -465,7 +465,7 @@ gravea2w = ["the Artifact deals an additional 4 (1d6) Necrotic damage on hit.",
 "can, when you hit with this weapon, send a bolt of healing energy to yourself or an ally within 30ft. of the struck target. The bolt heals a creature for up to 1d8 missing hit points. You may use this ability a number of times equal to your proficiency bonus, regaining any expended uses upon completion of a long rest."]
 gravea2a = ["gains Resistance to Necrotic damage whilst attuned to this Artifact.",
 "can cast the spell Death Ward using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."]
-gravea3 = ["When reduced to 0 hit points, you may choose to have your soul rise from your body. Your soul is connected to your body and occupies the same space it does at all times, and cannot be targeted or effected by anything (though your body still can, as per normal rules). For the next minute, you regain at least one missing hit point, or you are killed outright, your unleashed soul can launch a ghostly blast at creatures within 120ft. of you can see. These blasts are spell attacks using your Artifacts modifier, and deal 2d10 necrotic damage. Once you have used this ability, you may not use it again until you complete a long rest.",
+gravea3 = ["When reduced to 0 hit points, you may choose to have your soul rise from your body. Your soul is connected to your body and occupies the same space it does at all times, and cannot be targeted or effected by anything (though your body still can, as per normal rules). For the next minute, you regain at least one missing hit point, or you are killed outright, your unleashed soul can launch a ghostly blast at creatures within 120ft. of you can see. These blasts are ranged spell attacks using your Artifacts modifier, and deal 2d10 necrotic damage. Once you have used this ability, you may not use it again until you complete a long rest.",
 "can, as an action, target a creature you can see within 120ft. of you and have them hear the call of their own grave. They must succeed on a Wisdom Saving throw against this Artifacts Save DC; on failure, they cannot benefit from any immunities or resistances they have for the next minute. At the end of their turns, they may repeat this saving throw to end the effect early.Once you have used this ability, you may not do so again until you complete a long rest.",
 "can cast the spell Raise Dead using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."]
 gravea3w = ["can, as a reaction to slaying a creature with your artifact via a spell or ability from your artifact, seal that creatures soul within it. Whilst a creatures soul is sealed within the artifact, it cannot be resurrected, and your Artifact can hold up to a number of souls equal to your proficiency bonus. The attuned user of the Artifact can release a soul from their artifact to give themselves a burst of energy, granting them advantage on a roll they would make."]
@@ -631,6 +631,70 @@ warhammer.category = "Weapon"
 warhammer.titles = ["The DESC Warhammer", "The DESC Breaker", "DESC-crusher", "The Fist of DESC"]
 warhammer.save
 puts "warhammer created"
+
+puts "Making whip"
+whip = Type.new
+whip.name = "Whip"
+whip.category = "Weapon"
+whip.titles = ["The DESC whip", "DESC-Lasher", "DESC-Striker", "DESC Reacher"]
+whip.save
+puts "whip created"
+
+puts "Making longsword"
+longsword = Type.new
+longsword.name = "Longsword"
+longsword.category = "Weapon"
+longsword.titles = ["The DESC Longsword", "The DESC Blade", "Sword of DESC Might", "DESC Edge"]
+longsword.save
+puts "longsword created"
+
+puts "Making scimitar"
+scimitar = Type.new
+scimitar.name = "Scimitar"
+scimitar.category = "Weapon"
+scimitar.titles = ["The DESC Scimitar", "The DESC Blade", "Sword of DESC Skill", "DESC Edge"]
+scimitar.save
+puts "scimitar created"
+
+puts "Making sling"
+sling = Type.new
+sling.name = "Sling"
+sling.category = "Weapon"
+sling.titles = ["The DESC sling", "DESC-Shot", "Sling of DESC Skill", "DESC-Slinger"]
+sling.save
+puts "sling created"
+
+puts "Making lighthammer"
+lighthammer = Type.new
+lighthammer.name = "Light Hammer"
+lighthammer.category = "Weapon"
+lighthammer.titles = ["The DESC Hammer", "DESC-Basher", "Light Hammer of DESC Skill", "The DESC Hand"]
+lighthammer.save
+puts "lighthammer created"
+
+puts "Making club"
+club = Type.new
+club.name = "Club"
+club.category = "Weapon"
+club.titles = ["The DESC Club", "DESC-Basher", "Club of DESC Strength", "DESC-Breaker"]
+club.save
+puts "club created"
+
+puts "Making maul"
+maul = Type.new
+maul.name = "Maul"
+maul.category = "Weapon"
+maul.titles = ["The DESC Maul", "DESC-Basher", "Maul of DESC Strength", "DESC-Breaker"]
+maul.save
+puts "maul created"
+
+puts "Making greatclub"
+greatclub = Type.new
+greatclub.name = "Greatclub"
+greatclub.category = "Weapon"
+greatclub.titles = ["The DESC Greatclub", "DESC-Basher", "Greatclub of DESC Might", "DESC-Breaker"]
+greatclub.save
+puts "greatclub created"
 
 puts "--Making Armour"
 puts "Making Breastplate"
