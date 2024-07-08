@@ -516,6 +516,119 @@ forgeq3 = ["You must construct, through whatever means and skills you see fit, a
 Domain.create!(name: "Forge", descriptors: forge_descriptors, titles: forge_titles, tenets: forge_tenets, themes: forge_themes, ability_one: forgea1, ability_two: forgea2, ability_two_weapon: forgea2w, ability_two_armor: forgea2a, ability_three: forgea3,  ability_three_weapon: forgea3w, ability_three_armor: forgea3a, quest_two: forgeq2, quest_three: forgeq3  )
 puts "Forge created"
 
+knowledge_descriptors = [];
+knowledge_titles = [];
+knowledge_tenets = [];
+knowledge_themes = [];
+knowledgea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"",
+"",
+"",
+"",
+""];
+knowledgea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"",
+"",
+""];
+knowledgea2w = ["gains Resistance to ? damage whilst attuned to this Artifact.",
+""];
+knowledgea2a = ["the Artifact deals an additional 4 (1d6) ? damage on hit.",
+""];
+knowledgea3 = [];
+knowledgea3w = [];
+knowledgea3a = [];
+knowledgeq2 = [];
+knowledgeq3 = [];
+Domain.create!(name: "Knowledge", descriptors: knowledge_descriptors, titles: knowledge_titles, tenets: knowledge_tenets, themes: knowledge_themes, ability_one: knowledgea1, ability_two: knowledgea2, ability_two_weapon: knowledgea2w, ability_two_armor: knowledgea2a, ability_three: knowledgea3,  ability_three_weapon: knowledgea3w, ability_three_armor: knowledgea3a, quest_two: knowledgeq2, quest_three: knowledgeq3  )
+puts "Knowledge created"
+
+peace_descriptors = [];
+peace_titles = [];
+peace_tenets = [];
+peace_themes = [];
+peacea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"",
+"",
+"",
+"",
+""];
+peacea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"",
+"",
+""];
+peacea2w = ["gains Resistance to ? damage whilst attuned to this Artifact.",
+""];
+peacea2a = ["the Artifact deals an additional 4 (1d6) ? damage on hit.",
+""];
+peacea3 = [];
+peacea3w = [];
+peacea3a = [];
+peaceq2 = [];
+peaceq3 = [];
+Domain.create!(name: "Peace", descriptors: peace_descriptors, titles: peace_titles, tenets: peace_tenets, themes: peace_themes, ability_one: peacea1, ability_two: peacea2, ability_two_weapon: peacea2w, ability_two_armor: peacea2a, ability_three: peacea3,  ability_three_weapon: peacea3w, ability_three_armor: peacea3a, quest_two: peaceq2, quest_three: peaceq3  )
+puts "Peace created"
+
+order_descriptors = [];
+order_titles = [];
+order_tenets = [];
+order_themes = [];
+ordera1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+"has a +2 bonus to intelligence (Religion) checks.",
+"gains one additional hit die to their maximum, while attuned.",
+"",
+"",
+"",
+"",
+""];
+ordera2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+"",
+"",
+""];
+ordera2w = ["gains Resistance to ? damage whilst attuned to this Artifact.",
+""];
+ordera2a = ["the Artifact deals an additional 4 (1d6) ? damage on hit.",
+""];
+ordera3 = [];
+ordera3w = [];
+ordera3a = [];
+orderq2 = [];
+orderq3 = [];
+Domain.create!(name: "Order", descriptors: order_descriptors, titles: order_titles, tenets: order_tenets, themes: order_themes, ability_one: ordera1, ability_two: ordera2, ability_two_weapon: ordera2w, ability_two_armor: ordera2a, ability_three: ordera3,  ability_three_weapon: ordera3w, ability_three_armor: ordera3a, quest_two: orderq2, quest_three: orderq3  )
+puts "Order created"
+
+## BOILERPLATE FOR DOMAINS
+# abc_descriptors = [];
+# abc_titles = [];
+# abc_tenets = [];
+# abc_themes = [];
+# abca1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
+# "has a +2 bonus to intelligence (Religion) checks.",
+# "gains one additional hit die to their maximum, while attuned.",
+# "",
+# "",
+# "",
+# "",
+# ""];
+# abca2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
+# "",
+# "",
+# ""];
+# abca2w = ["gains Resistance to ? damage whilst attuned to this Artifact.",
+# ""];
+# abca2a = ["the Artifact deals an additional 4 (1d6) ? damage on hit.",
+# ""];
+# abca3 = [];
+# abca3w = [];
+# abca3a = [];
+# abcq2 = [];
+# abcq3 = [];
+# Domain.create!(name: "Xyz", descriptors: abc_descriptors, titles: abc_titles, tenets: abc_tenets, themes: abc_themes, ability_one: abca1, ability_two: abca2, ability_two_weapon: abca2w, ability_two_armor: abca2a, ability_three: abca3,  ability_three_weapon: abca3w, ability_three_armor: abca3a, quest_two: abcq2, quest_three: abcq3  )
+# puts "Xyz created"
+
 # abc_descriptors = [];
 # abc_titles = [];
 # abc_tenets = [];
