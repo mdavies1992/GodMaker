@@ -516,31 +516,43 @@ forgeq3 = ["You must construct, through whatever means and skills you see fit, a
 Domain.create!(name: "Forge", descriptors: forge_descriptors, titles: forge_titles, tenets: forge_tenets, themes: forge_themes, ability_one: forgea1, ability_two: forgea2, ability_two_weapon: forgea2w, ability_two_armor: forgea2a, ability_three: forgea3,  ability_three_weapon: forgea3w, ability_three_armor: forgea3a, quest_two: forgeq2, quest_three: forgeq3  )
 puts "Forge created"
 
-knowledge_descriptors = [];
-knowledge_titles = [];
-knowledge_tenets = [];
-knowledge_themes = [];
+knowledge_descriptors = ["Learned", "Knowing", "Arcane", "Wise", "All-seeing", "Truthful", "Enlightened", "Timeless", "Stern", "Enigmatic", "Historic", "Ancient", "Eternal", "Mysterious", "Great", "Mystical", "Insightful", "Mindful", "Grand", "Revered"];
+knowledge_titles = ["Magi", "Sage", "Teacher", "Custodian", "Librarian", "Scrollkeeper", "Keeper", "Writer", "Storyteller", "Speaker", "Weaver", "Watcher", "Listener", "Mind", "Steward", "Scholar", "Archivist", "Scribe", "Seer", "Guide"];
+knowledge_tenets = ["Seek knowledge and wisdom in all things, valuing learning as a lifelong journey.",
+"Uphold the truth in all matters, and strive to uncover it wherever it lies, no matter what (or who) hides it from the world.",
+"Distribute knowledge freely and ensure it is accessible to all who seek it.",
+"Encourage curiosity and critical thinking, questioning assumptions and seeking deeper understanding.",
+"Protect and preserve historical records and ancient texts, valuing the lessons they contain.",
+"Honor and support all who pursue knowledge, regardless of their background or status.",
+"Knowledge is indeed power, and you must collect as much as you can to prove that.",
+"Libraries and places of knowledge are sacred, and no discretions, disturbances or damage is permitted within them.",
+"You must, as some point in your life, create a piece of knowledge such as a tome, scroll or script to pass on to future generations.",
+"Safeguard dark and forbidden knowledge, allowing only the worthy to access it."];
+knowledge_themes = ["Ancestors", "Wisdom", "Spellbooks", "Investigation", "Curiousity", "Quills", "History", "Questions", "Answers", "Secrets", "Couriers", "Language", "Books", "Libraries", "Scrolls", "Understanding", "Stories", "Legends", "Myths", "Songs"];
 knowledgea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
 "has a +2 bonus to intelligence (Religion) checks.",
 "gains one additional hit die to their maximum, while attuned.",
-"",
-"",
-"",
-"",
-""];
+"can cast Bless through the Artifact a number of times equal to your proficiency bonus (rounded down), regaining any expended uses upon completition of a long rest.",
+"can gain proficiency in a chosen skill whilst attuned to this artifact. You may choose a different skill when you complete a long rest, gaining proficiency in that skill and losing proficiency in your previous choice.",
+"can cast the Mind Spike spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+"can cast Identify through the Artifact a number of times equal to your proficiency bonus (rounded down), regaining any expended uses upon completition of a long rest.",
+"can, whilst attuned, have proficiency in all languages."];
 knowledgea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
-"",
-"",
-""];
-knowledgea2w = ["gains Resistance to ? damage whilst attuned to this Artifact.",
-""];
-knowledgea2a = ["the Artifact deals an additional 4 (1d6) ? damage on hit.",
-""];
-knowledgea3 = [];
-knowledgea3w = [];
-knowledgea3a = [];
-knowledgeq2 = [];
-knowledgeq3 = [];
+"can cast Speak with Dead through the Artifact a number of times equal to your proficiency bonus (rounded down), regaining any expended uses upon completition of a long rest.",
+"can cast the Intellect Fortress spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+"can, as a bonus action, analyze an enemy. You immediately learn of any resistances, immunities, vulnerabilities and the creature type of the target. You can use this ability a number of times equal to half your proficiency bonus (rounded down), regaining any expended uses upon completition of a long rest."];
+knowledgea2w = ["gains Resistance to Psychic damage whilst attuned to this Artifact.",
+"can, when attacking with this weapon, treat a 19 when rolling to hit as a critical hit. If you already possess a similar ability or feature, increase your critical hit range by 1 instead."];
+knowledgea2a = ["the Artifact deals an additional 4 (1d6) Psychic damage on hit.",
+"can, as an action, grant yourself resistance to a chosen damage type that is not bludgeoning, piercing or slashing for the next minute. Once you have used this ability, you cannot do so again until you complete a long rest."];
+knowledgea3 = ["can, upon completition of a long rest,, roll two d20s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these foretelling rolls. You must choose to do so before the roll, and you can replace a roll in this way only once per turn. Each foretelling roll can be used only once. When you finish a long rest, you lose any unused foretelling rolls.",
+  "can cast the Synaptic Static spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+  "can cast the Legend Lore spell without using a spell slot through this Artifact.  Once cast in this way, it cannot do so again until the user completes a Long Rest."];
+knowledgea3w = ["can, with each attack against a creature, gain a +2 bonus on attack rolls with this artifact against that creature for the next minute. This timer resets with later attacks, and the bonus can be stacked to a maximum of +10. This effect ends if you attack, use an ability, or cast a spell on a different target."];
+knowledgea3a = ["can, as an action, call upon a spirit of the past to empower yourself or an ally within 60ft. of you that you can see for the next minute. Whilst empowered, this spirit can be called upon guidance 3 times for the following effects: Gives you advantage on an attack roll, Gives you advantage on a saving throw, Increases the saving throw of a spell or ability you use by 2, Gives you resistance to the damage of incoming attack or spell, A Death saving throw you make is treated as if you had rolled a 20. Once you have used any of these abilities in any combination 3 times, the effect ends. Once you have used this ability, you may not do so again until you complete a long rest."];
+knowledgeq2 = ["You must gather regaents worth 250gp and conduct an arcane ritual to summon a spirit of the past (CR 6, Undead or Elemental). You must defeat them to understand the lessons of GODNAME, and doing so will unlock more strength in your Artifact.",
+"You are tasked with making a tome of knowledge for GODNAME's judgment. As of starting this Quest, when you finish a long rest you can make a skill check from your choice of the following skills: Arcana, Nature, Religion, History, Medicine and (provided you have paper and writing tools) inscribe knowledge to a growing tome. Each check, note the total and add it to any previous roll's totals; once the Tome has a combined total of 100 from these skill checks, it is complete and can be taken to a Shrine, Temple or place of faith for the deity and submitted for judgement. If found worthy, your Artifact is blessed with further power as the quest completes. "];
+knowledgeq3 = ["You must defeat a creature that hordes a secret or item of knowledge such as a tome (Min. CR 13, such as an evil Archmage or Dragon) and bring that piece of knowledge to a temple of GODNAME."];
 Domain.create!(name: "Knowledge", descriptors: knowledge_descriptors, titles: knowledge_titles, tenets: knowledge_tenets, themes: knowledge_themes, ability_one: knowledgea1, ability_two: knowledgea2, ability_two_weapon: knowledgea2w, ability_two_armor: knowledgea2a, ability_three: knowledgea3,  ability_three_weapon: knowledgea3w, ability_three_armor: knowledgea3a, quest_two: knowledgeq2, quest_three: knowledgeq3  )
 puts "Knowledge created"
 
