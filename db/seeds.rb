@@ -556,31 +556,43 @@ knowledgeq3 = ["You must defeat a creature that hordes a secret or item of knowl
 Domain.create!(name: "Knowledge", descriptors: knowledge_descriptors, titles: knowledge_titles, tenets: knowledge_tenets, themes: knowledge_themes, ability_one: knowledgea1, ability_two: knowledgea2, ability_two_weapon: knowledgea2w, ability_two_armor: knowledgea2a, ability_three: knowledgea3,  ability_three_weapon: knowledgea3w, ability_three_armor: knowledgea3a, quest_two: knowledgeq2, quest_three: knowledgeq3  )
 puts "Knowledge created"
 
-peace_descriptors = [];
-peace_titles = [];
-peace_tenets = [];
-peace_themes = [];
+peace_descriptors = ["Peaceful", "Merciful", "Giving", "Patient", "Kind", "Compassionate", "Understanding", "Guiding", "Helping", "Aiding", "Serene", "Forgiving", "Eternal", "Gentle", "Tranquil", "Soothing", "Benevolent", "Silent", "Calm", "Kind"];
+peace_titles = ["Guardian", "Protector", "Speaker", "Guide", "Voice", "Seraph", "Emissary", "Pacifier", "Lord", "Lady", "Negotiator", "Harmony", "Keeper", "Peacekeeper", "Unity", "Sovereign", "Solace", "Watcher", "Beacon", "Mercy"];
+peace_tenets = ["Advocate for resolving conflicts without violence. Encourage peaceful solutions and reconciliation.",
+"Show empathy and kindness to all beings. Act with a caring heart and understanding of others' suffering.",
+"Practice forgiveness and let go of grudges. Understand that everyone makes mistakes and deserves a chance for redemption.",
+"Strive for fairness and justice in all actions. Ensure that everyone's rights are respected and protected.",
+"Respect and accept the differences in others, whether they are cultural, religious, or personal.",
+"Encourage a balanced and harmonious life, where individuals live in peace with themselves, others, and the environment.",
+"Uphold the truth in all aspects of life. Be honest and transparent in thoughts, words, and actions.",
+"Foster a sense of gratitude for the blessings and experiences in life. Appreciate the present moment and express thankfulness regularly.",
+"Understand and conquer your own anger, and strive to not let emotions- positive or negative- overwhelm your judgment and path.",
+"Times of peace are to be celebrated wherever possible, and it is your divine duty to either enjoy or better yet contribute to local festivals and joyous occasions."];
+peace_themes = ["Bravery", "Listening", "Speechcraft", "Community", "Civilization", "Sacrifice", "Martyrdom", "Diplomacy", "Recovery", "Agriculture", "Negotiation", "Patience", "Understanding", "Language", "Economics", "Trade", "Education", "Family", "Recovery", "Healing"];
 peacea1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
 "has a +2 bonus to intelligence (Religion) checks.",
 "gains one additional hit die to their maximum, while attuned.",
-"",
-"",
-"",
-"",
-""];
+"can cast Sancatuary spell through the Artifact a number of times equal to your proficiency bonus (rounded down), regaining any expended uses when you complete a long rest.",
+"can cast the spell Calm Emotions using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can, whilst attuned, have proficiency in all languages.",
+"can cast the Friends cantrip using the artifact as a spellcasting focus.",
+"can cast the Word of Radiance cantrip using the artifact as a spellcasting focus."];
 peacea2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
-"",
-"",
-""];
-peacea2w = ["gains Resistance to ? damage whilst attuned to this Artifact.",
-""];
-peacea2a = ["the Artifact deals an additional 4 (1d6) ? damage on hit.",
-""];
-peacea3 = [];
-peacea3w = [];
-peacea3a = [];
-peaceq2 = [];
-peaceq3 = [];
+"can use the calming, peaceful energy of your Artifact to improve rest and recovery. During Short rests, any hit die you or your allies resting nearby are treated as if they had rolled their maximum value.",
+"can cast the spell Aura of Vitality using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Mass Healing Word using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."];
+peacea2w = ["gains Resistance to Radiant damage whilst attuned to this Artifact.",
+"can, when you hit with this weapon, send a bolt of healing energy to yourself or an ally within 30ft. of the struck target. The bolt heals a creature for up to 1d8 missing hit points. You may use this ability a number of times equal to your proficiency bonus, regaining any expended uses upon completion of a long rest."];
+peacea2a = ["the Artifact deals an additional 4 (1d6) Radiant damage on hit.",
+"can cast the spell Warding Bond using the artifact as a spellcasting focus without using a spell slot.any When cast in this way, you do not require material components and neither you or your target need to be holding any materials required by the spell normally. Once you have used this ability, you cannot do so again until you complete a long rest."];
+peacea3 = ["can, as an action, declare a state of peace. When you use this ability, note the space that is a radius of 100ft. from you; until the end of your next turn, any damage to creatures and objects is reduced to 0 and no creatures can target other creatures with spells and abilities unless the target creature is willing. Once you use this ability, you may not do so again until you complete a long rest.",
+  "can cast the Summon Celestial spell without using a spell slot through this Artifact, without need of any components.  Once cast in this way, it cannot do so again until the user completes a Long Rest.",
+  "can cast the spell Dominate Person using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."];
+peacea3w = ["can gain advantage on attacks with this Artifact against creatures that have damaged one of your allies since the end of your last turn, and attacks against such creatures deal an additional 1d8 Radiant damage."];
+peacea3a = ["has access to a magical ward created by the Artifact. This ward has a pool of hit points equal to ten times the users proficiency bonus, and can be directed to the user or an ally they can see as a reaction to the target taking damage. When used this way, any damage dealt is first dealt to the Ward, with any remaining damage transfering to the target creature if the ward is reduced to 0 hit points. The Ward regains all missing hit points upon completition of a long rest."];
+peaceq2 = ["You must travel to a location that the Artifact, upon starting this quest, will show you. At this location, you will recieve an item or set of items, given by the faithful of GODNAME, which you must transport to another location in turn that is at war or in conflict with the first. These items are sure to promote understanding, diplomacy, trade and of course peace between these two places, and embodying that will grant the user more strength from this Artifact.",
+"You must, upon starting this quest, commit time to self-reflection and meditation as per GODNAME's teachings. Upon finishing a long rest, you may make a Wisdom saving throw and note the result, adding it to any previous results as a growing total. Once this total is 100 or more, you complete this quest. Disrupting factors and conflicting emotions may give you disadvantage on this meditation (but conversely, peaceful and tranquil spaces may give you advantage), so take care to give yourself proper space and time to do so."];
+peaceq3 = ["You must find and defeat a creature of unrest, chaos and war (Min. CR 13, such as a Powerful Warlord or Dragon) that opposes the peace the GODNAME promotes. 'Defeating' this enemy may be via combat, or perhaps even through other methods that the character see's fit (but may be under scrutiny from the deity of peace)."];
 Domain.create!(name: "Peace", descriptors: peace_descriptors, titles: peace_titles, tenets: peace_tenets, themes: peace_themes, ability_one: peacea1, ability_two: peacea2, ability_two_weapon: peacea2w, ability_two_armor: peacea2a, ability_three: peacea3,  ability_three_weapon: peacea3w, ability_three_armor: peacea3a, quest_two: peaceq2, quest_three: peaceq3  )
 puts "Peace created"
 
