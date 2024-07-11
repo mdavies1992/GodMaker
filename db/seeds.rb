@@ -596,31 +596,43 @@ peaceq3 = ["You must find and defeat a creature of unrest, chaos and war (Min. C
 Domain.create!(name: "Peace", descriptors: peace_descriptors, titles: peace_titles, tenets: peace_tenets, themes: peace_themes, ability_one: peacea1, ability_two: peacea2, ability_two_weapon: peacea2w, ability_two_armor: peacea2a, ability_three: peacea3,  ability_three_weapon: peacea3w, ability_three_armor: peacea3a, quest_two: peaceq2, quest_three: peaceq3  )
 puts "Peace created"
 
-order_descriptors = [];
-order_titles = [];
-order_tenets = [];
-order_themes = [];
+order_descriptors = ["Orderly", "Waiting", "Cold", "Stone", "Immovable", "Static", "Still", "Unmoving", "Ascended", "Sturdy", "Harmonious", "Respectful", "Mechanical", "Steel", "Cosmic", "Balanced", "Guiding", "Wise", "Patient", "Stern"];
+order_titles = ["Overseer", "Custodian", "Magistrate", "Sage", "Conductor", "Arbiter", "Guardian", "Keeper", "Regulator", "Enforcer", "Jailer", "Architect", "Dictator", "King", "Queen", "Warden", "Ruler", "Lawmaker", "Court", "Judge"];
+order_tenets = ["Strive to maintain equilibrium in all aspects of life, ensuring that chaos and disorder do not prevail.",
+  "Embrace discipline and structure in daily routines, valuing organization and methodical approaches to tasks.",
+  "Recognize and fulfill one's duties and responsibilities with diligence and integrity.",
+  "Honor and respect the established hierarchies and authorities, understanding their role in maintaining order.",
+  "Value truth and honesty in all dealings, rejecting deceit and falsehood.",
+  "You are divinely tasked to never willingly tell a lie, no matter what the circumstances may be.",
+  "Strive to be predictable and reliable in actions and promises, providing a stable foundation for others.",
+  "Exercise wisdom and prudence in decision-making, considering the long-term consequences of actions.",
+  "Believe that true growth and progress come through maintaining order and structure, not through chaos or disruption.",
+  "Acknowledge and respect the natural laws and cycles of the world, understanding their role in maintaining cosmic order."];
+order_themes = ["Judgment", "Trials", "Imprisonment", "Executions", "Harmony", "Civilization", "Respect", "Ancestry", "Cosmic", "Stars", "Gravity", "Authority", "Balance", "Time", "Gears", "Machinery", "Routine", "Pattern", "Law", "Courts"];
 ordera1 = ["can cast the Guidance cantrip using the artifact as a spellcasting focus.",
 "has a +2 bonus to intelligence (Religion) checks.",
 "gains one additional hit die to their maximum, while attuned.",
-"",
-"",
-"",
-"",
-""];
+"can, when you may a skill check or saving throw, choose to instead of rolling a d20 for that skill check make the result an automatic 10 (this must be decided before you roll). Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast Healing Word as a first level spell through the Artifact a number of times equal to your proficiency bonus (rounded down), regaining any expended uses when you complete a long rest. When you cast Healing word in this way, the spells healing calculation uses your proficiency bonus instead of any ability modifier.",
+"can cast the spell Zone of Truth using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the Resistance cantrip using the artifact as a spellcasting focus.",
+"can cast the Word of Radiance cantrip using the artifact as a spellcasting focus."];
 ordera2 = ["the user gains proficiency in an additional saving throw of their choice whilst attuned to the Artifact, chosen upon gaining this ability. Additionally, during a long rest they may change this selection to a different saving throw, if they so choose.",
-"",
-"",
-""];
-ordera2w = ["gains Resistance to ? damage whilst attuned to this Artifact.",
-""];
-ordera2a = ["the Artifact deals an additional 4 (1d6) ? damage on hit.",
-""];
-ordera3 = [];
-ordera3w = [];
-ordera3a = [];
-orderq2 = [];
-orderq3 = [];
+"can cast the spell Otiluke's Resilient Sphere using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can cast the spell Slow using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest.",
+"can, so long as you are attuned, emit a 30ft. aura that gives you and creatures within that aura immunity to the surprised condition and a bonus to initiative rolls equal to your proficiency bonus. "];
+ordera2w = ["gains Resistance to Psychic damage whilst attuned to this Artifact.",
+"can, upon hitting a target with this artifact, cause it to be branded until the end of your next turn. Attacks against a branded creature have advantage, and the brand ends early when the creature is struck by an attack."];
+ordera2a = ["the Artifact deals an additional 4 (1d6) Psychic damage on hit.",
+"can treat any critical hits against them as normal hits instead."];
+ordera3 = ["can cast the spell Hold Monster using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest.",
+  "can, whilst attuned to this Artifact, gain 60ft. Truesight.",
+  "can cast the spell Wall of Force using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."];
+ordera3w = ["can cast the spell Banishing Smite using the artifact as a spellcasting focus without using a spell slot, or requiring any material components. Once you have used this ability, you cannot do so again until you complete a long rest."];
+ordera3a = ["can, as a reaction, delay a source of incoming damage to yourself or an ally witihn 60ft. of you that you can see. The damage result is recorded, and occurs instead at the end of your next turn. When taking this damage, it has the same damage types but the creature recieving that damage has resistance to it. You may use this ability a number of times equal to half your proficiency bonus (rounded down), regaining any expended uses on completition of a long rest."];
+orderq2 = ["To understand the domain of order that GODNAME holds sway over, you must, as of starting this quest, conduct a ritual prayer that takes 10 minutes of undisturbed effort using 25gp of reagents (such as candles, incense or offerings), once per day, for 10 days in a row. Breaking this chain of days will cause the counter to be reset, and you must begin again. ",
+"You must, upon starting this quest, commit time to self-reflection and meditation as per GODNAME's teachings. Upon finishing a long rest, you may make a Wisdom saving throw and note the result, adding it to any previous results as a growing total. Once this total is 100 or more, you complete this quest. Disrupting factors and conflicting emotions may give you disadvantage on this meditation (but conversely, peaceful and tranquil spaces may give you advantage), so take care to give yourself proper space and time to do so."];
+orderq3 = ["You must find and defeat a creature of unbound chaos that opposes the order of GODNAME, Min. CR 13 such as a Greater Slaad or Demon."];
 Domain.create!(name: "Order", descriptors: order_descriptors, titles: order_titles, tenets: order_tenets, themes: order_themes, ability_one: ordera1, ability_two: ordera2, ability_two_weapon: ordera2w, ability_two_armor: ordera2a, ability_three: ordera3,  ability_three_weapon: ordera3w, ability_three_armor: ordera3a, quest_two: orderq2, quest_three: orderq3  )
 puts "Order created"
 
