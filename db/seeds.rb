@@ -894,6 +894,47 @@ studded.titles = ["The DESC Studded Armour", "DESC Garb", "The Gear of DESC Agil
 studded.save
 puts "studded created"
 
+puts "--Making Wondrous Items"
+puts "Making Amulet"
+amulet = Type.new
+amulet.name = "Amulet"
+amulet.category = "Wondrous Item"
+amulet.titles = ["The DESC Amulet","The DESC Necklace","DESC-Gem","The DESC Eye"]
+amulet.save
+puts "Amulet created"
+
+puts "Making Helm"
+helm = Type.new
+helm.name = "Helm"
+helm.category = "Wondrous Item"
+helm.titles = ["The DESC Helm","DESC-Helm","The DESC Crown","Headband of DESC Power"]
+helm.save
+puts "Helm created"
+
+puts "Making Mantle"
+mantle = Type.new
+mantle.name = "Mantle"
+mantle.category = "Wondrous Item"
+mantle.titles = ["Mantle of DESC","DESC Mantle","DESC Garb","DESC Raiments"]
+mantle.save
+puts "Mantle created"
+
+puts "Making Cloak"
+cloak = Type.new
+cloak.name = "Cloak"
+cloak.category = "Wondrous Item"
+cloak.titles = ["The DESC Cloak","Cowl of DESC","DESC-Hood","DESC-Cover"]
+cloak.save
+puts "Cloak created"
+
+puts "Making Wand"
+wand = Type.new
+wand.name = "Wand"
+wand.category = "Wondrous Item"
+wand.titles = ["The DESC Wand","DESC-Blaster","Greater Wand of DESC Power","DESC Hand"]
+wand.save
+puts "Wand created"
+
 #Create God
 # puts "Creating God"
 # new_god = God.new(name: global.make_name, alignment: Alignment.all.sample, domain: Domain.all.sample)

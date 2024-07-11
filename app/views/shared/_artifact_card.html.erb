@@ -16,7 +16,7 @@
     <% when "Armor" %>
       <%="The Artifact becomes magical and gives a +1 bonus to armour class whilst worn, as well as signifying that it (and the attuned user) are marked by #{artifact.god.name}. The spell attack modifier for any spells or abilities this Artifact provides is +5, and any Saving DCs are 13. Additionally, whilst attuned a character #{@artifact.ability_one}" %>
     <% else %>
-      <%="The Artifact becomes magical, and signifies that it (and the attuned user) are marked by #{artifact.god.name}.  The spell attack modifier for any spells or abilities this Artifact provides is +5, and any Saving DCs are 13. Additionally, whilst attuned a character #{@artifact.ability_one}" %>
+      <%="The Artifact becomes magical, and signifies that it (and the attuned user) are marked by #{artifact.god.name}.  The spell attack modifier for any spells or abilities this Artifact provides is +6, and any Saving DCs are 14. Additionally, whilst attuned a character #{@artifact.ability_one}" %>
     <% end %>
   </span>
 </span>
@@ -31,7 +31,7 @@
 <% when "Armor" %>
   <%="The Artifact's magical bonus to AC becomes +2.  The spell attack modifier for any spells or abilities this Artifact provides is +8, and any Saving DCs are 16. Additionally, whilst attuned to the user #{@artifact.ability_two}" %>
 <% else %>
-  <%= "Whilst attuned to this item, you can #{@artifact.ability_two}" %>
+  <%= "The spell attack modifier for any spells or abilities this Artifact provides is +9, and any Saving DCs are 17. Additionally, whilst attuned to the user #{@artifact.ability_two}" %>
 <% end %>
 </span>
 </span>
@@ -46,7 +46,7 @@
 <% when "Armor" %>
   <%="The Artifact's magical bonus to AC becomes +3.  The spell attack modifier for any spells or abilities this Artifact provides is +11, and any Saving DCs are 19. Additionally, whilst attuned a character #{@artifact.ability_three}" %>
 <% else %>
-  <%= " The spell attack modifier for any spells or abilities this Artifact provides is +11, and any Saving DCs are 19. Whilst attuned to this item, you can #{@artifact.ability_three}" %>
+  <%= "The spell attack modifier for any spells or abilities this Artifact provides is +12, and any Saving DCs are 20. Whilst attuned to this item, you can #{@artifact.ability_three}" %>
 <% end %>
 </span>
 </span>
