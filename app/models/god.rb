@@ -3,6 +3,7 @@ class God < ApplicationRecord
   belongs_to :domain
   belongs_to :user
   has_many :artifacts, dependent: :destroy
+  has_many :followers, dependent: :destroy
   has_one_attached :photo
 
   DOMAINS = Domain.all

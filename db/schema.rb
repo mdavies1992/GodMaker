@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_01_145159) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_12_142535) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,6 +85,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_01_145159) do
     t.string "quest_three", default: [], array: true
   end
 
+  create_table "followers", force: :cascade do |t|
+    t.string "name"
+    t.bigint "god_id", null: false
+    t.bigint "alignment_id", null: false
+    t.string "gender"
+    t.string "species"
+    t.string "profession"
+    t.string "description"
+    t.index ["alignment_id"], name: "index_followers_on_alignment_id"
+    t.index ["god_id"], name: "index_followers_on_god_id"
+  end
+
   create_table "generals", force: :cascade do |t|
     t.string "names", default: [], array: true
     t.string "themes", default: [], array: true
@@ -156,6 +168,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_01_145159) do
   add_foreign_key "alignments", "y_alignments"
   add_foreign_key "artifacts", "gods"
   add_foreign_key "artifacts", "types"
+  add_foreign_key "followers", "alignments"
+  add_foreign_key "followers", "gods"
   add_foreign_key "gods", "alignments"
   add_foreign_key "gods", "domains"
   add_foreign_key "gods", "users"
