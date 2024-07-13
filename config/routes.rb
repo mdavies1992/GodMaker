@@ -12,7 +12,9 @@ Rails.application.routes.draw do
       delete :remove_photo
     end
     resources :artifacts, only: [:new, :create]
+    resources :followers, only: [:new, :create]
   end
 
   resources :artifacts, only: [:show, :destroy]
+  resources :followers, only: [:new, :create]
 end
