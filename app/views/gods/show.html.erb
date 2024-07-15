@@ -160,6 +160,7 @@
               <div class="col-4">
                 <%# <%= render 'shared/artifact_card_mini', artifact: artifact %>
                 <p>Follower Found!</p>
+                <%= link_to "#{follower.name}", follower_path(follower)%>
               </div>
             <% end %>
           </div>
