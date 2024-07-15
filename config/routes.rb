@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   end
 
   resources :artifacts, only: [:show, :destroy]
-  resources :followers, only: [:new, :create]
+  resources :followers, only: [:show, :destroy]
 end

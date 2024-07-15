@@ -3,6 +3,7 @@ require "open-uri"
 # Clear it all out
 puts "Clearing DB"
 General.destroy_all
+Follower.destroy_all
 Artifact.destroy_all
 Type.destroy_all
 God.destroy_all

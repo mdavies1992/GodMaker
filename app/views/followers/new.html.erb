@@ -1,0 +1,6 @@
+<div class="devise-card" data-controller="">
+  <h1 class="d-flex justify-content-center">New Follower for <%= @god.name %></h1>
+  <%= simple_form_for [@god, @follower] do |f| %>
+    <%= f.submit %>
+  <% end %>
+</div>
