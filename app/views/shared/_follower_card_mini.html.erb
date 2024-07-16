@@ -1,0 +1,7 @@
+<div class="arti-container">
+  <div class="mini-card d-flex align-items-center">
+    <%= image_tag "#{follower.profession}.webp", class: "artifact-img" %>
+    <%= "#{follower.name} the #{follower.profession}" %>
+  </div>
+  <%= link_to "", follower_path(follower), class: "card-artifact-link" %>
+</div>

@@ -158,9 +158,7 @@
             <% @god.followers.each do |follower| %>
               <%# <%= link_to "#{artifact.name}", artifact_path(artifact), class: "btn btn-primary" %>
               <div class="col-4">
-                <%# <%= render 'shared/artifact_card_mini', artifact: artifact %>
-                <p>Follower Found!</p>
-                <%= link_to "#{follower.name}", follower_path(follower)%>
+                <%= render 'shared/follower_card_mini', follower: follower %>
               </div>
             <% end %>
           </div>
