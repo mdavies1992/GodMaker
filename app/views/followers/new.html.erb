@@ -16,6 +16,10 @@
       <div data-follower-target="race" class="d-none">
         <%= f.input :species, collection: Follower::RACES, label: "What is your follower's species?", prompt: "Select a Species" %>
       </div>
+      <%= f.input :random_gender, as: :boolean, label: "Choose a Gender", input_html: { data: {action: 'change->follower#gendercheck'} }%>
+      <div data-follower-target="gender" class="d-none">
+        <%= f.input :gender, collection: Follower::GENDERS, label: "What is your follower's gender?", prompt: "Select the follower's Gender" %>
+      </div>
       <%= f.input :random_profession, as: :boolean, label: "Choose a profession", input_html: { data: {action: 'change->follower#professioncheck'} }%>
       <div data-follower-target="profession" class="d-none">
         <%= f.input :profession, collection: Follower::PROFESSIONS, label: "What is your follower's profession?", prompt: "Select a profession" %>

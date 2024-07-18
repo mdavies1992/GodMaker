@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 
 export default class extends Controller {
-  static targets = ["name", "alignment", "race", "profession"];
+  static targets = ["name", "alignment", "race", "profession", "gender"];
 
   connect() {
     console.log("Follower Connected");
@@ -25,6 +25,16 @@ export default class extends Controller {
       this.alignmentTarget.classList.remove("d-none")
     } else {
       this.alignmentTarget.classList.add("d-none")
+    }
+   }
+
+   gendercheck(event) {
+    const gischecked = event.currentTarget.checked
+    console.log(gischecked);
+    if (gischecked){
+      this.genderTarget.classList.remove("d-none")
+    } else {
+      this.genderTarget.classList.add("d-none")
     }
    }
 

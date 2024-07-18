@@ -97,6 +97,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_18_024005) do
     t.boolean "random_alignment"
     t.boolean "random_species"
     t.boolean "random_profession"
+    t.boolean "random_gender"
     t.index ["alignment_id"], name: "index_followers_on_alignment_id"
     t.index ["god_id"], name: "index_followers_on_god_id"
   end
