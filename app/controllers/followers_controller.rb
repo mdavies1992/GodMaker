@@ -17,19 +17,38 @@ class FollowersController < ApplicationController
     @god = God.find(params[:god_id])
 
     # Determine Name
-    @follower.name =  @global.make_name
+    if params[:follower][:random_name] == "0"
+      @follower.name =  @global.make_name
+    end
 
     # Determine Gender
-    @follower.gender = Follower::GENDERS.sample
+    if params[:follower][:random_gender] == "0"
+      @follower.gender = Follower::GENDERS.sample
+    else
+      @follower.gender = params[:follower][:gender]
+    end
+
 
     # Determine Race
-    @follower.species = Follower::RACES.sample
+    if params[:follower][:random_species] == "0"
+      @follower.species = Follower::RACES.sample
+    else
+      @follower.species = params[:follower][:species]
+    end
 
     # Determine Profession
-    @follower.profession = Follower::PROFESSIONS.sample
+    if params[:follower][:random_profession] == "0"
+      @follower.profession = Follower::PROFESSIONS.sample
+    else
+      @follower.profession = params[:follower][:profession]
+    end
 
     #Determine Alignment
-    @follower.alignment = Alignment.all.sample
+    if params[:follower][:random_alignment] == "0"
+      @follower.alignment = Alignment.all.sample
+    else
+      @follower.alignment = Alignment.find(params[:follower][:alignment])
+    end
 
     @follower.god = @god
 

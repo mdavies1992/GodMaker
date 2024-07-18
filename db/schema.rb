@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_12_142535) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_18_024005) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,6 +93,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_12_142535) do
     t.string "species"
     t.string "profession"
     t.string "description"
+    t.boolean "random_name"
+    t.boolean "random_alignment"
+    t.boolean "random_species"
+    t.boolean "random_profession"
+    t.boolean "random_gender"
     t.index ["alignment_id"], name: "index_followers_on_alignment_id"
     t.index ["god_id"], name: "index_followers_on_god_id"
   end
