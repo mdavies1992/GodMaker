@@ -23,11 +23,11 @@
       <div data-follower-target="profession" class="d-none">
         <%= f.input :profession, collection: Follower::PROFESSIONS, label: "What is your follower's profession?", prompt: "Select a profession" %>
       </div>
-    </div>
-    <span class="d-flex justify-content-center">
-      <input type="submit" name="commit" value="Create follower" data-disable-with="Create Follower" class="btn-create">
-    </span>
-  <% end %>
+      <span class="d-flex justify-content-center">
+        <input type="submit" name="commit" value="Create follower" data-disable-with="Create Follower" class="btn-create">
+      </span>
+    <% end %>
+  </div>
 </div>
 <div class="d-flex justify-content-center mt-3">
   <a class="btn-gold" href="/gods/<%= @god.id %>">
@@ -37,7 +37,7 @@
         .st0 {
           fill: url(#SVGID_1_);
         }
-
+        q
         .st1 {
           fill: url(#SVGID_2_);
         }
