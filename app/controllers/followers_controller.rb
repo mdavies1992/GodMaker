@@ -53,7 +53,7 @@ class FollowersController < ApplicationController
     @follower.god = @god
 
     # Create Prompt
-    prompt = "Give me a short description of a character, who is a #{@follower.gender} #{@follower.species} called #{@follower.name}, who is #{@follower.alignment} in alignment. They are a #{@follower.profession} of #{@god.name}, a #{@god.alignment.name} god of #{@god.domain.name}."
+    prompt = "Give me a short description of a character, who is a #{@follower.gender} #{@follower.species} called #{@follower.name}, who is #{@follower.alignment.name} in alignment. They are a #{@follower.profession} of #{@god.name}, a #{@god.alignment.name} deity of #{@god.domain.name}."
 
     # Generate Description
     client = OpenAI::Client.new
