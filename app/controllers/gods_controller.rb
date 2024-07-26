@@ -86,7 +86,7 @@ class GodsController < ApplicationController
     end
 
     @god.prompt = "Give me a short introductory description of a #{@god.alignment.name} deity of #{@god.domain.name}. They also incorporate themes of #{@god.themes[0]}, #{@god.themes[1]} and #{@god.themes[2]}. Additionally, they have the title of '#{@god.epitaph}'."
-    @god.img_prompt = "An image of a #{@god.alignment.name} deity of #{@god.domain.name}, no text. They incorporate themes of #{@god.themes[0]}, #{@god.themes[1]} and #{@god.themes[2]}. Fantasy, illustrated, 2d, watercolours."
+    @god.img_prompt = "A detailed illustration of a #{@god.alignment.name} deity of #{@god.domain.name}, incorporating themes of #{@god.themes[0]}, #{@god.themes[1]}, and #{@god.themes[2]}. Fantasy style, 2D, watercolor. No text, no captions, no writing."
 
 
     client = OpenAI::Client.new
