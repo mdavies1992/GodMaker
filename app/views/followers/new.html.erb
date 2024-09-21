@@ -24,7 +24,7 @@
         <%= f.input :profession, collection: Follower::PROFESSIONS, label: "What is your follower's profession?", prompt: "Select a profession" %>
       </div>
       <span class="d-flex justify-content-center">
-        <input type="submit" name="commit" value="Create follower" data-disable-with="Create Follower" class="btn-create">
+        <input type="submit" name="commit" value="Create follower" data-disable-with="Create Follower" class="btn-create", data-turbo-submits-with="Creating...">
       </span>
     <% end %>
   </div>

@@ -20,7 +20,7 @@
         <%= f.input :domain, collection: God::DOMAINS, label: "What is your God's Divine Domain?", prompt: "Select a Domain" %>
       </div>
       <span class="d-flex justify-content-center">
-        <input type="submit" name="commit" value="Create God" data-disable-with="Create God" class="btn-create">
+        <input type="submit" name="commit" value="Create God" data-disable-with="Create God" class="btn-create", data-turbo-submits-with="Creating...">
       </span>
     <% end %>
   </div>
